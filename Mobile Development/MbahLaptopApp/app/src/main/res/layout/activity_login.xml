@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
@@ -30,7 +29,7 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginTop="8dp"
-        android:contentDescription="TODO"
+        android:contentDescription="@string/mbah_laptop_image"
         app:layout_constraintTop_toBottomOf="@id/login_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +49,6 @@
         app:errorEnabled="true">
         
         <com.reza.mbahlaptop.customview.customEditText.MyEmailEditText
-            android:id="@+id/ed_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:ems="10"
@@ -74,7 +72,6 @@
         app:errorEnabled="true">
 
         <com.reza.mbahlaptop.customview.customEditText.MyPasswordEditText
-            android:id="@+id/ed_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:ems="10"

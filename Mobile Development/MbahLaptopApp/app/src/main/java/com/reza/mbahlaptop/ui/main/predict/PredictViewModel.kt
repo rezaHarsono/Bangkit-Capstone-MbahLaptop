@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class PredictViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+        value = "This is Predict Fragment"
     }
     val text: LiveData<String> = _text
 }

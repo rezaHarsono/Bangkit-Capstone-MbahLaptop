@@ -28,7 +28,7 @@ class PredictFragment : Fragment() {
         _binding = FragmentPredictBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
+        val textView: TextView = binding.tvPredict
         predictViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
