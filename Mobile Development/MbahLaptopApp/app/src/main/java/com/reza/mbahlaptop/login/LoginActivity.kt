@@ -1,31 +1,22 @@
-package com.reza.mbahlaptop
+package com.reza.mbahlaptop.login
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.reza.mbahlaptop.databinding.ActivityIntroBinding
-import com.reza.mbahlaptop.login.LoginActivity
+import com.reza.mbahlaptop.databinding.ActivityLoginBinding
 import com.reza.mbahlaptop.register.RegisterActivity
 
-class IntroActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityIntroBinding
+class LoginActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityIntroBinding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        binding.btnLogin.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        }
 
         binding.btnRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
-
     }
 }

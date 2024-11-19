@@ -46,4 +46,12 @@
     <string name="intro_info">Start Predict Your Laptop Prices Now!</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
+    <string name="mbahlaptop">MbahLaptop</string>
+    <string name="register_ask">Doesn’t have an account yet?</string>
+    <string name="register_now">Register Now!</string>
+    <string name="error_email_invalid">Invalid email format</string>
+    <string name="email">Email</string>
+    <string name="error_password_invalid">Password must be at least 8 characters</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
 </resources>

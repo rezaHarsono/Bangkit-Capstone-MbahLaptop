@@ -12,10 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MbahLaptop"
         tools:targetApi="31">
-<!--        <activity-->
-<!--            android:name=".IntroActivity"-->
-<!--            android:exported="false"-->
-<!--            android:theme="@style/Theme.MbahLaptop" />-->
+        <activity
+            android:name=".register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".IntroActivity" -->
+        <!-- android:exported="false" -->
+        <!-- android:theme="@style/Theme.MbahLaptop" /> -->
         <activity
             android:name=".IntroActivity"
             android:exported="true">
