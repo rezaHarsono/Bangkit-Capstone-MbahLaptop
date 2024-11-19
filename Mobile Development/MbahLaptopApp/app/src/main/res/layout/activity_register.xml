@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".register.RegisterActivity">
+    tools:context=".ui.register.RegisterActivity">
 
     <TextView
         android:id="@+id/register_title"
@@ -30,6 +30,7 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/mbah_laptop_image"
         app:layout_constraintTop_toBottomOf="@id/register_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +38,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_email"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -47,7 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <com.reza.mbahlaptop.customEditText.MyEmailEditText
+        <com.reza.mbahlaptop.customview.customEditText.MyEmailEditText
             android:id="@+id/ed_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -91,7 +92,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <com.reza.mbahlaptop.customEditText.MyPasswordEditText
+        <com.reza.mbahlaptop.customview.customEditText.MyPasswordEditText
             android:id="@+id/ed_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".login.LoginActivity">
+    tools:context=".ui.login.LoginActivity">
     
     <TextView
         android:id="@+id/login_title"
@@ -30,6 +30,7 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="TODO"
         app:layout_constraintTop_toBottomOf="@id/login_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:errorEnabled="true">
         
-        <com.reza.mbahlaptop.customEditText.MyEmailEditText
+        <com.reza.mbahlaptop.customview.customEditText.MyEmailEditText
             android:id="@+id/ed_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -72,7 +73,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:errorEnabled="true">
 
-        <com.reza.mbahlaptop.customEditText.MyPasswordEditText
+        <com.reza.mbahlaptop.customview.customEditText.MyPasswordEditText
             android:id="@+id/ed_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -124,7 +125,7 @@
         android:textColor="@color/light_blue"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:backgroundTint="@color/white"
+        style="@style/Widget.Material3.Button.TextButton"
         app:layout_constraintTop_toBottomOf="@id/tv_register"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="@drawable/gradient_background"
-    tools:context=".IntroActivity">
+    tools:context=".ui.intro.IntroActivity">
 
     <TextView
         android:id="@+id/intro_welcome"
@@ -24,7 +24,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
-    
+
     <TextView
         android:id="@+id/intro_info"
         android:layout_width="match_parent"
@@ -45,6 +45,7 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/mbah_laptop_image"
         app:layout_constraintTop_toBottomOf="@id/intro_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +54,7 @@
     <Button
         android:id="@+id/btn_login"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="match_parent"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:layout_marginStart="40dp"
@@ -69,7 +70,7 @@
     <Button
         android:id="@+id/btn_register"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="match_parent"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:layout_marginStart="40dp"
@@ -82,6 +83,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <Button
+        android:id="@+id/btn_guest"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_as_guest"
+        android:textColor="#1976D2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_register" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

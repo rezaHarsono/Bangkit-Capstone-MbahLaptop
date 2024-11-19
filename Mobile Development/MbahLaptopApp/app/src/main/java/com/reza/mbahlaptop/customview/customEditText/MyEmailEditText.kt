@@ -1,11 +1,9 @@
-package com.reza.mbahlaptop.customEditText
+package com.reza.mbahlaptop.customview.customEditText
 
-import android.content.AttributionSource
 import android.content.Context
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatEditText
 import com.reza.mbahlaptop.R
 
@@ -34,7 +32,7 @@ class MyEmailEditText @JvmOverloads constructor(
             }
 
             override fun afterTextChanged(s: Editable?) {
-               // No Action
+                // No Action
             }
         })
     }
