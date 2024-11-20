@@ -1,13 +1,8 @@
 package com.reza.mbahlaptop.ui.main.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.reza.mbahlaptop.data.remote.NewsRepository
 
-class HomeViewModel : ViewModel() {
-
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is Home Fragment"
-    }
-    val text: LiveData<String> = _text
+class HomeViewModel(private val newsRepository: NewsRepository) : ViewModel() {
+    fun getNews() = newsRepository.getNews()
 }

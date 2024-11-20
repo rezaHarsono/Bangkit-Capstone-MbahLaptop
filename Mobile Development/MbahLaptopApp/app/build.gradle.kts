@@ -15,6 +15,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "BASE_URL", "\"https://newsapi.org/v2/\"")
+        buildConfigField("String", "API_KEY", "\"93b21820d88640e3bea33203ff62dd7d\"")
     }
 
     buildTypes {
@@ -35,11 +38,18 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
 dependencies {
+    //Retrofit and APIs
+    implementation(libs.retrofit)
+    implementation(libs.retrofit2.converter.gson)
+    implementation(libs.glide)
+    implementation(libs.logging.interceptor)
 
+    //AndroidX and UIs
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -47,8 +57,12 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+
+    //Lifecycle
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
+    //App Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

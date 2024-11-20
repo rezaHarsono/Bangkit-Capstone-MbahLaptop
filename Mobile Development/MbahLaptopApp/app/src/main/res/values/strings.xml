@@ -20,4 +20,8 @@
     <string name="title_predict">Predict</string>
     <string name="login_as_guest">Login as Guest</string>
     <string name="mbah_laptop_image">Mbah Laptop Image</string>
+    <string name="predict_your_laptop_price_now">Predict Your Laptop Price Now</string>
+    <string name="predict">Predict</string>
+    <string name="laptop_image">Laptop Image</string>
+    <string name="check_out_the_latest_news_for_laptops">Check Out the Latest News for Laptops</string>
 </resources>
