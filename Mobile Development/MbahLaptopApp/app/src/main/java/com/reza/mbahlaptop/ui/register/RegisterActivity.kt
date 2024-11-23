@@ -1,8 +1,10 @@
 package com.reza.mbahlaptop.ui.register
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.reza.mbahlaptop.databinding.ActivityRegisterBinding
+import com.reza.mbahlaptop.ui.login.LoginActivity
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
@@ -12,5 +14,10 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+
+        binding.btnCancel.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
     }
 }

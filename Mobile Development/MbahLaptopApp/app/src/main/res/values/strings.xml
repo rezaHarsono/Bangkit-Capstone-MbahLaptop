@@ -24,4 +24,7 @@
     <string name="predict">Predict</string>
     <string name="laptop_image">Laptop Image</string>
     <string name="check_out_the_latest_news_for_laptops">Check Out the Latest News for Laptops</string>
+    <string name="or">OR</string>
+    <string name="logout">Logout</string>
+    <string name="cancel">Cancel</string>
 </resources>

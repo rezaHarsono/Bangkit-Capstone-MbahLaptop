@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.reza.mbahlaptop" />
+                  <option name="mobileSdkAppId" value="1:710591619210:android:1664497f59a1a39f9b4d73" />
+                  <option name="projectId" value="mbahlaptop-52165" />
+                  <option name="projectNumber" value="710591619210" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

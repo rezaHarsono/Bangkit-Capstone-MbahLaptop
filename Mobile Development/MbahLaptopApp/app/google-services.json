@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "710591619210",
+    "project_id": "mbahlaptop-52165",
+    "storage_bucket": "mbahlaptop-52165.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710591619210:android:1664497f59a1a39f9b4d73",
+        "android_client_info": {
+          "package_name": "com.reza.mbahlaptop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710591619210-svkvtsg84s2pg6iis50rjc8jjibm7d4j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.reza.mbahlaptop",
+            "certificate_hash": "36e5c97442e68c12f243abb7098be2666843c6f2"
+          }
+        },
+        {
+          "client_id": "710591619210-r8uam0ltm5qu8ncjmrllqknoganl2adp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzscN32PRxlH5i2gPA5VCPIRLKrBjsj_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710591619210-r8uam0ltm5qu8ncjmrllqknoganl2adp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

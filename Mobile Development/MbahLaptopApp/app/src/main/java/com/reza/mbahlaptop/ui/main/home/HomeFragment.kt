@@ -12,8 +12,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
-import com.reza.mbahlaptop.databinding.FragmentHomeBinding
 import com.reza.mbahlaptop.data.Result
+import com.reza.mbahlaptop.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
