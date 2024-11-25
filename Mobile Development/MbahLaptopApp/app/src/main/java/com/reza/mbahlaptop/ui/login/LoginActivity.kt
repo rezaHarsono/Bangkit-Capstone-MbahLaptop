@@ -3,6 +3,8 @@ package com.reza.mbahlaptop.ui.login
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.credentials.CredentialManager
 import androidx.credentials.CustomCredential
@@ -40,7 +42,18 @@ class LoginActivity : AppCompatActivity() {
         auth = Firebase.auth
 
         binding.btnGoogle.setOnClickListener {
-            signIn()
+            signInWithGoogle()
+        }
+
+        binding.btnLogin.setOnClickListener {
+            val email = binding.edEmail.text.toString()
+            val password = binding.edPassword.text.toString()
+
+            if (email.isEmpty() || password.isEmpty()) {
+                showToast(getString(R.string.please_fill_all_fields))
+            } else {
+                signInWithEmailAndPassword()
+            }
         }
 
         binding.btnRegister.setOnClickListener {
@@ -49,7 +62,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun signIn() {
+    private fun signInWithGoogle() {
         val credentialManager = CredentialManager.create(this)
 
         val googleIdOption = GetGoogleIdOption.Builder()
@@ -73,6 +86,27 @@ class LoginActivity : AppCompatActivity() {
                 Log.d("Error", e.message.toString())
             }
         }
+    }
+
+    private fun signInWithEmailAndPassword() {
+        val email = binding.edEmail.text.toString()
+        val password = binding.edPassword.text.toString()
+        showLoading(true)
+
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    showLoading(false)
+                    Log.d(TAG, "signInWithEmail: Success")
+                    val user = auth.currentUser
+                    updateUI(user)
+                } else {
+                    showLoading(false)
+                    Log.w(TAG, "signInWithEmail: Failure", task.exception)
+                    showToast(getString(R.string.error_login_invalid))
+                    updateUI(null)
+                }
+            }
     }
 
     private fun handleSignIn(result: GetCredentialResponse) {
@@ -110,6 +144,7 @@ class LoginActivity : AppCompatActivity() {
                     updateUI(user)
                 } else {
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
+                    showToast("Login Failed")
                     updateUI(null)
                 }
             }
@@ -121,6 +156,19 @@ class LoginActivity : AppCompatActivity() {
             loginIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(loginIntent)
             finish()
+        }
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(baseContext, message, Toast.LENGTH_SHORT).show()
+    }
+
+
+    private fun showLoading(active: Boolean) {
+        if (active) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
         }
     }
 

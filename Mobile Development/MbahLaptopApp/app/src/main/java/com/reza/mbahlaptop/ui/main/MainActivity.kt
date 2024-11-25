@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.credentials.ClearCredentialStateRequest
@@ -69,6 +70,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun signOut() {
+        showLoading(true)
         lifecycleScope.launch {
             val credentialManager = CredentialManager.create(this@MainActivity)
             auth.signOut()
@@ -76,6 +78,14 @@ class MainActivity : AppCompatActivity() {
             credentialManager.clearCredentialState(ClearCredentialStateRequest())
             startActivity(Intent(this@MainActivity, LoginActivity::class.java))
             finish()
+        }
+    }
+
+    private fun showLoading(active: Boolean) {
+        if (active) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
         }
     }
 
