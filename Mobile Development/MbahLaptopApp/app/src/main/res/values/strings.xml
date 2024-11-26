@@ -29,4 +29,15 @@
     <string name="cancel">Cancel</string>
     <string name="error_login_invalid">Invalid Username or Password. \nPlease Try Again</string>
     <string name="please_fill_all_fields">Please fill all fields</string>
+    <string name="delete_history">Delete History</string>
+    <string name="are_you_sure_you_want_to_delete_this_item">Are you sure you want to delete this item?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="prediction_date">Prediction Date</string>
+    <string name="processor">Processor :</string>
+    <string name="intel_amd">INTEL/AMD</string>
+    <string name="ram_size">Ram Size :</string>
+    <string name="x_gb">X GB</string>
+    <string name="gpu">GPU :</string>
+    <string name="prediction_detail">Prediction Detail</string>
 </resources>
