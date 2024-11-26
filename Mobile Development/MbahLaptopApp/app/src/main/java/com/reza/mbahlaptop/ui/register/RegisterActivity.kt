@@ -1,5 +1,7 @@
 package com.reza.mbahlaptop.ui.register
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -12,6 +14,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.auth
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivityRegisterBinding
+import com.reza.mbahlaptop.ui.intro.IntroActivity
 import com.reza.mbahlaptop.ui.login.LoginActivity
 
 class RegisterActivity : AppCompatActivity() {
@@ -27,7 +30,7 @@ class RegisterActivity : AppCompatActivity() {
         auth = Firebase.auth
 
         binding.btnCancel.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, IntroActivity::class.java))
             finish()
         }
 
@@ -40,6 +43,8 @@ class RegisterActivity : AppCompatActivity() {
                 register()
             }
         }
+
+        playAnimation()
     }
 
     private fun register() {
@@ -83,6 +88,34 @@ class RegisterActivity : AppCompatActivity() {
         } else {
             binding.progressBar.visibility = View.GONE
         }
+    }
+
+    private fun playAnimation() {
+        val registerTitle =
+            ObjectAnimator.ofFloat(binding.registerTitle, View.ALPHA, 1f).setDuration(300)
+        val registerImage =
+            ObjectAnimator.ofFloat(binding.introImage, View.ALPHA, 1f).setDuration(300)
+        val registerEmail =
+            ObjectAnimator.ofFloat(binding.tilEmail, View.ALPHA, 1f).setDuration(300)
+        val registerPassword =
+            ObjectAnimator.ofFloat(binding.tilPassword, View.ALPHA, 1f).setDuration(300)
+        val registerButton =
+            ObjectAnimator.ofFloat(binding.btnRegister, View.ALPHA, 1f).setDuration(300)
+        val cancelButton =
+            ObjectAnimator.ofFloat(binding.btnCancel, View.ALPHA, 1f).setDuration(300)
+
+        AnimatorSet().apply {
+            playSequentially(
+                registerTitle,
+                registerImage,
+                registerEmail,
+                registerPassword,
+                registerButton,
+                cancelButton
+            )
+            start()
+        }
+
     }
 
     companion object {

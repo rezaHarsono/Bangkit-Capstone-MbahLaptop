@@ -1,5 +1,7 @@
 package com.reza.mbahlaptop.ui.login
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -60,6 +62,8 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
+
+        playAnimation()
     }
 
     private fun signInWithGoogle() {
@@ -163,12 +167,43 @@ class LoginActivity : AppCompatActivity() {
         Toast.makeText(baseContext, message, Toast.LENGTH_SHORT).show()
     }
 
-
     private fun showLoading(active: Boolean) {
         if (active) {
             binding.progressBar.visibility = View.VISIBLE
         } else {
             binding.progressBar.visibility = View.GONE
+        }
+    }
+
+    private fun playAnimation() {
+        val loginTitle = ObjectAnimator.ofFloat(binding.loginTitle, View.ALPHA, 1f).setDuration(300)
+        val loginImage = ObjectAnimator.ofFloat(binding.introImage, View.ALPHA, 1f).setDuration(300)
+        val emailEditTextLayout =
+            ObjectAnimator.ofFloat(binding.tilEmail, View.ALPHA, 1f).setDuration(300)
+        val passwordEditTextLayout =
+            ObjectAnimator.ofFloat(binding.tilPassword, View.ALPHA, 1f).setDuration(300)
+        val loginButton = ObjectAnimator.ofFloat(binding.btnLogin, View.ALPHA, 1f).setDuration(300)
+        val orTextView = ObjectAnimator.ofFloat(binding.tvOr, View.ALPHA, 1f).setDuration(300)
+        val googleButton =
+            ObjectAnimator.ofFloat(binding.btnGoogle, View.ALPHA, 1f).setDuration(300)
+        val wantRegister =
+            ObjectAnimator.ofFloat(binding.tvRegister, View.ALPHA, 1f).setDuration(300)
+        val registerButton =
+            ObjectAnimator.ofFloat(binding.btnRegister, View.ALPHA, 1f).setDuration(300)
+
+        AnimatorSet().apply {
+            playSequentially(
+                loginTitle,
+                loginImage,
+                emailEditTextLayout,
+                passwordEditTextLayout,
+                loginButton,
+                orTextView,
+                googleButton,
+                wantRegister,
+                registerButton
+            )
+            start()
         }
     }
 

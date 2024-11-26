@@ -36,7 +36,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.1" />
+            app:layout_constraintVertical_bias="0.1"
+            android:alpha="0"
+            tools:alpha="100"/>
 
         <ImageView
             android:id="@+id/intro_image"
@@ -47,7 +49,9 @@
             android:src="@drawable/mbah_laptop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/login_title" />
+            app:layout_constraintTop_toBottomOf="@id/login_title"
+            android:alpha="0"
+            tools:alpha="100"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_email"
@@ -60,7 +64,9 @@
             app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/intro_image">
+            app:layout_constraintTop_toBottomOf="@id/intro_image"
+            android:alpha="0"
+            tools:alpha="100">
 
             <com.reza.mbahlaptop.customview.customEditText.MyEmailEditText
                 android:id="@+id/ed_email"
@@ -84,7 +90,9 @@
             app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/til_email">
+            app:layout_constraintTop_toBottomOf="@id/til_email"
+            android:alpha="0"
+            tools:alpha="100">
 
             <com.reza.mbahlaptop.customview.customEditText.MyPasswordEditText
                 android:id="@+id/ed_password"
@@ -109,7 +117,9 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/til_password" />
+            app:layout_constraintTop_toBottomOf="@id/til_password"
+            android:alpha="0"
+            tools:alpha="100"/>
 
         <TextView
             android:id="@+id/tv_or"
@@ -121,7 +131,9 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_login" />
+            app:layout_constraintTop_toBottomOf="@id/btn_login"
+            android:alpha="0"
+            tools:alpha="100"/>
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/btn_google"
@@ -131,7 +143,9 @@
             android:layout_marginEnd="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_or" />
+            app:layout_constraintTop_toBottomOf="@id/tv_or"
+            android:alpha="0"
+            tools:alpha="100"/>
 
         <TextView
             android:id="@+id/tv_register"
@@ -147,7 +161,9 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_google" />
+            app:layout_constraintTop_toBottomOf="@id/btn_google"
+            android:alpha="0"
+            tools:alpha="100"/>
 
         <Button
             android:id="@+id/btn_register"
@@ -162,7 +178,9 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_register" />
+            app:layout_constraintTop_toBottomOf="@id/tv_register"
+            android:alpha="0"
+            tools:alpha="100"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

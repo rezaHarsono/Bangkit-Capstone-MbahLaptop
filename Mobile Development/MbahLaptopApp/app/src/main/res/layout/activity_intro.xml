@@ -27,7 +27,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.1" />
+            app:layout_constraintVertical_bias="0.1"
+            android:alpha="0"
+            tools:alpha="100"/>
 
         <TextView
             android:id="@+id/intro_info"
@@ -42,7 +44,9 @@
             android:textSize="21sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/intro_welcome" />
+            app:layout_constraintTop_toBottomOf="@id/intro_welcome"
+            android:alpha="0"
+            tools:alpha="100"/>
 
         <ImageView
             android:id="@+id/intro_image"
@@ -53,7 +57,9 @@
             android:src="@drawable/mbah_laptop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/intro_info" />
+            app:layout_constraintTop_toBottomOf="@id/intro_info"
+            android:alpha="0"
+            tools:alpha="100"/>
 
         <Button
             android:id="@+id/btn_login"
@@ -69,7 +75,9 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/intro_image" />
+            app:layout_constraintTop_toBottomOf="@id/intro_image"
+            android:alpha="0"
+            tools:alpha="100"/>
 
         <Button
             android:id="@+id/btn_register"
@@ -85,7 +93,9 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_login" />
+            app:layout_constraintTop_toBottomOf="@id/btn_login"
+            android:alpha="0"
+            tools:alpha="100"/>
 
         <Button
             android:id="@+id/btn_guest"
@@ -96,7 +106,9 @@
             android:textColor="#1976D2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_register" />
+            app:layout_constraintTop_toBottomOf="@id/btn_register"
+            android:alpha="0"
+            tools:alpha="100"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
