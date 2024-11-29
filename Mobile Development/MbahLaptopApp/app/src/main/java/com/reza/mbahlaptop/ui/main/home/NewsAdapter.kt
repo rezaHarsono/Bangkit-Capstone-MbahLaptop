@@ -46,9 +46,10 @@ class NewsAdapter : ListAdapter<ArticlesItem, NewsAdapter.MyViewHolder>(DIFF_CAL
         fun bind(news: ArticlesItem) {
             Glide.with(binding.root.context)
                 .load(news.urlToImage)
-                .into(binding.imgItemImage)
-            binding.tvItemName.text = news.title
-            binding.tvItemDescription.text = news.description
+                .into(binding.ivNewsImage)
+            binding.tvNewsSource.text = news.source!!.name
+            binding.tvNewsTitle.text = news.title
+            binding.tvNewsAuthor.text = "By ${news.author}"
         }
 
     }

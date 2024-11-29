@@ -25,12 +25,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
+                <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/image_laptop"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:contentDescription="@string/laptop_image"
                     android:layout_margin="8dp"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.ExtraSmall"
                     android:src="@drawable/laptop"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -41,6 +42,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/predict_your_laptop_price_now"
                     android:textColor="#212121"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/btn_predict"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/image_laptop"
@@ -101,6 +103,7 @@
             android:id="@+id/rv_news_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
