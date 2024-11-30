@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.FragmentPredictBinding
 
 class PredictFragment : Fragment() {
@@ -22,17 +22,56 @@ class PredictFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val predictViewModel =
-            ViewModelProvider(this)[PredictViewModel::class.java]
-
         _binding = FragmentPredictBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.tvPredict
-        predictViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        val osType = resources.getStringArray(R.array.os_type)
+        val osArrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, osType)
+        binding.actvOs.setAdapter(osArrayAdapter)
+
+        val processorWindows = resources.getStringArray(R.array.processor_windows)
+        val processorMac = resources.getStringArray(R.array.processor_mac)
+        val processorWindowsArrayAdapter =
+            ArrayAdapter(requireContext(), R.layout.dropdown_item, processorWindows)
+        val processorMacArrayAdapter =
+            ArrayAdapter(requireContext(), R.layout.dropdown_item, processorMac)
+        binding.actvProcessor.setAdapter(processorWindowsArrayAdapter)
+
+        binding.actvOs.setOnItemClickListener { parent, _, position, _ ->
+            val selectedOS = parent.getItemAtPosition(position) as String
+            if (selectedOS == "MAC") {
+                binding.actvProcessor.setAdapter(processorMacArrayAdapter)
+                binding.actvProcessor.text = null
+            } else {
+                binding.actvProcessor.setAdapter(processorWindowsArrayAdapter)
+                binding.actvProcessor.text = null
+            }
+        }
+
+        val ramSize = resources.getStringArray(R.array.ram_size)
+        val ramSizeArrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, ramSize)
+        binding.actvRamSize.setAdapter(ramSizeArrayAdapter)
+
+        val storageType = resources.getStringArray(R.array.storage_type)
+        val storageTypeArrayAdapter =
+            ArrayAdapter(requireContext(), R.layout.dropdown_item, storageType)
+        binding.actvStorageType.setAdapter(storageTypeArrayAdapter)
+
+        val storageSize = resources.getStringArray(R.array.storage_size)
+        val storageSizeArrayAdapter =
+            ArrayAdapter(requireContext(), R.layout.dropdown_item, storageSize)
+        binding.actvStorageSize.setAdapter(storageSizeArrayAdapter)
+
+        val screenRes = resources.getStringArray(R.array.screen_res)
+        val screenResArrayAdapter =
+            ArrayAdapter(requireContext(), R.layout.dropdown_item, screenRes)
+        binding.actvScreenRes.setAdapter(screenResArrayAdapter)
     }
 
     override fun onDestroyView() {

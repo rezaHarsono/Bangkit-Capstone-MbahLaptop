@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="os_type">
+        <item>MAC</item>
+        <item>Windows</item>
+    </string-array>
+
+    <string-array name="processor_windows">
+        <item>8th Gen Intel Core i5</item>
+        <item>8th Gen Intel Core i7</item>
+        <item>8th Gen Intel Core i9</item>
+        <item>9th Gen intel Core i7</item>
+        <item>9th Gen Intel Core i9</item>
+        <item>10th Gen Intel Core i3</item>
+        <item>10th Gen Intel Core i5</item>
+        <item>10th Gen Intel Core i7</item>
+        <item>11th Gen Intel Core i3</item>
+        <item>11th Gen Intel Core i5</item>
+        <item>11th Gen Intel Core i7</item>
+        <item>12th Gen Intel Core i3</item>
+        <item>12th Gen Intel Core i5</item>
+        <item>12th Gen Intel Core i7</item>
+        <item>12th Gen Intel Core i9</item>
+        <item>13th Gen Intel Core i3</item>
+        <item>13th Gen Intel Core i5</item>
+        <item>13th Gen Intel Core i7</item>
+        <item>13th Gen Intel Core i9</item>
+        <item>3rd Gen AMD Athlon</item>
+        <item>3rd Gen AMD Athlon Silver</item>
+        <item>3rd Gen AMD Ryzen 3</item>
+        <item>3rd Gen AMD Ryzen 5</item>
+        <item>4th Gen AMD Ryzen 7 PRO</item>
+        <item>4th Gen Intel Celeron</item>
+        <item>5th Gen AMD Ryzen 3</item>
+        <item>5th Gen AMD Ryzen 5</item>
+        <item>5th Gen AMD Ryzen 7</item>
+        <item>6th Gen AMD Ryzen 5</item>
+        <item>6th Gen AMD Ryzen 7</item>
+        <item>6th Gen AMD Ryzen 9</item>
+        <item>7th Gen AMD Ryzen 3</item>
+        <item>7th Gen Amd Ryzen 5</item>
+        <item>7th Gen AMD Ryzen 7</item>
+        <item>7th Gen AMD Ryzen 9</item>
+    </string-array>
+
+    <string-array name="processor_mac">
+        <item>Apple M1 Apple M1 Chip</item>
+        <item>Apple M1 Max M1 Max</item>
+        <item>Apple M1 Pro M1 Pro</item>
+        <item>Apple M2</item>
+        <item>Apple M2 Apple M2 Chip</item>
+        <item>Apple M2 Max M2 Max</item>
+        <item>Apple M2 Pro M2 Pro</item>
+    </string-array>
+
+    <string-array name="ram_size">
+        <item>8</item>
+        <item>16</item>
+        <item>32</item>
+    </string-array>
+
+    <string-array name="storage_type">
+        <item>SSD</item>
+        <item>HDD</item>
+    </string-array>
+
+    <string-array name="storage_size">
+        <item>256</item>
+        <item>512</item>
+        <item>1024</item>
+    </string-array>
+
+    <string-array name="screen_res">
+        <item>HD+</item>
+        <item>FHD</item>
+        <item>2K</item>
+    </string-array>
+</resources>

@@ -13,7 +13,6 @@
     <string name="email">Email</string>
     <string name="error_password_invalid">Password must be at least 8 characters</string>
     <string name="password">Password</string>
-    <string name="username">Username</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_history">History</string>
@@ -40,4 +39,14 @@
     <string name="x_gb">X GB</string>
     <string name="gpu">GPU :</string>
     <string name="prediction_detail">Prediction Detail</string>
+    <string name="insert_your_laptop_spesification_below">Insert your laptop spesification below</string>
+    <string name="os_type">OS Type</string>
+    <string name="processor_type">Processor Type</string>
+    <string name="gpu_type">GPU Type</string>
+    <string name="ram_size_hint">Ram Size</string>
+    <string name="storage_type">Storage Type</string>
+    <string name="storage_size">Storage Size</string>
+    <string name="screen_resolution">Screen Resolution</string>
+    <string name="predict_price">Predict Price</string>
+    <string name="by">By %1$s</string>
 </resources>

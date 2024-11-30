@@ -78,6 +78,7 @@ class MainActivity : AppCompatActivity() {
             credentialManager.clearCredentialState(ClearCredentialStateRequest())
             startActivity(Intent(this@MainActivity, LoginActivity::class.java))
             finish()
+            showLoading(false)
         }
     }
 
@@ -87,9 +88,5 @@ class MainActivity : AppCompatActivity() {
         } else {
             binding.progressBar.visibility = View.GONE
         }
-    }
-
-    companion object {
-        private const val TAG = "MAIN_ACTIVITY"
     }
 }

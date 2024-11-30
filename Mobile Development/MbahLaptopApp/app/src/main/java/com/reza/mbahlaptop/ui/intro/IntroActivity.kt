@@ -25,32 +25,50 @@ class IntroActivity : AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle())
+            startActivity(
+                intent,
+                ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle()
+            )
         }
 
         binding.btnRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle())
+            startActivity(
+                intent,
+                ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle()
+            )
         }
 
         binding.btnGuest.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle())
+            startActivity(
+                intent,
+                ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle()
+            )
         }
 
         playAnimation()
     }
 
     private fun playAnimation() {
-        val introTitle = ObjectAnimator.ofFloat(binding.introWelcome, View.ALPHA, 1f).setDuration(500)
+        val introTitle =
+            ObjectAnimator.ofFloat(binding.introWelcome, View.ALPHA, 1f).setDuration(500)
         val introInfo = ObjectAnimator.ofFloat(binding.introInfo, View.ALPHA, 1f).setDuration(500)
         val introImage = ObjectAnimator.ofFloat(binding.introImage, View.ALPHA, 1f).setDuration(500)
         val introLogin = ObjectAnimator.ofFloat(binding.btnLogin, View.ALPHA, 1f).setDuration(500)
-        val introRegister = ObjectAnimator.ofFloat(binding.btnRegister, View.ALPHA, 1f).setDuration(500)
+        val introRegister =
+            ObjectAnimator.ofFloat(binding.btnRegister, View.ALPHA, 1f).setDuration(500)
         val introGuest = ObjectAnimator.ofFloat(binding.btnGuest, View.ALPHA, 1f).setDuration(500)
 
         AnimatorSet().apply {
-            playSequentially(introTitle, introInfo, introImage, introLogin, introRegister, introGuest)
+            playSequentially(
+                introTitle,
+                introInfo,
+                introImage,
+                introLogin,
+                introRegister,
+                introGuest
+            )
             start()
         }
     }

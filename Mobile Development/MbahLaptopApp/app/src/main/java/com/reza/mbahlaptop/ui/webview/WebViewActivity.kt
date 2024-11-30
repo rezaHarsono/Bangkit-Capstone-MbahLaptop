@@ -1,16 +1,12 @@
 package com.reza.mbahlaptop.ui.webview
 
-import android.os.Build
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivityWebViewBinding
 
 class WebViewActivity : AppCompatActivity() {
@@ -25,6 +21,7 @@ class WebViewActivity : AppCompatActivity() {
         val title = intent.getStringExtra("title")
 
         supportActionBar?.title = title
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val webview = binding.webView
         url = intent.getStringExtra("url")
@@ -50,5 +47,15 @@ class WebViewActivity : AppCompatActivity() {
             Toast.makeText(this, "Invalid URL", Toast.LENGTH_SHORT).show()
             finish()
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

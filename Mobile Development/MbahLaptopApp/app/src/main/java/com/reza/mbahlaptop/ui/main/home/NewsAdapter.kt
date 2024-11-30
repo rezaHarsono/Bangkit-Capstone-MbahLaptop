@@ -1,13 +1,13 @@
 package com.reza.mbahlaptop.ui.main.home
 
 import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.data.remote.response.ArticlesItem
 import com.reza.mbahlaptop.databinding.NewsRowBinding
 import com.reza.mbahlaptop.ui.webview.WebViewActivity
@@ -22,35 +22,18 @@ class NewsAdapter : ListAdapter<ArticlesItem, NewsAdapter.MyViewHolder>(DIFF_CAL
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val news = getItem(position)
         holder.bind(news)
-
-//        holder.itemView.setOnClickListener {
-//            val context = holder.itemView.context
-//            val url = news.url
-//
-//            val builder = android.app.AlertDialog.Builder(context)
-//            builder.setTitle("Open Link")
-//            builder.setMessage("Are you sure you want to open this link in your browser?")
-//            builder.setPositiveButton("Yes") { _, _ ->
-//                val intent = Intent(Intent.ACTION_VIEW)
-//                intent.data = Uri.parse(url)
-//                context.startActivity(intent)
-//            }
-//            builder.setNegativeButton("No") { dialog, _ ->
-//                dialog.dismiss()
-//            }
-//            builder.show()
-//        }
     }
 
     class MyViewHolder(private val binding: NewsRowBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(news: ArticlesItem) {
+            val context = itemView.context
             Glide.with(binding.root.context)
                 .load(news.urlToImage)
                 .into(binding.ivNewsImage)
             binding.tvNewsSource.text = news.source!!.name
             binding.tvNewsTitle.text = news.title
-            binding.tvNewsAuthor.text = "By ${news.author}"
+            binding.tvNewsAuthor.text = context.getString(R.string.by, news.author)
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, WebViewActivity::class.java)

@@ -58,6 +58,7 @@
             android:id="@+id/tv_news_author"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:paddingHorizontal="4dp"
             android:layout_margin="8dp"
             android:textSize="11sp"
             card_view:layout_constraintStart_toStartOf="parent"
