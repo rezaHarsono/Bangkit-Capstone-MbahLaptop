@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.reza.mbahlaptop.data.remote.response.ArticlesItem
 import com.reza.mbahlaptop.databinding.NewsRowBinding
+import com.reza.mbahlaptop.ui.webview.WebViewActivity
 
 class NewsAdapter : ListAdapter<ArticlesItem, NewsAdapter.MyViewHolder>(DIFF_CALLBACK) {
 
@@ -22,23 +23,23 @@ class NewsAdapter : ListAdapter<ArticlesItem, NewsAdapter.MyViewHolder>(DIFF_CAL
         val news = getItem(position)
         holder.bind(news)
 
-        holder.itemView.setOnClickListener {
-            val context = holder.itemView.context
-            val url = news.url
-
-            val builder = android.app.AlertDialog.Builder(context)
-            builder.setTitle("Open Link")
-            builder.setMessage("Are you sure you want to open this link in your browser?")
-            builder.setPositiveButton("Yes") { _, _ ->
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse(url)
-                context.startActivity(intent)
-            }
-            builder.setNegativeButton("No") { dialog, _ ->
-                dialog.dismiss()
-            }
-            builder.show()
-        }
+//        holder.itemView.setOnClickListener {
+//            val context = holder.itemView.context
+//            val url = news.url
+//
+//            val builder = android.app.AlertDialog.Builder(context)
+//            builder.setTitle("Open Link")
+//            builder.setMessage("Are you sure you want to open this link in your browser?")
+//            builder.setPositiveButton("Yes") { _, _ ->
+//                val intent = Intent(Intent.ACTION_VIEW)
+//                intent.data = Uri.parse(url)
+//                context.startActivity(intent)
+//            }
+//            builder.setNegativeButton("No") { dialog, _ ->
+//                dialog.dismiss()
+//            }
+//            builder.show()
+//        }
     }
 
     class MyViewHolder(private val binding: NewsRowBinding) :
@@ -50,6 +51,13 @@ class NewsAdapter : ListAdapter<ArticlesItem, NewsAdapter.MyViewHolder>(DIFF_CAL
             binding.tvNewsSource.text = news.source!!.name
             binding.tvNewsTitle.text = news.title
             binding.tvNewsAuthor.text = "By ${news.author}"
+
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context, WebViewActivity::class.java)
+                intent.putExtra("url", news.url)
+                intent.putExtra("title", news.title)
+                itemView.context.startActivity(intent)
+            }
         }
 
     }
