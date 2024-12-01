@@ -1,8 +1,6 @@
 package com.reza.mbahlaptop.ui.main.home
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -47,23 +45,14 @@ class HomeFragment : Fragment() {
                 when (result) {
                     is Result.Loading -> {
                         Log.d("LOADING", "Loading")
-                        binding?.progressBar?.visibility = View.VISIBLE
-                        var progress = 0
-                        val handler = Handler(Looper.getMainLooper())
-                        handler.postDelayed(object : Runnable {
-                            override fun run() {
-                                progress += 10
-                                if (progress <= 100) {
-                                    binding?.progressBar?.progress = progress
-                                    handler.postDelayed(this, 100) // Update every 300ms
-                                }
-                            }
-                        }, 100)
+                        binding?.shimmerNews?.visibility = View.VISIBLE
+                        binding?.shimmerNews?.startShimmer()
                     }
 
                     is Result.Success -> {
                         Log.d("SUCCESS", "Success")
-                        binding?.progressBar?.visibility = View.GONE
+                        binding?.shimmerNews?.stopShimmer()
+                        binding?.shimmerNews?.visibility = View.GONE
                         val newsData = result.data
                         newsAdapter.submitList(newsData)
                         binding!!.rvNewsList.apply {
@@ -74,7 +63,8 @@ class HomeFragment : Fragment() {
                     }
 
                     is Result.Error -> {
-                        binding?.progressBar?.visibility = View.GONE
+                        binding?.shimmerNews?.stopShimmer()
+                        binding?.shimmerNews?.visibility = View.GONE
                         view?.let {
                             Snackbar.make(
                                 requireActivity(),

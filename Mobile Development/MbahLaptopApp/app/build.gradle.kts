@@ -77,4 +77,5 @@ dependencies {
 
     //Utilities
     implementation (libs.threetenabp)
+    implementation (libs.shimmer)
 }
