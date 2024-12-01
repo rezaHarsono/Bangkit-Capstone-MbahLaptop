@@ -78,4 +78,5 @@ dependencies {
     //Utilities
     implementation (libs.threetenabp)
     implementation (libs.shimmer)
+    implementation(libs.androidx.swiperefreshlayout)
 }
