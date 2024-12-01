@@ -25,7 +25,7 @@
             android:scaleType="centerCrop"
             android:layout_margin="8dp"
             card_view:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small"
-            card_view:layout_constraintBottom_toTopOf="@+id/tv_news_author"
+            card_view:layout_constraintBottom_toTopOf="@+id/tv_news_date"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
             tools:src="@tools:sample/avatars" />
@@ -55,7 +55,7 @@
             tools:text="News Title" />
 
         <TextView
-            android:id="@+id/tv_news_author"
+            android:id="@+id/tv_news_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingHorizontal="4dp"
@@ -64,7 +64,7 @@
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
-            tools:text="By Author" />
+            tools:text="X time ago" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
