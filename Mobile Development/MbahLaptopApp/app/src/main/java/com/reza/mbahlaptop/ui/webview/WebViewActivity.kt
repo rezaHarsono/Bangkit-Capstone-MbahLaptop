@@ -12,6 +12,7 @@ import com.reza.mbahlaptop.databinding.ActivityWebViewBinding
 class WebViewActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWebViewBinding
     private var url: String? = null
+    private var isToastShown = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,11 +34,14 @@ class WebViewActivity : AppCompatActivity() {
 
         webview.webViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView, url: String) {
-                Toast.makeText(
-                    this@WebViewActivity,
-                    "News Loaded Successfully",
-                    Toast.LENGTH_LONG
-                ).show()
+                if (!isToastShown) {
+                    Toast.makeText(
+                        this@WebViewActivity,
+                        "News Loaded Successfully",
+                        Toast.LENGTH_LONG
+                    ).show()
+                    isToastShown = true
+                }
                 binding.progressBar.visibility = View.GONE
             }
         }
@@ -48,6 +52,13 @@ class WebViewActivity : AppCompatActivity() {
             Toast.makeText(this, "Invalid URL", Toast.LENGTH_SHORT).show()
             finish()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        binding.webView.stopLoading()
+        binding.webView.webViewClient = object : WebViewClient() {}
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
