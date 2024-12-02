@@ -3,6 +3,7 @@
     <style name="Base.Theme.MbahLaptop" parent="Theme.Material3.DayNight">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="fontFamily">@font/lato</item>
         <item name="colorPrimary">@color/light_blue</item>
         <item name="android:windowActivityTransitions">true</item>
         <item name="android:windowEnterTransition">@android:transition/explode</item>
