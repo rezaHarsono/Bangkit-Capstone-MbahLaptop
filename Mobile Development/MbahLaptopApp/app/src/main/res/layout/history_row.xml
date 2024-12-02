@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="@string/prediction_date"
             android:textStyle="bold"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_margin="8dp" />
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/processor"
-            android:textSize="16sp"
+            android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/tv_prediction_date"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="20dp"
@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ram_size"
-            android:textSize="16sp"
+            android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/tv_prediction_date"
             app:layout_constraintEnd_toEndOf="@id/btn_prediction_detail"
             app:layout_constraintStart_toStartOf="@id/btn_prediction_detail"
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:text="@string/intel_amd"
             android:textStyle="bold|italic"
-            android:textSize="16sp"
+            android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/tv_processor_label"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="20dp" />
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:text="@string/x_gb"
             android:textStyle="bold|italic"
-            android:textSize="16sp"
+            android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/tv_ram_label"
             app:layout_constraintStart_toStartOf="@id/tv_ram_label"
             android:layout_marginEnd="20dp"/>
@@ -85,7 +85,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/gpu"
-            android:textSize="16sp"
+            android:textSize="14sp"
             app:layout_constraintTop_toTopOf="@id/btn_prediction_detail"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="20dp"/>
@@ -111,7 +111,7 @@
             android:layout_height="wrap_content"
             android:text="@string/intel_amd"
             android:textStyle="bold|italic"
-            android:textSize="16sp"
+            android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/tv_gpu_label"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="20dp" />
