@@ -3,16 +3,16 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_home_selector"
         android:title="@string/title_home" />
 
     <item
         android:id="@+id/navigation_predict"
-        android:icon="@drawable/baseline_calculate_24"
+        android:icon="@drawable/ic_calculate_selector"
         android:title="@string/title_predict" />
 
     <item
         android:id="@+id/navigation_history"
-        android:icon="@drawable/baseline_history_24"
+        android:icon="@drawable/ic_history_selector"
         android:title="@string/title_history" />
 </menu>
