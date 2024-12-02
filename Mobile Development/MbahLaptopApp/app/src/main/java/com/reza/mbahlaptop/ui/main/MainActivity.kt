@@ -14,7 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivityMainBinding
-import com.reza.mbahlaptop.ui.main.setting.SettingActivity
+import com.reza.mbahlaptop.ui.setting.SettingActivity
 
 class MainActivity : AppCompatActivity() {
 

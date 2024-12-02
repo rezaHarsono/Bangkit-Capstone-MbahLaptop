@@ -37,8 +37,8 @@ class HistoryAdapter(private val onDeleteClick: (ResultEntity) -> Unit) :
     class MyViewHolder(private val binding: HistoryRowBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(result: ResultEntity) {
+            binding.tvOsValue.text = result.os
             binding.tvProcessorValue.text = result.cpu
-            binding.tvGpuValue.text = result.gpu
             binding.tvRamValue.text = result.ram
         }
     }

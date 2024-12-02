@@ -20,6 +20,7 @@ class WebViewActivity : AppCompatActivity() {
 
         val title = intent.getStringExtra("title")
 
+        setSupportActionBar(binding.myToolbar)
         supportActionBar?.title = title
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 

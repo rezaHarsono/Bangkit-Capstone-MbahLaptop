@@ -1,7 +1,8 @@
-package com.reza.mbahlaptop.ui.main.setting
+package com.reza.mbahlaptop.ui.setting
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +27,8 @@ class SettingActivity : AppCompatActivity() {
         _binding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
+        setSupportActionBar(binding?.myToolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         auth = Firebase.auth
 
         setupAction()
@@ -57,5 +60,15 @@ class SettingActivity : AppCompatActivity() {
         } else {
             binding?.progressBar?.visibility = View.GONE
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

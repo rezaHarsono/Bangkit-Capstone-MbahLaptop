@@ -32,15 +32,27 @@
 
         <!-- Processor Label -->
         <TextView
-            android:id="@+id/tv_processor_label"
+            android:id="@+id/tv_os_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/processor"
+            android:text="Operating System :"
             android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/tv_prediction_date"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="20dp"
             android:layout_marginTop="16dp" />
+
+        <!-- Processor Value -->
+        <TextView
+            android:id="@+id/tv_os_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MAC/Windows"
+            android:textStyle="bold|italic"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_os_label"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp" />
 
         <!-- RAM Label -->
         <TextView
@@ -54,18 +66,6 @@
             app:layout_constraintStart_toStartOf="@id/btn_prediction_detail"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="16dp" />
-
-        <!-- Processor Value -->
-        <TextView
-            android:id="@+id/tv_processor_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/intel_amd"
-            android:textStyle="bold|italic"
-            android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/tv_processor_label"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="20dp" />
 
         <!-- RAM Value -->
         <TextView
@@ -81,10 +81,10 @@
 
         <!-- GPU Label -->
         <TextView
-            android:id="@+id/tv_gpu_label"
+            android:id="@+id/tv_processor_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/gpu"
+            android:text="@string/processor"
             android:textSize="14sp"
             app:layout_constraintTop_toTopOf="@id/btn_prediction_detail"
             app:layout_constraintStart_toStartOf="parent"
@@ -106,13 +106,13 @@
 
         <!-- GPU Value -->
         <TextView
-            android:id="@+id/tv_gpu_value"
+            android:id="@+id/tv_processor_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/intel_amd"
             android:textStyle="bold|italic"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@id/tv_gpu_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_processor_label"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="20dp" />
 
