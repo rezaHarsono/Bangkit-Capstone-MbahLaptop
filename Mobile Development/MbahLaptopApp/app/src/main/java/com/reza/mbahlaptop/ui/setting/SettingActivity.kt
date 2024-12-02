@@ -11,6 +11,7 @@ import androidx.credentials.CredentialManager
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.auth
 import com.reza.mbahlaptop.databinding.ActivitySettingBinding
 import com.reza.mbahlaptop.ui.login.LoginActivity
@@ -20,6 +21,7 @@ class SettingActivity : AppCompatActivity() {
     private var _binding: ActivitySettingBinding? = null
     private val binding get() = _binding
     private lateinit var auth: FirebaseAuth
+    private var user: FirebaseUser? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,10 +31,19 @@ class SettingActivity : AppCompatActivity() {
 
         setSupportActionBar(binding?.myToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        auth = Firebase.auth
 
+        auth = Firebase.auth
+        user = auth.currentUser
+
+        setupView()
         setupAction()
 
+    }
+
+    private fun setupView() {
+        user?.let {
+            binding?.tvUserEmail?.text = user!!.email
+        }
     }
 
     private fun setupAction() {

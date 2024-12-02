@@ -16,14 +16,87 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         />
 
-    <com.google.android.material.button.MaterialButton
-        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small"
-        android:id="@+id/button_logout"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="8dp"
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
-        android:text="@string/logout"/>
+        android:src="@drawable/filled_account_circle_32"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/username"
+        android:textSize="24sp"
+        android:layout_margin="4dp"/>
+
+    <TextView
+        android:id="@+id/tv_user_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/email_domain_com"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/preferences"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginVertical="8dp"
+        app:cardCornerRadius="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <com.reza.mbahlaptop.customview.ButtonWithIcons
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="Language"
+                app:leadingIcon="@drawable/baseline_language_24"
+                app:trailingIcon="@drawable/baseline_arrow_forward_ios_24"
+                android:gravity="center_vertical"
+                android:textColor="?attr/colorOnBackground"
+                />
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="8dp"/>
+            <com.reza.mbahlaptop.customview.ButtonWithIcons
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="Theme"
+                app:leadingIcon="@drawable/outline_palette_24"
+                app:trailingIcon="@drawable/baseline_arrow_forward_ios_24"
+                android:gravity="center_vertical"
+                android:textColor="?attr/colorOnBackground"
+                />
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="8dp"/>
+            <com.reza.mbahlaptop.customview.ButtonWithIcons
+                android:id="@+id/button_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="Logout"
+                app:leadingIcon="@drawable/baseline_logout_24"
+                android:gravity="center_vertical"
+                android:textColor="?attr/colorOnBackground"
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <ProgressBar
         android:id="@+id/progressBar"
