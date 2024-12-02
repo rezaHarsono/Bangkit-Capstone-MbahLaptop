@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:hint="@string/processor_type"
             app:layout_constraintTop_toBottomOf="@+id/til_os">
             <AutoCompleteTextView
@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:hint="@string/gpu_type"
             app:layout_constraintTop_toBottomOf="@+id/til_processor">
             <AutoCompleteTextView
@@ -76,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:hint="@string/ram_size_hint"
             app:layout_constraintTop_toBottomOf="@+id/til_gpu">
             <AutoCompleteTextView
@@ -92,7 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:hint="@string/storage_type"
             app:layout_constraintTop_toBottomOf="@+id/til_ram_size">
             <AutoCompleteTextView
@@ -108,7 +108,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:hint="@string/storage_size"
             app:layout_constraintTop_toBottomOf="@+id/til_storage_type">
             <AutoCompleteTextView
@@ -124,7 +124,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:hint="@string/screen_resolution"
             app:layout_constraintTop_toBottomOf="@+id/til_storage_size">
             <AutoCompleteTextView
@@ -134,13 +134,14 @@
                 android:inputType="none"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_width="320dp"
             android:layout_height="wrap_content"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/til_screen_res"
-            android:layout_margin="24dp"
+            android:layout_margin="20dp"
             android:text="@string/predict_price"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
