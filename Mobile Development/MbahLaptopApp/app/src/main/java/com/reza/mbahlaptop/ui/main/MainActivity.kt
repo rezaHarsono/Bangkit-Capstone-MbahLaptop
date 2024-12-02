@@ -4,32 +4,22 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.credentials.ClearCredentialStateRequest
-import androidx.credentials.CredentialManager
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.Firebase
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.auth
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivityMainBinding
-import com.reza.mbahlaptop.ui.login.LoginActivity
-import kotlinx.coroutines.launch
+import com.reza.mbahlaptop.ui.main.setting.SettingActivity
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
-    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        auth = Firebase.auth
+        setSupportActionBar(binding.myToolbar)
 
         val navView: BottomNavigationView = binding.navView
 
@@ -64,31 +54,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_logout -> {
-                signOut()
+            R.id.action_setting -> {
+                val intent = Intent(this, SettingActivity::class.java)
+                startActivity(intent)
             }
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    private fun signOut() {
-        showLoading(true)
-        lifecycleScope.launch {
-            val credentialManager = CredentialManager.create(this@MainActivity)
-            auth.signOut()
-            Toast.makeText(this@MainActivity, "Signed out successfully", Toast.LENGTH_SHORT).show()
-            credentialManager.clearCredentialState(ClearCredentialStateRequest())
-            startActivity(Intent(this@MainActivity, LoginActivity::class.java))
-            finish()
-            showLoading(false)
-        }
-    }
-
-    private fun showLoading(active: Boolean) {
-        if (active) {
-            binding.progressBar.visibility = View.VISIBLE
-        } else {
-            binding.progressBar.visibility = View.GONE
-        }
     }
 }
