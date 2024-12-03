@@ -47,7 +47,11 @@ class WebViewActivity : AppCompatActivity() {
         }
 
         url?.let {
-            webview.loadUrl(it)
+            if (it.startsWith("https://")) {
+                webview.loadUrl(it)
+            } else {
+                Toast.makeText(this, "Unsecure URL blocked", Toast.LENGTH_SHORT).show()
+            }
         } ?: run {
             Toast.makeText(this, "Invalid URL", Toast.LENGTH_SHORT).show()
             finish()

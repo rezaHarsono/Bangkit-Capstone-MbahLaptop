@@ -114,7 +114,7 @@
                 android:clipToOutline="true"
                 android:background="@drawable/rounded_corner_shape"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintVertical_bias="0" />
+                app:layout_constraintVertical_bias="0"/>
 
         </LinearLayout>
 

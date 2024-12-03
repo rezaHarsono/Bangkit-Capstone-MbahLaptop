@@ -84,7 +84,8 @@ class SettingActivity : AppCompatActivity() {
         lifecycleScope.launch {
             val credentialManager = CredentialManager.create(this@SettingActivity)
             auth.signOut()
-            Toast.makeText(this@SettingActivity, "Signed out successfully", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@SettingActivity, "Signed out successfully", Toast.LENGTH_SHORT)
+                .show()
             credentialManager.clearCredentialState(ClearCredentialStateRequest())
             val logoutIntent = Intent(this@SettingActivity, HandleLoginActivity::class.java)
             logoutIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

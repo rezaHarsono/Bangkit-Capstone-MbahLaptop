@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.reza.mbahlaptop.customview.ButtonWithIcons
+            <com.reza.mbahlaptop.customview.customButton.ButtonWithIcons
                 android:id="@+id/button_language"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <com.reza.mbahlaptop.customview.ButtonWithIcons
+                <com.reza.mbahlaptop.customview.customButton.ButtonWithIcons
                     android:id="@+id/button_theme"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -107,11 +107,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginHorizontal="8dp"/>
-            <com.reza.mbahlaptop.customview.ButtonWithIcons
+            <com.reza.mbahlaptop.customview.customButton.ButtonWithIcons
                 android:id="@+id/button_logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:text="Logout"
+                app:text="@string/logout"
                 android:visibility="gone"
                 app:leadingIcon="@drawable/baseline_logout_24"
                 android:gravity="center_vertical"

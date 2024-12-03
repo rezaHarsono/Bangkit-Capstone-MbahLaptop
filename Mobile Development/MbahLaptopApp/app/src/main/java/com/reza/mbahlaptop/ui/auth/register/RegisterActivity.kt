@@ -14,8 +14,8 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.auth
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivityRegisterBinding
-import com.reza.mbahlaptop.ui.intro.IntroActivity
 import com.reza.mbahlaptop.ui.auth.login.LoginActivity
+import com.reza.mbahlaptop.ui.intro.IntroActivity
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding

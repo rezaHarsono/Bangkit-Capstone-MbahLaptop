@@ -1,4 +1,4 @@
-package com.reza.mbahlaptop.customview
+package com.reza.mbahlaptop.customview.customButton
 
 import android.content.Context
 import android.util.AttributeSet
@@ -27,8 +27,10 @@ class ButtonWithIcons @JvmOverloads constructor(
         attrs?.let {
             val typedArray = context.obtainStyledAttributes(it, R.styleable.ButtonWithIcons, 0, 0)
             val text = typedArray.getString(R.styleable.ButtonWithIcons_text) ?: ""
-            val leadingIconRes = typedArray.getResourceId(R.styleable.ButtonWithIcons_leadingIcon, 0)
-            val trailingIconRes = typedArray.getResourceId(R.styleable.ButtonWithIcons_trailingIcon, 0)
+            val leadingIconRes =
+                typedArray.getResourceId(R.styleable.ButtonWithIcons_leadingIcon, 0)
+            val trailingIconRes =
+                typedArray.getResourceId(R.styleable.ButtonWithIcons_trailingIcon, 0)
 
             buttonText.text = text
             if (leadingIconRes != 0) leadingIcon.setImageResource(leadingIconRes)

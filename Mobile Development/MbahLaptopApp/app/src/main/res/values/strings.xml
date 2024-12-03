@@ -37,7 +37,6 @@
     <string name="intel_amd">INTEL/AMD</string>
     <string name="ram_size">Ram Size :</string>
     <string name="x_gb">X GB</string>
-    <string name="gpu">GPU :</string>
     <string name="prediction_detail">Prediction Detail</string>
     <string name="insert_your_laptop_spesification_below">Insert your laptop spesification below</string>
     <string name="os_type">OS Type</string>
@@ -48,11 +47,12 @@
     <string name="storage_size">Storage Size</string>
     <string name="screen_resolution">Screen Resolution</string>
     <string name="predict_price">Predict Price</string>
-    <string name="by">By %1$s</string>
     <string name="username">Username</string>
-    <string name="email_domain_com">email@domain.com</string>
     <string name="preferences">Preferences</string>
     <string name="guest">Guest</string>
     <string name="dark">Dark</string>
     <string name="light">Light</string>
+    <string name="operating_system">Operating System :</string>
+    <string name="mac_windows">MAC/Windows</string>
+    <string name="user_setting">User Setting</string>
 </resources>
