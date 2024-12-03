@@ -45,6 +45,9 @@ android {
 }
 
 dependencies {
+    //Local Persistence
+    implementation(libs.datastore.preferences)
+
     //Retrofit and APIs
     implementation(libs.retrofit)
     implementation(libs.retrofit2.converter.gson)

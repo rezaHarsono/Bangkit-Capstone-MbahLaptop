@@ -53,4 +53,6 @@
     <string name="email_domain_com">email@domain.com</string>
     <string name="preferences">Preferences</string>
     <string name="guest">Guest</string>
+    <string name="dark">Dark</string>
+    <string name="light">Light</string>
 </resources>

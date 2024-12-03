@@ -23,6 +23,7 @@
         android:src="@drawable/filled_account_circle_32"/>
 
     <TextView
+        android:id="@+id/tv_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -36,7 +37,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:visibility="gone"/>
-
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="24dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,7 +60,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
             <com.reza.mbahlaptop.customview.ButtonWithIcons
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,15 +73,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginHorizontal="8dp"/>
-            <com.reza.mbahlaptop.customview.ButtonWithIcons
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:text="Theme"
-                app:leadingIcon="@drawable/outline_palette_24"
-                app:trailingIcon="@drawable/baseline_arrow_forward_ios_24"
-                android:gravity="center_vertical"
-                android:textColor="?attr/colorOnBackground"
-                />
+                android:layout_height="wrap_content">
+                <com.reza.mbahlaptop.customview.ButtonWithIcons
+                    android:id="@+id/button_theme"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:text="Theme"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/switch_theme"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:leadingIcon="@drawable/outline_palette_24"
+                    android:gravity="center_vertical"
+                    android:textColor="?attr/colorOnBackground"
+                    />
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switch_theme"
+                    android:background="@drawable/rounded_corner_shape"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="@string/light"
+                    app:switchPadding="4dp"
+                    android:layout_marginEnd="12dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/button_theme"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="1dp"

@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.credentials.ClearCredentialStateRequest
 import androidx.credentials.CredentialManager
 import androidx.lifecycle.lifecycleScope
@@ -13,6 +15,7 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.auth
+import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivitySettingBinding
 import com.reza.mbahlaptop.ui.main.HandleLoginActivity
 import kotlinx.coroutines.launch
@@ -20,8 +23,15 @@ import kotlinx.coroutines.launch
 class SettingActivity : AppCompatActivity() {
     private var _binding: ActivitySettingBinding? = null
     private val binding get() = _binding
+
     private lateinit var auth: FirebaseAuth
     private var user: FirebaseUser? = null
+
+    private lateinit var preferences: SettingsPreferences
+    private lateinit var factory: SettingViewModelFactory
+    private val viewModel: SettingViewModel by viewModels {
+        factory
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +45,9 @@ class SettingActivity : AppCompatActivity() {
         auth = Firebase.auth
         user = auth.currentUser
 
+        preferences = SettingsPreferences.getInstance(this.dataStore)
+        factory = SettingViewModelFactory(preferences)
+
         user?.let {
             setupView()
             setupAction()
@@ -43,16 +56,22 @@ class SettingActivity : AppCompatActivity() {
 
     private fun setupView() {
         binding?.apply {
+            tvUserName.text = getString(R.string.username)
             tvUserEmail.visibility = View.VISIBLE
             tvUserEmail.text = user?.email
-
             buttonLogout.visibility = View.VISIBLE
         }
+        changeTheme()
     }
 
     private fun setupAction() {
-        binding?.buttonLogout?.setOnClickListener {
-            signOut()
+        binding?.apply {
+            buttonLogout.setOnClickListener {
+                signOut()
+            }
+            switchTheme.setOnCheckedChangeListener { _, isChecked: Boolean ->
+                viewModel.saveThemeSetting(isChecked)
+            }
         }
     }
 
@@ -76,6 +95,24 @@ class SettingActivity : AppCompatActivity() {
             binding?.progressBar?.visibility = View.VISIBLE
         } else {
             binding?.progressBar?.visibility = View.GONE
+        }
+    }
+
+    private fun changeTheme() {
+        viewModel.getThemeSetting().observe(this) { isDarkModeActive: Boolean ->
+            if (isDarkModeActive) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                binding?.apply {
+                    switchTheme.isChecked = true
+                    switchTheme.text = getString(R.string.dark)
+                }
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                binding?.apply {
+                    switchTheme.isChecked = false
+                    switchTheme.text = getString(R.string.light)
+                }
+            }
         }
     }
 
