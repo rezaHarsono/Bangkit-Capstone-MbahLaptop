@@ -1,4 +1,4 @@
-package com.reza.mbahlaptop.ui.register
+package com.reza.mbahlaptop.ui.auth.register
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
@@ -15,7 +15,7 @@ import com.google.firebase.auth.auth
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivityRegisterBinding
 import com.reza.mbahlaptop.ui.intro.IntroActivity
-import com.reza.mbahlaptop.ui.login.LoginActivity
+import com.reza.mbahlaptop.ui.auth.login.LoginActivity
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding

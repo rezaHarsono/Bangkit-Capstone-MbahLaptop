@@ -19,7 +19,6 @@ class HandleLoginActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
 
         return if (currentUser == null) {
-            // Not signed in, launch the Login activity
             startActivity(Intent(this, IntroActivity::class.java))
             finish()
         } else {

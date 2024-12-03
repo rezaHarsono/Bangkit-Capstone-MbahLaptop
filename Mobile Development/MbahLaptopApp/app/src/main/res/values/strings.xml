@@ -52,4 +52,5 @@
     <string name="username">Username</string>
     <string name="email_domain_com">email@domain.com</string>
     <string name="preferences">Preferences</string>
+    <string name="guest">Guest</string>
 </resources>

@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/username"
+        android:text="@string/guest"
         android:textSize="24sp"
         android:layout_margin="4dp"/>
 
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/email_domain_com"/>
+        android:visibility="gone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -89,6 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:text="Logout"
+                android:visibility="gone"
                 app:leadingIcon="@drawable/baseline_logout_24"
                 android:gravity="center_vertical"
                 android:textColor="?attr/colorOnBackground"

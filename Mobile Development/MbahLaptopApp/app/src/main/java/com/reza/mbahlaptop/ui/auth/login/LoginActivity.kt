@@ -1,4 +1,4 @@
-package com.reza.mbahlaptop.ui.login
+package com.reza.mbahlaptop.ui.auth.login
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
@@ -25,8 +25,8 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.auth
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivityLoginBinding
-import com.reza.mbahlaptop.ui.main.MainActivity
-import com.reza.mbahlaptop.ui.register.RegisterActivity
+import com.reza.mbahlaptop.ui.auth.register.RegisterActivity
+import com.reza.mbahlaptop.ui.main.HandleLoginActivity
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
@@ -156,7 +156,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun updateUI(currentUser: FirebaseUser?) {
         if (currentUser != null) {
-            val loginIntent = Intent(this@LoginActivity, MainActivity::class.java)
+            val loginIntent = Intent(this@LoginActivity, HandleLoginActivity::class.java)
             loginIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(loginIntent)
             finish()

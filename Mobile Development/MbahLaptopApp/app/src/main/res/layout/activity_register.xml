@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".ui.register.RegisterActivity">
+    tools:context=".ui.auth.register.RegisterActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -106,12 +106,12 @@
 
         <Button
             android:id="@+id/btn_register"
-            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
+            android:drawableStart="@drawable/baseline_logout_24"
             android:padding="16dp"
             android:text="@string/register"
             android:textSize="16sp"

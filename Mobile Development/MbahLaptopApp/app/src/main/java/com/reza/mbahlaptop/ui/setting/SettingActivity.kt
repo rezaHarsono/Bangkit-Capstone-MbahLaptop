@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.auth
 import com.reza.mbahlaptop.databinding.ActivitySettingBinding
-import com.reza.mbahlaptop.ui.login.LoginActivity
+import com.reza.mbahlaptop.ui.main.HandleLoginActivity
 import kotlinx.coroutines.launch
 
 class SettingActivity : AppCompatActivity() {
@@ -35,14 +35,18 @@ class SettingActivity : AppCompatActivity() {
         auth = Firebase.auth
         user = auth.currentUser
 
-        setupView()
-        setupAction()
-
+        user?.let {
+            setupView()
+            setupAction()
+        }
     }
 
     private fun setupView() {
-        user?.let {
-            binding?.tvUserEmail?.text = user!!.email
+        binding?.apply {
+            tvUserEmail.visibility = View.VISIBLE
+            tvUserEmail.text = user?.email
+
+            buttonLogout.visibility = View.VISIBLE
         }
     }
 
@@ -59,7 +63,9 @@ class SettingActivity : AppCompatActivity() {
             auth.signOut()
             Toast.makeText(this@SettingActivity, "Signed out successfully", Toast.LENGTH_SHORT).show()
             credentialManager.clearCredentialState(ClearCredentialStateRequest())
-            startActivity(Intent(this@SettingActivity, LoginActivity::class.java))
+            val logoutIntent = Intent(this@SettingActivity, HandleLoginActivity::class.java)
+            logoutIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(logoutIntent)
             finish()
             showLoading(false)
         }

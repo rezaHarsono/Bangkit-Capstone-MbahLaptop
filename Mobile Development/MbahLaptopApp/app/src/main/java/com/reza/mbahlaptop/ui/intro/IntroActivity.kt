@@ -8,9 +8,9 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
 import com.reza.mbahlaptop.databinding.ActivityIntroBinding
-import com.reza.mbahlaptop.ui.login.LoginActivity
+import com.reza.mbahlaptop.ui.auth.login.LoginActivity
 import com.reza.mbahlaptop.ui.main.MainActivity
-import com.reza.mbahlaptop.ui.register.RegisterActivity
+import com.reza.mbahlaptop.ui.auth.register.RegisterActivity
 
 class IntroActivity : AppCompatActivity() {
 
