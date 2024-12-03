@@ -2,6 +2,7 @@ package com.reza.mbahlaptop.ui.setting
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
@@ -66,6 +67,9 @@ class SettingActivity : AppCompatActivity() {
 
     private fun setupAction() {
         binding?.apply {
+            buttonLanguage.setOnClickListener {
+                startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+            }
             buttonLogout.setOnClickListener {
                 signOut()
             }

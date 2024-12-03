@@ -61,6 +61,7 @@
             android:orientation="vertical">
 
             <com.reza.mbahlaptop.customview.ButtonWithIcons
+                android:id="@+id/button_language"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:text="Language"
