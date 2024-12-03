@@ -17,8 +17,9 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "BASE_URL", "\"https://newsapi.org/v2/\"")
+        buildConfigField("String", "BASE_URL_NEWS", "\"https://newsapi.org/v2/\"")
         buildConfigField("String", "API_KEY", "\"93b21820d88640e3bea33203ff62dd7d\"")
+        buildConfigField("String", "BASE_URL_MODEL", "\"https://laptop-price-predictor-api-642507985346.asia-southeast2.run.app/\"")
     }
 
     buildTypes {

@@ -1,4 +1,4 @@
-package com.reza.mbahlaptop.data.remote.retrofit
+package com.reza.mbahlaptop.data.remote.retrofit.news
 
 import com.reza.mbahlaptop.data.remote.response.NewsResponse
 import retrofit2.http.GET

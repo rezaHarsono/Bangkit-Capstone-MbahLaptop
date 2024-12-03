@@ -1,4 +1,4 @@
-package com.reza.mbahlaptop.data.remote.retrofit
+package com.reza.mbahlaptop.data.remote.retrofit.model
 
 import com.reza.mbahlaptop.BuildConfig
 import okhttp3.OkHttpClient
@@ -6,9 +6,9 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ApiConfig {
+class ApiConfigModel {
     companion object {
-        fun getApiService(): ApiService {
+        fun getApiService(): ApiServiceModel {
             val loggingInterceptor =
                 HttpLoggingInterceptor().apply {
                     level = if (BuildConfig.DEBUG) {
@@ -22,11 +22,11 @@ class ApiConfig {
                 .addInterceptor(loggingInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl(BuildConfig.BASE_URL)
+                .baseUrl(BuildConfig.BASE_URL_MODEL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
-            return retrofit.create(ApiService::class.java)
+            return retrofit.create(ApiServiceModel::class.java)
         }
     }
 }

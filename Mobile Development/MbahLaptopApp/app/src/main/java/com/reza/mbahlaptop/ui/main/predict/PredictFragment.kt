@@ -1,17 +1,26 @@
 package com.reza.mbahlaptop.ui.main.predict
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.reza.mbahlaptop.R
+import com.reza.mbahlaptop.data.Result
 import com.reza.mbahlaptop.databinding.FragmentPredictBinding
+import com.reza.mbahlaptop.utils.ViewModelFactory
 
 class PredictFragment : Fragment() {
 
     private var _binding: FragmentPredictBinding? = null
+
+    private val predictViewModel: PredictViewModel by viewModels<PredictViewModel> {
+        ViewModelFactory.getInstance(requireContext())
+    }
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -74,8 +83,62 @@ class PredictFragment : Fragment() {
         binding.actvScreenRes.setAdapter(screenResArrayAdapter)
     }
 
+    private fun predict(
+        brand: String,
+        processor: String,
+        ram: Float,
+        ramType: Float,
+        storage: Float,
+        storageType: String,
+        gpu: String,
+        displaySize: Float,
+        resolutionWidth: Float,
+        resolutionHeight: Float,
+        os: String
+    ) {
+        predictViewModel.uploadSpecs(
+            brand,
+            processor,
+            ram,
+            ramType,
+            storage,
+            storageType,
+            gpu,
+            displaySize,
+            resolutionWidth,
+            resolutionHeight,
+            os
+        ).observe(viewLifecycleOwner) { result ->
+            if (result != null) {
+                when (result) {
+                    is Result.Success -> {
+                        binding.progressBar.visibility = View.GONE
+                    }
+
+                    is Result.Loading -> {
+                        binding.progressBar.visibility = View.VISIBLE
+                    }
+
+                    is Result.Error -> {
+                        binding.progressBar.visibility = View.GONE
+                        Toast.makeText(
+                            requireContext(),
+                            "Error: ${result.error}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        Log.e(TAG, "Error: ${result.error}")
+                    }
+                }
+            }
+        }
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        const val TAG = "PredictFragment"
     }
 }

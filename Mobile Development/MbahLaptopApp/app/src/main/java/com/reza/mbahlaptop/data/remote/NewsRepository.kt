@@ -6,7 +6,7 @@ import androidx.lifecycle.liveData
 import com.reza.mbahlaptop.BuildConfig.API_KEY
 import com.reza.mbahlaptop.data.Result
 import com.reza.mbahlaptop.data.remote.response.ArticlesItem
-import com.reza.mbahlaptop.data.remote.retrofit.ApiService
+import com.reza.mbahlaptop.data.remote.retrofit.news.ApiService
 
 class NewsRepository private constructor(
     private val apiService: ApiService
