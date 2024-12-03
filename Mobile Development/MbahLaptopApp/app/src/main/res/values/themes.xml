@@ -14,8 +14,10 @@
         <item name="android:textSize">12sp</item> <!-- Customize text size -->
         <item name="android:textStyle">bold</item>
     </style>
+
     <style name="CustomBottomNavTextAppearanceInactive" parent="@style/TextAppearance.AppCompat.Caption">
         <item name="android:textSize">10sp</item> <!-- Customize text size -->
     </style>
+
     <style name="Theme.MbahLaptop" parent="Base.Theme.MbahLaptop" />
 </resources>

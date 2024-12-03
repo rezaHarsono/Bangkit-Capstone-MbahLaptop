@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
+            android:alpha="0"
             android:text="@string/intro_welcome"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -28,8 +29,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.1"
-            android:alpha="0"
-            tools:alpha="100"/>
+            tools:alpha="100" />
 
         <TextView
             android:id="@+id/intro_info"
@@ -38,6 +38,7 @@
             android:layout_marginStart="60dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="60dp"
+            android:alpha="0"
             android:text="@string/intro_info"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -45,21 +46,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/intro_welcome"
-            android:alpha="0"
-            tools:alpha="100"/>
+            tools:alpha="100" />
 
         <ImageView
             android:id="@+id/intro_image"
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:layout_marginTop="8dp"
+            android:alpha="0"
             android:contentDescription="@string/mbah_laptop_image"
             android:src="@drawable/mbah_laptop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/intro_info"
-            android:alpha="0"
-            tools:alpha="100"/>
+            tools:alpha="100" />
 
         <Button
             android:id="@+id/btn_login"
@@ -69,6 +69,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="40dp"
+            android:alpha="0"
             android:padding="16dp"
             android:text="@string/login"
             android:textSize="16sp"
@@ -76,8 +77,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/intro_image"
-            android:alpha="0"
-            tools:alpha="100"/>
+            tools:alpha="100" />
 
         <Button
             android:id="@+id/btn_register"
@@ -87,6 +87,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="40dp"
+            android:alpha="0"
             android:padding="16dp"
             android:text="@string/register"
             android:textSize="16sp"
@@ -94,21 +95,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_login"
-            android:alpha="0"
-            tools:alpha="100"/>
+            tools:alpha="100" />
 
         <Button
             android:id="@+id/btn_guest"
             style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:alpha="0"
             android:text="@string/login_as_guest"
             android:textColor="#1976D2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_register"
-            android:alpha="0"
-            tools:alpha="100"/>
+            tools:alpha="100" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

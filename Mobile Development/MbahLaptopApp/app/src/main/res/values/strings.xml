@@ -28,10 +28,6 @@
     <string name="cancel">Cancel</string>
     <string name="error_login_invalid">Invalid Username or Password. \nPlease Try Again</string>
     <string name="please_fill_all_fields">Please fill all fields</string>
-    <string name="delete_history">Delete History</string>
-    <string name="are_you_sure_you_want_to_delete_this_item">Are you sure you want to delete this item?</string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
     <string name="prediction_date">Prediction Date</string>
     <string name="processor">Processor :</string>
     <string name="intel_amd">INTEL/AMD</string>
@@ -55,4 +51,15 @@
     <string name="operating_system">Operating System :</string>
     <string name="mac_windows">MAC/Windows</string>
     <string name="user_setting">User Setting</string>
+    <string name="predicted_price_result">Predicted Price Result</string>
+    <string name="predicted_price">Predicted Price</string>
+    <string name="dd_mm_yyyy">DD/MM/YYYY</string>
+    <string name="operating_system_hint">Operating System</string>
+    <string name="processor_hint">Processor</string>
+    <string name="gpu_hint">GPU</string>
+    <string name="hd_fhd_2k">HD+/FHD/2K</string>
+    <string name="hdd_ssd">HDD/SSD</string>
+    <string name="lowest_predicted_price">Lowest Predicted Price</string>
+    <string name="rp0_000_000">Rp0.000.000</string>
+    <string name="highest_predicted_price">Highest Predicted Price</string>
 </resources>

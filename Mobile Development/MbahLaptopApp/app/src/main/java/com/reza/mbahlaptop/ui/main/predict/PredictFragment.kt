@@ -1,5 +1,6 @@
 package com.reza.mbahlaptop.ui.main.predict
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,19 +13,17 @@ import androidx.fragment.app.viewModels
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.data.Result
 import com.reza.mbahlaptop.databinding.FragmentPredictBinding
+import com.reza.mbahlaptop.ui.result.ResultActivity
 import com.reza.mbahlaptop.utils.ViewModelFactory
 
 class PredictFragment : Fragment() {
 
     private var _binding: FragmentPredictBinding? = null
+    private val binding get() = _binding!!
 
     private val predictViewModel: PredictViewModel by viewModels<PredictViewModel> {
         ViewModelFactory.getInstance(requireContext())
     }
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,8 +32,19 @@ class PredictFragment : Fragment() {
     ): View {
         _binding = FragmentPredictBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setupAction()
+    }
+
+    private fun setupAction() {
+        binding.buttonPredict.setOnClickListener {
+            startActivity(Intent(requireContext(), ResultActivity::class.java))
+        }
     }
 
     override fun onResume() {

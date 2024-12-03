@@ -20,50 +20,50 @@
             android:id="@+id/iv_news_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:background="#dddddd"
             android:importantForAccessibility="no"
             android:scaleType="centerCrop"
-            android:layout_margin="8dp"
-            card_view:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small"
             card_view:layout_constraintBottom_toTopOf="@+id/tv_news_date"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
-            android:background="#dddddd"/>
+            card_view:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small" />
 
         <TextView
             android:id="@+id/tv_news_source"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
+            android:background="#dddddd"
             android:textSize="11sp"
-            card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintEnd_toStartOf="@+id/iv_news_image"
-            card_view:layout_constraintTop_toTopOf="@+id/iv_news_image"
-            android:background="#dddddd"/>
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="@+id/iv_news_image" />
 
         <TextView
             android:id="@+id/tv_news_title"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="8dp"
+            android:background="#dddddd"
             android:textSize="16sp"
             android:textStyle="bold"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintEnd_toStartOf="@+id/iv_news_image"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_news_source"
             card_view:layout_constraintBottom_toTopOf="@+id/tv_news_date"
-            android:background="#dddddd"/>
+            card_view:layout_constraintEnd_toStartOf="@+id/iv_news_image"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_news_source" />
 
         <TextView
             android:id="@+id/tv_news_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="4dp"
             android:layout_margin="8dp"
+            android:background="#dddddd"
+            android:paddingHorizontal="4dp"
             android:textSize="11sp"
-            card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
-            android:background="#dddddd"/>
+            card_view:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

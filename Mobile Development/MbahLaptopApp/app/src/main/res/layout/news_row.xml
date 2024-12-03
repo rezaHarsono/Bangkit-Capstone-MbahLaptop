@@ -19,13 +19,13 @@
             android:id="@+id/iv_news_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_margin="8dp"
             android:importantForAccessibility="no"
             android:scaleType="centerCrop"
-            android:layout_margin="8dp"
-            card_view:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small"
             card_view:layout_constraintBottom_toTopOf="@+id/tv_news_date"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
+            card_view:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small"
             tools:src="@tools:sample/avatars" />
 
         <TextView
@@ -34,8 +34,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:textSize="11sp"
-            card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintEnd_toStartOf="@+id/iv_news_image"
+            card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="@+id/iv_news_image"
             tools:text="News Source" />
 
@@ -47,8 +47,8 @@
             android:maxLines="4"
             android:textSize="16sp"
             android:textStyle="bold"
-            card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintEnd_toStartOf="@+id/iv_news_image"
+            card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toBottomOf="@+id/tv_news_source"
             tools:text="News Title" />
 
@@ -59,9 +59,9 @@
             android:layout_marginHorizontal="8dp"
             android:layout_marginBottom="8dp"
             android:textSize="11sp"
-            card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
             tools:text="X time ago" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

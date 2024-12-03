@@ -15,22 +15,22 @@
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:visibility="gone"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_fragment_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="@string/insert_your_laptop_spesification_below"
-            android:textStyle="bold"
-            android:textSize="20sp"
             android:gravity="center"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:text="@string/insert_your_laptop_spesification_below"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_os"
@@ -41,11 +41,12 @@
             android:layout_marginTop="16dp"
             android:hint="@string/os_type"
             app:layout_constraintTop_toBottomOf="@+id/tv_fragment_title">
+
             <AutoCompleteTextView
                 android:id="@+id/actv_os"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="none"/>
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -57,11 +58,12 @@
             android:layout_marginTop="16dp"
             android:hint="@string/processor_type"
             app:layout_constraintTop_toBottomOf="@+id/til_os">
+
             <AutoCompleteTextView
                 android:id="@+id/actv_processor"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="none"/>
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -73,11 +75,12 @@
             android:layout_marginTop="16dp"
             android:hint="@string/gpu_type"
             app:layout_constraintTop_toBottomOf="@+id/til_processor">
+
             <AutoCompleteTextView
                 android:id="@+id/actv_gpu"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="none"/>
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -89,11 +92,12 @@
             android:layout_marginTop="16dp"
             android:hint="@string/ram_size_hint"
             app:layout_constraintTop_toBottomOf="@+id/til_gpu">
+
             <AutoCompleteTextView
                 android:id="@+id/actv_ram_size"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="none"/>
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -105,11 +109,12 @@
             android:layout_marginTop="16dp"
             android:hint="@string/storage_type"
             app:layout_constraintTop_toBottomOf="@+id/til_ram_size">
+
             <AutoCompleteTextView
                 android:id="@+id/actv_storage_type"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="none"/>
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -121,11 +126,12 @@
             android:layout_marginTop="16dp"
             android:hint="@string/storage_size"
             app:layout_constraintTop_toBottomOf="@+id/til_storage_type">
+
             <AutoCompleteTextView
                 android:id="@+id/actv_storage_size"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="none"/>
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -137,22 +143,24 @@
             android:layout_marginTop="16dp"
             android:hint="@string/screen_resolution"
             app:layout_constraintTop_toBottomOf="@+id/til_storage_size">
+
             <AutoCompleteTextView
                 android:id="@+id/actv_screen_res"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="none"/>
+                android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_predict"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/til_screen_res"
             android:layout_margin="20dp"
-            android:text="@string/predict_price"/>
+            android:text="@string/predict_price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_screen_res"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

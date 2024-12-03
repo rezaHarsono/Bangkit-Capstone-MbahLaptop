@@ -16,12 +16,12 @@
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.6"
-            android:visibility="gone"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6" />
 
         <TextView
             android:id="@+id/register_title"
@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
+            android:alpha="0"
             android:gravity="center"
             android:text="@string/mbahlaptop"
             android:textColor="@color/white"
@@ -39,21 +40,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.1"
-            android:alpha="0"
-            tools:alpha="100"/>
+            tools:alpha="100" />
 
         <ImageView
             android:id="@+id/intro_image"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_marginTop="8dp"
+            android:alpha="0"
             android:contentDescription="@string/mbah_laptop_image"
             android:src="@drawable/mbah_laptop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/register_title"
-            android:alpha="0"
-            tools:alpha="100"/>
+            tools:alpha="100" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_email"
@@ -63,10 +63,10 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
+            android:alpha="0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/intro_image"
-            android:alpha="0"
             tools:alpha="100">
 
             <com.reza.mbahlaptop.customview.customEditText.MyEmailEditText
@@ -87,11 +87,11 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
+            android:alpha="0"
             app:endIconMode="password_toggle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/til_email"
-            android:alpha="0"
             tools:alpha="100">
 
             <com.reza.mbahlaptop.customview.customEditText.MyPasswordEditText
@@ -111,6 +111,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
+            android:alpha="0"
             android:drawableStart="@drawable/baseline_logout_24"
             android:padding="16dp"
             android:text="@string/register"
@@ -119,13 +120,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/til_password"
-            android:alpha="0"
-            tools:alpha="100"/>
+            tools:alpha="100" />
 
         <Button
             android:id="@+id/btn_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:alpha="0"
             android:backgroundTint="@color/white"
             android:padding="16dp"
             android:text="@string/cancel"
@@ -134,8 +135,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_register"
-            android:alpha="0"
-            tools:alpha="100"/>
+            tools:alpha="100" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
