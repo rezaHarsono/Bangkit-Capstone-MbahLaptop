@@ -25,10 +25,10 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="64dp"
         android:background="?android:attr/windowBackground"
         app:itemIconSize="24dp"
-        app:itemPaddingBottom="8dp"
+        app:itemPaddingBottom="12dp"
         app:itemPaddingTop="8dp"
         app:itemTextAppearanceActive="@style/CustomBottomNavTextAppearanceActive"
         app:itemTextAppearanceInactive="@style/CustomBottomNavTextAppearanceInactive"

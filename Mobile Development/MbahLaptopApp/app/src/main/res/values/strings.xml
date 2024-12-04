@@ -62,4 +62,8 @@
     <string name="lowest_predicted_price">Lowest Predicted Price</string>
     <string name="rp0_000_000">Rp0.000.000</string>
     <string name="highest_predicted_price">Highest Predicted Price</string>
+    <string name="lowest_price_recommendation">Lowest Price Recommendation</string>
+    <string name="highest_price_recommendation">Highest Price Recommendation</string>
+    <string name="laptop_name">Laptop Name</string>
+    <string name="price">Price</string>
 </resources>
