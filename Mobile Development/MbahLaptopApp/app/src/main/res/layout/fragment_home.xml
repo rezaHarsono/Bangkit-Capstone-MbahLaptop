@@ -77,12 +77,12 @@
 
             </androidx.cardview.widget.CardView>
 
-
             <TextView
                 android:id="@+id/news_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:text="@string/latest_news"
                 android:textSize="24sp"
