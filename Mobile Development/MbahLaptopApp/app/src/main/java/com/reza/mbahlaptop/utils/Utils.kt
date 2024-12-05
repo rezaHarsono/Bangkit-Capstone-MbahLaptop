@@ -1,8 +1,10 @@
 package com.reza.mbahlaptop.utils
 
+import android.icu.text.NumberFormat
 import org.threeten.bp.ZonedDateTime
 import org.threeten.bp.format.DateTimeFormatter
 import org.threeten.bp.temporal.ChronoUnit
+import java.util.Locale
 import java.util.concurrent.TimeUnit
 
 fun formatToRelativeTime(dateString: String): String {
@@ -22,4 +24,11 @@ fun formatToRelativeTime(dateString: String): String {
         e.printStackTrace()
         "Unknown time"
     }
+}
+
+fun String.withCurrencyFormat(): String {
+    val localeID =  Locale("in", "ID")
+    val numberFormat = NumberFormat.getCurrencyInstance(localeID)
+
+    return numberFormat.format(this.toDouble()).toString()
 }

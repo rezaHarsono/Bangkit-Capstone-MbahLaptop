@@ -2,7 +2,8 @@
 <resources>
     <string-array name="os_type">
         <item>MAC</item>
-        <item>Windows</item>
+        <item>Windows 10 OS</item>
+        <item>Windows 11 OS</item>
     </string-array>
 
     <string-array name="processor_windows">
@@ -51,6 +52,55 @@
         <item>Apple M2 Apple M2 Chip</item>
         <item>Apple M2 Max M2 Max</item>
         <item>Apple M2 Pro M2 Pro</item>
+    </string-array>
+
+    <string-array name="gpu_windows">
+        <item>10-Core GPU</item>
+        <item>16-core GPU</item>
+        <item>19-core GPU</item>
+        <item>30-core GPU</item>
+        <item>32-core GPU</item>
+        <item>AMD Radeon 610M</item>
+        <item>AMD Radeon 780M Graphics</item>
+        <item>AMD Radeon Graphics</item>
+        <item>AMD Radeon RX 6500M</item>
+        <item>AMD Radeon RX 6650M</item>
+        <item>AMD Radeon RX6500M</item>
+        <item>AMD Radeon Vega 6</item>
+        <item>AMD Radeon Vega 7</item>
+        <item>AMD Radeon Vega 8</item>
+        <item>AMD Radeon Vega 9</item>
+        <item>GeForce MX130</item>
+        <item>Integrated AMD Graphics</item>
+        <item>Integrated Intel Graphics</item>
+        <item>Integrated Intel Iris Xe Graphics</item>
+        <item>Integrated Intel UHD 620</item>
+        <item>Integrated Intel UHD Graphics</item>
+        <item>Intel Arc A350M Graphics</item>
+        <item>Intel HD Graphics</item>
+        <item>Intel Iris Plus</item>
+        <item>NVIDIA GeForce GTX 1050Ti</item>
+        <item>NVIDIA GeForce GTX 1650</item>
+        <item>NVIDIA GeForce GTX 2050</item>
+        <item>NVIDIA GeForce MX 250</item>
+        <item>NVIDIA GeForce MX 350</item>
+        <item>NVIDIA GeForce RTX 1650</item>
+        <item>NVIDIA GeForce RTX 2050</item>
+        <item>NVIDIA GeForce RTX 3050</item>
+        <item>NVIDIA GeForce RTX 3050Ti</item>
+        <item>NVIDIA GeForce RTX 3060</item>
+        <item>NVIDIA GeForce RTX 3070Ti</item>
+        <item>NVIDIA GeForce RTX 3080Ti</item>
+        <item>NVIDIA GeForce RTX 4050</item>
+        <item>NVIDIA GeForce RTX 4060</item>
+        <item>NVIDIA GeForce RTX 4070</item>
+        <item>NVIDIA GeForce RTX 4080</item>
+        <item>NVIDIA GeForce RTX 4090</item>
+        <item>NVIDIA GeForce RTX A1000</item>
+    </string-array>
+
+    <string-array name="gpu_mac">
+        <item>Apple M1 Integrated Graphics</item>
     </string-array>
 
     <string-array name="ram_size">

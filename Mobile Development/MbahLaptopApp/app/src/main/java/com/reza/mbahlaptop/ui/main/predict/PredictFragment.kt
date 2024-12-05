@@ -15,6 +15,9 @@ import com.reza.mbahlaptop.data.Result
 import com.reza.mbahlaptop.databinding.FragmentPredictBinding
 import com.reza.mbahlaptop.ui.result.ResultActivity
 import com.reza.mbahlaptop.utils.ViewModelFactory
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class PredictFragment : Fragment() {
 
@@ -24,6 +27,12 @@ class PredictFragment : Fragment() {
     private val predictViewModel: PredictViewModel by viewModels<PredictViewModel> {
         ViewModelFactory.getInstance(requireContext())
     }
+
+    private val resolutionMap = mapOf(
+        "HD" to Pair(1366f, 768f),
+        "FHD" to Pair(1920f, 1080f),
+        "2K" to Pair(2560f, 1440f)
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,7 +52,39 @@ class PredictFragment : Fragment() {
 
     private fun setupAction() {
         binding.buttonPredict.setOnClickListener {
-            startActivity(Intent(requireContext(), ResultActivity::class.java))
+            val os = binding.actvOs.text.toString()
+            val processor = binding.actvProcessor.text.toString()
+            val ramString = binding.actvRamSize.text.toString()
+            val gpu = binding.actvGpu.text.toString()
+            val storageType = binding.actvStorageType.text.toString()
+            val storageSizeString = binding.actvStorageSize.text.toString()
+            val resolution = binding.actvScreenRes.text.toString()
+            val resolutionPair = resolutionMap[resolution] ?: Pair(0f, 0f)
+
+            if (emptyFieldIsEmpty()) {
+               showToast(getString(R.string.fields_empty_warning))
+            } else {
+                try {
+                    val ram = ramString.toFloat()
+                    val storageSize = storageSizeString.toFloat()
+                    val resolutionWidth = resolutionPair.first
+                    val resolutionHeight = resolutionPair.second
+
+                    predict(
+                        processor = processor,
+                        ram = ram,
+                        storage = storageSize,
+                        storageType = storageType,
+                        gpu = gpu,
+                        resolutionWidth = resolutionWidth,
+                        resolutionHeight = resolutionHeight,
+                        os = os
+                    )
+                } catch (e: NumberFormatException) {
+                    showToast(getString(R.string.fields_empty_warning))
+                    Log.e(TAG, "Error: ${e.message}")
+                }
+            }
         }
     }
 
@@ -56,20 +97,31 @@ class PredictFragment : Fragment() {
 
         val processorWindows = resources.getStringArray(R.array.processor_windows)
         val processorMac = resources.getStringArray(R.array.processor_mac)
+        val gpuWindows = resources.getStringArray(R.array.gpu_windows)
+        val gpuMac = resources.getStringArray(R.array.gpu_mac)
         val processorWindowsArrayAdapter =
             ArrayAdapter(requireContext(), R.layout.dropdown_item, processorWindows)
         val processorMacArrayAdapter =
             ArrayAdapter(requireContext(), R.layout.dropdown_item, processorMac)
         binding.actvProcessor.setAdapter(processorWindowsArrayAdapter)
+        val gpuWindowsArrayAdapter =
+            ArrayAdapter(requireContext(), R.layout.dropdown_item, gpuWindows)
+        val gpuMacArrayAdapter =
+            ArrayAdapter(requireContext(), R.layout.dropdown_item, gpuMac)
+        binding.actvGpu.setAdapter(gpuWindowsArrayAdapter)
 
         binding.actvOs.setOnItemClickListener { parent, _, position, _ ->
             val selectedOS = parent.getItemAtPosition(position) as String
             if (selectedOS == "MAC") {
                 binding.actvProcessor.setAdapter(processorMacArrayAdapter)
+                binding.actvGpu.setAdapter(gpuMacArrayAdapter)
                 binding.actvProcessor.text = null
+                binding.actvGpu.text = null
             } else {
                 binding.actvProcessor.setAdapter(processorWindowsArrayAdapter)
+                binding.actvGpu.setAdapter(gpuWindowsArrayAdapter)
                 binding.actvProcessor.text = null
+                binding.actvGpu.text = null
             }
         }
 
@@ -94,43 +146,62 @@ class PredictFragment : Fragment() {
     }
 
     private fun predict(
-        brand: String,
         processor: String,
         ram: Float,
-        ramType: Float,
         storage: Float,
         storageType: String,
         gpu: String,
-        displaySize: Float,
         resolutionWidth: Float,
         resolutionHeight: Float,
         os: String
     ) {
         predictViewModel.uploadSpecs(
-            brand,
-            processor,
-            ram,
-            ramType,
-            storage,
-            storageType,
-            gpu,
-            displaySize,
-            resolutionWidth,
-            resolutionHeight,
-            os
+            brand = "Asus",
+            processor = processor,
+            ram = ram,
+            ramType = 1f,
+            storage = storage,
+            storageType = storageType,
+            gpu = gpu,
+            displaySize = 15.6f,
+            resolutionWidth = resolutionWidth,
+            resolutionHeight = resolutionHeight,
+            os = os
         ).observe(viewLifecycleOwner) { result ->
             if (result != null) {
                 when (result) {
                     is Result.Success -> {
-                        binding.progressBar.visibility = View.GONE
+                        showLoading(false)
+                        val date = getCurrentDate()
+                        val intent = Intent(requireContext(), ResultActivity::class.java)
+                        val bundle = Bundle().apply {
+                            putString("date", date)
+                            putString("os", binding.actvOs.text.toString())
+                            putString("processor", binding.actvProcessor.text.toString())
+                            putString("ram", binding.actvRamSize.text.toString())
+                            putString("gpu", binding.actvGpu.text.toString())
+                            putString("storageType", binding.actvStorageType.text.toString())
+                            putString("storageSize", binding.actvStorageSize.text.toString())
+                            putString("resolution", binding.actvScreenRes.text.toString())
+                            putString(
+                                "lowPrice",
+                                result.data.data?.predictedIntervals?.quantile05.toString()
+                            )
+                            putString(
+                                "highPrice",
+                                result.data.data?.predictedIntervals?.quantile075.toString()
+                            )
+                        }
+                        intent.putExtras(bundle)
+                        startActivity(intent)
                     }
 
                     is Result.Loading -> {
-                        binding.progressBar.visibility = View.VISIBLE
+                        showLoading(true)
                     }
 
                     is Result.Error -> {
-                        binding.progressBar.visibility = View.GONE
+                        showLoading(false)
                         Toast.makeText(
                             requireContext(),
                             "Error: ${result.error}",
@@ -141,6 +212,32 @@ class PredictFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun getCurrentDate(): String {
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        val date = Date()
+        return dateFormat.format(date)
+    }
+
+    private fun emptyFieldIsEmpty(): Boolean {
+        return listOf(
+            binding.actvOs.text,
+            binding.actvProcessor.text,
+            binding.actvRamSize.text,
+            binding.actvGpu.text,
+            binding.actvStorageType.text,
+            binding.actvStorageSize.text,
+            binding.actvScreenRes.text
+        ).all { it.isEmpty() }
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
     override fun onDestroyView() {
