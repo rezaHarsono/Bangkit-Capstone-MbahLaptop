@@ -20,8 +20,7 @@
                 android:id="@+id/card_predict"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                app:cardBackgroundColor="#1E90FF"
+                android:layout_margin="12dp"
                 app:cardCornerRadius="8dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -44,22 +43,30 @@
                         android:id="@+id/tv_banner_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/predict_your_laptop_price_now"
-                        android:textColor="#212121"
+                        android:paddingTop="4dp"
+                        android:text="@string/predict_the_price_of_any_laptop"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toTopOf="@+id/btn_predict"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/image_laptop"
                         app:layout_constraintTop_toTopOf="@+id/image_laptop" />
+
+                    <TextView
+                        android:id="@+id/tv_banner_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp"
+                        android:text="@string/powered_by_machine_learning"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_banner_title"
+                        app:layout_constraintStart_toStartOf="@+id/tv_banner_title"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_banner_title" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_predict"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
-                        android:backgroundTint="@color/white"
-                        android:text="@string/predict"
-                        android:textColor="@color/black"
+                        android:text="@string/try_now"
                         app:layout_constraintBottom_toBottomOf="@+id/image_laptop"
                         app:layout_constraintEnd_toEndOf="@+id/tv_banner_title"
                         app:layout_constraintStart_toStartOf="@+id/tv_banner_title"
@@ -69,19 +76,14 @@
 
             </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.divider.MaterialDivider
-                android:id="@+id/divider1"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginVertical="16dp" />
 
             <TextView
                 android:id="@+id/news_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginHorizontal="16dp"
                 android:gravity="center"
-                android:text="@string/check_out_the_latest_news_for_laptops"
+                android:text="@string/latest_news"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 

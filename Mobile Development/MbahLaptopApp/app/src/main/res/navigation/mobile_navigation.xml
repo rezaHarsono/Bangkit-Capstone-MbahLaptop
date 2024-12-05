@@ -13,12 +13,12 @@
     <fragment
         android:id="@+id/navigation_predict"
         android:name="com.reza.mbahlaptop.ui.main.predict.PredictFragment"
-        android:label="@string/title_predict"
+        android:label="Price Prediction"
         tools:layout="@layout/fragment_predict" />
 
     <fragment
         android:id="@+id/navigation_history"
         android:name="com.reza.mbahlaptop.ui.main.history.HistoryFragment"
-        android:label="@string/title_history"
+        android:label="Prediction History"
         tools:layout="@layout/fragment_history" />
 </navigation>

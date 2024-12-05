@@ -16,10 +16,10 @@
             android:layout_height="36dp"
             android:backgroundTint="?attr/colorSecondaryContainer"
             android:elevation="8dp"
-            app:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:cardCornerRadius="8dp">
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/leading_icon"
