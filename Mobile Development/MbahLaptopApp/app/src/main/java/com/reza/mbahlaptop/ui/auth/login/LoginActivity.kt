@@ -139,6 +139,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun firebaseAuthWithGoogle(idToken: String) {
+        showLoading(true)
         val credential: AuthCredential = GoogleAuthProvider.getCredential(idToken, null)
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
@@ -146,10 +147,12 @@ class LoginActivity : AppCompatActivity() {
                     Log.d(TAG, "signInWithCredential:success")
                     val user: FirebaseUser? = auth.currentUser
                     updateUI(user)
+                    showLoading(false)
                 } else {
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
                     showToast("Login Failed")
                     updateUI(null)
+                    showLoading(false)
                 }
             }
     }

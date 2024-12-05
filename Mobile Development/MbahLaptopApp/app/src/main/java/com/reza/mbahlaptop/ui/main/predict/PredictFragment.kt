@@ -185,7 +185,7 @@ class PredictFragment : Fragment() {
                             putString("resolution", binding.actvScreenRes.text.toString())
                             putString(
                                 "lowPrice",
-                                result.data.data?.predictedIntervals?.quantile05.toString()
+                                result.data.data?.predictedIntervals?.quantile025.toString()
                             )
                             putString(
                                 "highPrice",

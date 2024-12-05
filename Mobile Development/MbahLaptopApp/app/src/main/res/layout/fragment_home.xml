@@ -66,6 +66,7 @@
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
+                        android:textColor="@color/white"
                         android:text="@string/try_now"
                         app:layout_constraintBottom_toBottomOf="@+id/image_laptop"
                         app:layout_constraintEnd_toEndOf="@+id/tv_banner_title"

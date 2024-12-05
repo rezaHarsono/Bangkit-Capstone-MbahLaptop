@@ -49,29 +49,31 @@ class SettingActivity : AppCompatActivity() {
         preferences = SettingsPreferences.getInstance(this.dataStore)
         factory = SettingViewModelFactory(preferences)
 
-        user?.let {
-            setupView()
-            setupAction()
-        }
+        setupView()
+        setupAction()
     }
 
     private fun setupView() {
         binding?.apply {
-            tvUserName.text = getString(R.string.username)
-            tvUserEmail.visibility = View.VISIBLE
-            tvUserEmail.text = user?.email
-            buttonLogout.visibility = View.VISIBLE
+            user?.let {
+                tvUserName.text = getString(R.string.username)
+                tvUserEmail.visibility = View.VISIBLE
+                tvUserEmail.text = user?.email
+                buttonLogout.visibility = View.VISIBLE
+            }
         }
         changeTheme()
     }
 
     private fun setupAction() {
         binding?.apply {
-            buttonLanguage.setOnClickListener {
-                startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
-            }
-            buttonLogout.setOnClickListener {
-                signOut()
+            user?.let {
+                buttonLanguage.setOnClickListener {
+                    startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+                }
+                buttonLogout.setOnClickListener {
+                    signOut()
+                }
             }
             switchTheme.setOnCheckedChangeListener { _, isChecked: Boolean ->
                 viewModel.saveThemeSetting(isChecked)
