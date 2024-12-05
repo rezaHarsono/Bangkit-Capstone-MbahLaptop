@@ -8,8 +8,7 @@
         android:id="@+id/navigation_home"
         android:name="com.reza.mbahlaptop.ui.main.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home">/
-    </fragment>
+        tools:layout="@layout/fragment_home"></fragment>
 
     <fragment
         android:id="@+id/navigation_predict"
@@ -27,5 +26,5 @@
         android:id="@+id/action_home_to_predict"
         app:destination="@+id/navigation_predict"
         app:popUpTo="@+id/navigation_home"
-        app:popUpToInclusive="true"/>
+        app:popUpToInclusive="true" />
 </navigation>

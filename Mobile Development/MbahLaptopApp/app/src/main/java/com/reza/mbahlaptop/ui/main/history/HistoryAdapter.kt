@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.reza.mbahlaptop.data.local.ResultEntity
 import com.reza.mbahlaptop.databinding.HistoryRowBinding
 
-class HistoryAdapter( private val onDetailClick: (ResultEntity) -> Unit) :
+class HistoryAdapter(private val onDetailClick: (ResultEntity) -> Unit) :
     ListAdapter<ResultEntity, HistoryAdapter.MyViewHolder>(DIFF_CALLBACK) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding = HistoryRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)

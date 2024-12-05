@@ -27,7 +27,7 @@ fun formatToRelativeTime(dateString: String): String {
 }
 
 fun String.withCurrencyFormat(): String {
-    val localeID =  Locale("in", "ID")
+    val localeID = Locale("in", "ID")
     val numberFormat = NumberFormat.getCurrencyInstance(localeID)
 
     return numberFormat.format(this.toDouble()).toString()

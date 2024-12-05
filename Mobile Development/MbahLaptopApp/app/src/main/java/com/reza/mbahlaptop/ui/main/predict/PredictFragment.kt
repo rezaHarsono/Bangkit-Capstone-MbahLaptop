@@ -62,7 +62,7 @@ class PredictFragment : Fragment() {
             val resolutionPair = resolutionMap[resolution] ?: Pair(0f, 0f)
 
             if (emptyFieldIsEmpty()) {
-               showToast(getString(R.string.fields_empty_warning))
+                showToast(getString(R.string.fields_empty_warning))
             } else {
                 try {
                     val ram = ramString.toFloat()

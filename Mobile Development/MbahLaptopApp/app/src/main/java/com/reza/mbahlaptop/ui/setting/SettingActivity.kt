@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.auth
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivitySettingBinding
+import com.reza.mbahlaptop.ui.about.AboutActivity
 import com.reza.mbahlaptop.ui.main.HandleLoginActivity
 import kotlinx.coroutines.launch
 
@@ -74,6 +75,9 @@ class SettingActivity : AppCompatActivity() {
                 buttonLogout.setOnClickListener {
                     signOut()
                 }
+            }
+            buttonAbout.setOnClickListener {
+                startActivity(Intent(this@SettingActivity, AboutActivity::class.java))
             }
             switchTheme.setOnCheckedChangeListener { _, isChecked: Boolean ->
                 viewModel.saveThemeSetting(isChecked)

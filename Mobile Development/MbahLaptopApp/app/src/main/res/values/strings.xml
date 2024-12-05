@@ -68,4 +68,16 @@
     <string name="try_now">Try Now</string>
     <string name="latest_news">Latest News</string>
     <string name="fields_empty_warning">Please fill all the fields</string>
+    <string name="about_app">
+        This application is designed to predict laptop prices based on specifications provided by users.
+        It was developed by a team of seven members from the Bangkit Academy, combining expertise from three
+        specialized learning paths: Machine Learning, Cloud Computing, and Mobile Development.
+    </string>
+    <string name="about_app_title">About App</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="team">Team</string>
+    <string name="name">Name</string>
+    <string name="role">Role</string>
+    <string name="since_2024">Since 2024</string>
+
 </resources>

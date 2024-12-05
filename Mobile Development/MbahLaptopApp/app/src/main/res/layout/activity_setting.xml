@@ -114,6 +114,21 @@
                 android:layout_marginHorizontal="6dp" />
 
             <com.reza.mbahlaptop.customview.customButton.ButtonWithIcons
+                android:id="@+id/button_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingVertical="4dp"
+                android:textColor="?attr/colorOnBackground"
+                app:leadingIcon="@drawable/outline_info_24"
+                app:text="About" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="6dp" />
+
+            <com.reza.mbahlaptop.customview.customButton.ButtonWithIcons
                 android:id="@+id/button_logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
