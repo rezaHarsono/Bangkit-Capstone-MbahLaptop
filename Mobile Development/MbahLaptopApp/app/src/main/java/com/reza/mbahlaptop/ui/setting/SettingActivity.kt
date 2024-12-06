@@ -69,12 +69,12 @@ class SettingActivity : AppCompatActivity() {
     private fun setupAction() {
         binding?.apply {
             user?.let {
-                buttonLanguage.setOnClickListener {
-                    startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
-                }
                 buttonLogout.setOnClickListener {
                     signOut()
                 }
+            }
+            buttonLanguage.setOnClickListener {
+                startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
             }
             buttonAbout.setOnClickListener {
                 startActivity(Intent(this@SettingActivity, AboutActivity::class.java))
