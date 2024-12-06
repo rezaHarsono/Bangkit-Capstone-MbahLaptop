@@ -2,7 +2,6 @@ package com.reza.mbahlaptop.ui.setting
 
 import android.content.Intent
 import android.os.Bundle
-import android.provider.Settings
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
@@ -42,6 +41,7 @@ class SettingActivity : AppCompatActivity() {
         setContentView(binding?.root)
 
         setSupportActionBar(binding?.myToolbar)
+        supportActionBar?.title = getString(R.string.user_setting)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         auth = Firebase.auth
@@ -74,7 +74,7 @@ class SettingActivity : AppCompatActivity() {
                 }
             }
             buttonLanguage.setOnClickListener {
-                startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+                startActivity(Intent(this@SettingActivity, LanguageActivity::class.java))
             }
             buttonAbout.setOnClickListener {
                 startActivity(Intent(this@SettingActivity, AboutActivity::class.java))

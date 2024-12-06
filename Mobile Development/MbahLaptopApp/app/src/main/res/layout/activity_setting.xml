@@ -70,7 +70,7 @@
                 android:paddingVertical="4dp"
                 android:textColor="?attr/colorOnBackground"
                 app:leadingIcon="@drawable/baseline_language_24"
-                app:text="Language"
+                app:text="@string/language"
                 app:trailingIcon="@drawable/baseline_arrow_forward_ios_24" />
 
             <com.google.android.material.divider.MaterialDivider
@@ -93,7 +93,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:leadingIcon="@drawable/outline_palette_24"
-                    app:text="Theme" />
+                    app:text="@string/theme" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
                     android:id="@+id/switch_theme"
@@ -121,7 +121,7 @@
                 android:paddingVertical="4dp"
                 android:textColor="?attr/colorOnBackground"
                 app:leadingIcon="@drawable/outline_info_24"
-                app:text="About" />
+                app:text="@string/about" />
 
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MbahLaptop</string>
+    <!-- Strings used for fragments for navigation -->
+
+    <string name="intro_welcome">Selamat Datang di MbahLaptop</string>
+    <string name="intro_info">Mulai Prediksi Harga Laptop Anda Sekarang!</string>
+    <string name="login">Masuk</string>
+    <string name="register">Daftar</string>
+    <string name="mbahlaptop">MbahLaptop</string>
+    <string name="register_ask">Belum memiliki akun?</string>
+    <string name="register_now">Daftar Sekarang!</string>
+    <string name="error_email_invalid">Format email tidak valid</string>
+    <string name="email">Email</string>
+    <string name="error_password_invalid">Password harus memiliki setidaknya 8 karakter</string>
+    <string name="password">Password</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_history">Riwayat</string>
+    <string name="title_predict">Prediksi</string>
+    <string name="login_as_guest">Masuk Sebagai Tamu</string>
+    <string name="mbah_laptop_image">Gambar Mbah Laptop</string>
+    <string name="laptop_image">Gambar Laptop</string>
+    <string name="or">Atau</string>
+    <string name="logout">Keluar</string>
+    <string name="cancel">Batal</string>
+    <string name="error_login_invalid">Username atau password salah. \nTolong coba lagi</string>
+    <string name="please_fill_all_fields">Tolong isi semua kolom!</string>
+    <string name="prediction_date">Tanggal Prediksi</string>
+    <string name="processor">Prosesor :</string>
+    <string name="intel_amd">INTEL/AMD</string>
+    <string name="ram_size">Ukuran Ram :</string>
+    <string name="x_gb">X GB</string>
+    <string name="prediction_detail">Detail Prediksi</string>
+    <string name="insert_your_laptop_spesification_below">Masukkan spesifikasi laptop anda di bawah</string>
+    <string name="os_type">Tipe OS</string>
+    <string name="processor_type">Tipe Prosesor</string>
+    <string name="gpu_type">Tipe GPU</string>
+    <string name="ram_size_hint">Ukuran Ram</string>
+    <string name="storage_type">Tipe Penyimpanan</string>
+    <string name="storage_size">Ukuran Penyimpanan</string>
+    <string name="screen_resolution">Resolusi Layar</string>
+    <string name="predict_price">Prediksi Harga</string>
+    <string name="username">Username</string>
+    <string name="preferences">Preferensi</string>
+    <string name="guest">Tamu</string>
+    <string name="dark">Gelap</string>
+    <string name="light">Terang</string>
+    <string name="operating_system">Sistem Operasi :</string>
+    <string name="mac_windows">MAC/Windows</string>
+    <string name="user_setting">Pengaturan Pengguna</string>
+    <string name="predicted_price_result">Hasil Prediksi Harga</string>
+    <string name="predicted_price">Harga Terprediksi</string>
+    <string name="dd_mm_yyyy">DD/MM/YYYY</string>
+    <string name="operating_system_hint">Sistem Operasi</string>
+    <string name="processor_hint">Prosesor</string>
+    <string name="gpu_hint">GPU</string>
+    <string name="hd_fhd_2k">HD+/FHD/2K</string>
+    <string name="hdd_ssd">HDD/SSD</string>
+    <string name="lowest_predicted_price">Harga Terprediksi Terendah</string>
+    <string name="rp0_000_000">Rp0.000.000</string>
+    <string name="highest_predicted_price">Harga Terprediksi Tertinggi</string>
+    <string name="lowest_price_recommendation">Rekomendasi Harga Terendah</string>
+    <string name="highest_price_recommendation">Rekomendasi Harga Tertinggi</string>
+    <string name="laptop_name">Nama Laptop</string>
+    <string name="price">Harga</string>
+    <string name="predict_the_price_of_any_laptop">Prediksi harga dari laptop apapun</string>
+    <string name="powered_by_machine_learning">Ditenagai oleh Machine Learning</string>
+    <string name="try_now">Coba Sekarang</string>
+    <string name="latest_news">Berita Terbaru</string>
+    <string name="fields_empty_warning">Tolong isi semua kolom!</string>
+    <string name="about_app">
+        Aplikasi ini dibuat untuk memprediksi harga laptop berdasarkan daftar spesifikasi yang diberikan oleh user.
+        Aplikasi ini dikembangkan oleh tim yang terdiri dari tujuh anggota dari Bangkit Academy, menggabungkan pengetahuan dari tiga
+        jalur pembelajaran: Machine Learning, Cloud Computing, dan Mobile Development.
+    </string>
+    <string name="about_app_title">Tentang Aplikasi</string>
+    <string name="profile_image">Gambar Profil</string>
+    <string name="team">Tim</string>
+    <string name="name">Nama</string>
+    <string name="role">Peran</string>
+    <string name="since_2024">Sejak 2024</string>
+    <string name="language">Bahasa</string>
+    <string name="theme">Tema</string>
+    <string name="about">Tentang</string>
+    <string name="title_prediction">Prediksi Harga</string>
+    <string name="title_prediction_history">Riwayat Prediksi</string>
+    <string name="english">English</string>
+    <string name="indonesia">Bahasa Indonesia</string>
+    <string name="title_language_setting">Pengaturan Bahasa</string>
+</resources>

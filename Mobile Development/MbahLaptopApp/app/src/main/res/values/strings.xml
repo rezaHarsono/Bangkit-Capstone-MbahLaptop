@@ -79,5 +79,13 @@
     <string name="name">Name</string>
     <string name="role">Role</string>
     <string name="since_2024">Since 2024</string>
+    <string name="language">Language</string>
+    <string name="theme">Theme</string>
+    <string name="about">About</string>
+    <string name="title_prediction">Price Prediction</string>
+    <string name="title_prediction_history">Prediction History</string>
+    <string name="english">English</string>
+    <string name="indonesia">Bahasa Indonesia</string>
+    <string name="title_language_setting">Language Setting</string>
 
 </resources>
