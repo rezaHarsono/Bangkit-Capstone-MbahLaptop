@@ -1,9 +1,9 @@
 package com.reza.mbahlaptop.ui.about
 
 import android.os.Bundle
-import android.view.MenuItem
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivityAboutBinding
+import com.reza.mbahlaptop.databinding.TeamRowBinding
 import com.reza.mbahlaptop.utils.TemplateActivity
 
 class AboutActivity : TemplateActivity() {
@@ -23,22 +23,27 @@ class AboutActivity : TemplateActivity() {
     }
 
     private fun setupView() {
-        val teamAdapter = TeamAdapter()
-        val teamRv = binding?.rvTeamList
+        val teamContainer = binding?.teamContainer
 
         val teamList = listOf(
-            TeamAdapter.TeamMember("Adam Noor Falah", "Machine Learning"),
-            TeamAdapter.TeamMember("Juan Graciano", "Machine Learning"),
-            TeamAdapter.TeamMember("German Mindo Simamarta", "Machine Learning"),
-            TeamAdapter.TeamMember("Muhammad Reza Harsono", "Mobile Development"),
-            TeamAdapter.TeamMember("Muhammad Rizky Ramadhani", "Mobile Development"),
-            TeamAdapter.TeamMember("Zuwita S", "Cloud Computing"),
-            TeamAdapter.TeamMember("Muhammad Adnan Fadillah", "Cloud Computing")
+            TeamMember("Adam Noor Falah", getString(R.string.machine_learning)),
+            TeamMember("Juan Graciano", getString(R.string.machine_learning)),
+            TeamMember("German Mindo Simamarta", getString(R.string.machine_learning)),
+            TeamMember("Muhammad Reza Harsono", getString(R.string.mobile_development)),
+            TeamMember("Muhammad Rizky Ramadhani", getString(R.string.mobile_development)),
+            TeamMember("Zuwita S", getString(R.string.cloud_computing)),
+            TeamMember("Muhammad Adnan Fadillah", getString(R.string.cloud_computing))
         )
 
-        teamRv?.layoutManager = LinearLayoutManager(this)
-        teamRv?.setOnTouchListener { _, _ -> true }
-        teamRv?.adapter = teamAdapter
-        teamAdapter.submitList(teamList)
+        for (member in teamList) {
+            val binding = TeamRowBinding.inflate(layoutInflater)
+            binding.apply {
+                tvMemberName.text = member.name
+                tvMemberRole.text = member.role
+            }
+            teamContainer?.addView(binding.root)
+        }
     }
+
+    data class TeamMember(val name: String, val role: String)
 }

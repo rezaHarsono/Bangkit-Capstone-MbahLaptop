@@ -91,5 +91,8 @@
     <string name="signed_out_success">Signed out successfully</string>
     <string name="no_history_detected">No History Detected</string>
     <string name="price_range">%1$s - %2$s</string>
+    <string name="machine_learning">Machine Learning</string>
+    <string name="mobile_development">Mobile Development</string>
+    <string name="cloud_computing">Cloud Computing</string>
 
 </resources>
