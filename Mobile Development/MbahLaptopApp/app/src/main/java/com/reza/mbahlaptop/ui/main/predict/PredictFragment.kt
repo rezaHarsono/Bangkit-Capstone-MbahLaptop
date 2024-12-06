@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.data.Result
+import com.reza.mbahlaptop.data.local.entity.ResultEntity
 import com.reza.mbahlaptop.databinding.FragmentPredictBinding
 import com.reza.mbahlaptop.ui.result.ResultActivity
 import com.reza.mbahlaptop.utils.ViewModelFactory
@@ -71,11 +72,11 @@ class PredictFragment : Fragment() {
                     val resolutionWidth = resolutionPair.first
                     val resolutionHeight = resolutionPair.second
 
-                    when (os) {
-                        "MAC" -> brand = "apple"
-                        "Windows 10 OS" -> brand = "asus"
-                        "Windows 11 OS" -> brand = "asus"
-                        else -> brand = ""
+                    brand = when (os) {
+                        "MAC" -> "apple"
+                        "Windows 10 OS" -> "asus"
+                        "Windows 11 OS" -> "asus"
+                        else -> ""
                     }
 
                     predict(
@@ -183,26 +184,34 @@ class PredictFragment : Fragment() {
                     is Result.Success -> {
                         showLoading(false)
                         val date = getCurrentDate()
+                        predictViewModel.insertResult(
+                            date = date,
+                            os = os,
+                            processor = processor,
+                            gpu = gpu,
+                            ram = ram,
+                            storageType = storageType,
+                            storage = storage,
+                            displayRes = binding.actvScreenRes.text.toString(),
+                            lowestPrice = result.data.data?.predictedIntervals?.quantile025.toString(),
+                            highestPrice = result.data.data?.predictedIntervals?.quantile075.toString(),
+                            brand = brand,
+                        )
                         val intent = Intent(requireContext(), ResultActivity::class.java)
-                        val bundle = Bundle().apply {
-                            putString("date", date)
-                            putString("os", binding.actvOs.text.toString())
-                            putString("processor", binding.actvProcessor.text.toString())
-                            putString("ram", binding.actvRamSize.text.toString())
-                            putString("gpu", binding.actvGpu.text.toString())
-                            putString("storageType", binding.actvStorageType.text.toString())
-                            putString("storageSize", binding.actvStorageSize.text.toString())
-                            putString("resolution", binding.actvScreenRes.text.toString())
-                            putString(
-                                "lowPrice",
-                                result.data.data?.predictedIntervals?.quantile025.toString()
-                            )
-                            putString(
-                                "highPrice",
-                                result.data.data?.predictedIntervals?.quantile075.toString()
-                            )
-                        }
-                        intent.putExtras(bundle)
+                        val resultBundle = ResultEntity(
+                            date = date,
+                            os = os,
+                            processor = processor,
+                            gpu = gpu,
+                            ram = ram,
+                            storageType = storageType,
+                            storage = storage,
+                            displayRes = binding.actvScreenRes.text.toString(),
+                            lowestPrice = result.data.data?.predictedIntervals?.quantile025.toString(),
+                            highestPrice = result.data.data?.predictedIntervals?.quantile075.toString(),
+                            brand = brand,
+                        )
+                        intent.putExtra("RESULT", resultBundle)
                         clearFields()
                         startActivity(intent)
                     }

@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.gms.google.services)
+    id("com.google.devtools.ksp")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -47,6 +49,9 @@ android {
 dependencies {
     //Local Persistence
     implementation(libs.datastore.preferences)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
 
     //Retrofit and APIs
     implementation(libs.retrofit)

@@ -1,9 +1,7 @@
 package com.reza.mbahlaptop.ui.setting
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.provider.Settings
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
@@ -95,11 +93,7 @@ class SettingActivity : AppCompatActivity() {
                 }
             }
             buttonLanguage.setOnClickListener {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                    startActivity(Intent(this@SettingActivity, LanguageActivity::class.java))
-                } else {
-                    startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
-                }
+                startActivity(Intent(this@SettingActivity, LanguageActivity::class.java))
             }
             buttonAbout.setOnClickListener {
                 startActivity(Intent(this@SettingActivity, AboutActivity::class.java))
@@ -115,8 +109,10 @@ class SettingActivity : AppCompatActivity() {
         lifecycleScope.launch {
             val credentialManager = CredentialManager.create(this@SettingActivity)
             auth.signOut()
-            Toast.makeText(this@SettingActivity,
-                getString(R.string.signed_out_success), Toast.LENGTH_SHORT)
+            Toast.makeText(
+                this@SettingActivity,
+                getString(R.string.signed_out_success), Toast.LENGTH_SHORT
+            )
                 .show()
             credentialManager.clearCredentialState(ClearCredentialStateRequest())
             val logoutIntent = Intent(this@SettingActivity, HandleLoginActivity::class.java)

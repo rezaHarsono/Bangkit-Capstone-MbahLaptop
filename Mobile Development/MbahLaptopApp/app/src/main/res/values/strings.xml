@@ -89,5 +89,7 @@
     <string name="title_language_setting">Language Setting</string>
     <string name="email_registered_error">This email is already registered!</string>
     <string name="signed_out_success">Signed out successfully</string>
+    <string name="no_history_detected">No History Detected</string>
+    <string name="price_range">%1$s - %2$s</string>
 
 </resources>

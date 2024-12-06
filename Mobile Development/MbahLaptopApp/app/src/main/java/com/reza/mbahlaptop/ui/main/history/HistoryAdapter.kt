@@ -5,8 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.reza.mbahlaptop.data.local.ResultEntity
+import com.reza.mbahlaptop.data.local.entity.ResultEntity
 import com.reza.mbahlaptop.databinding.HistoryRowBinding
+import com.reza.mbahlaptop.utils.formatNumber
 
 class HistoryAdapter(private val onDetailClick: (ResultEntity) -> Unit) :
     ListAdapter<ResultEntity, HistoryAdapter.MyViewHolder>(DIFF_CALLBACK) {
@@ -24,8 +25,8 @@ class HistoryAdapter(private val onDetailClick: (ResultEntity) -> Unit) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(result: ResultEntity, onDetailClick: (ResultEntity) -> Unit) {
             binding.tvOsValue.text = result.os
-            binding.tvProcessorValue.text = result.cpu
-            binding.tvRamValue.text = result.ram
+            binding.tvProcessorValue.text = result.processor
+            binding.tvRamValue.text = formatNumber(result.ram)
 
             binding.btnPredictionDetail.setOnClickListener {
                 onDetailClick(result)

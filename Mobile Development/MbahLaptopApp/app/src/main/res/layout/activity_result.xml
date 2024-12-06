@@ -10,13 +10,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_margin="20dp"
         android:orientation="vertical"
         android:paddingBottom="32dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             app:cardCornerRadius="16dp">
 
             <LinearLayout
@@ -39,7 +44,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_margin="8dp"
                     android:text="@string/predicted_price"
-                    android:textSize="24sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -238,14 +243,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="20dp"
             android:text="@string/lowest_price_recommendation"
             android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
             android:orientation="horizontal"
+
             android:paddingVertical="4dp">
 
             <include layout="@layout/laptop_row" />
@@ -257,6 +264,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
             android:layout_marginTop="16dp"
             android:text="@string/highest_price_recommendation"
             android:textStyle="bold" />
@@ -264,6 +272,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
             android:orientation="horizontal"
             android:paddingVertical="4dp">
 

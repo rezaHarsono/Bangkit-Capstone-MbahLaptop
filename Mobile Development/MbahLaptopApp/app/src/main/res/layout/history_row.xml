@@ -24,6 +24,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/dividerA"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginVertical="8dp"
@@ -34,19 +35,19 @@
             android:id="@+id/tv_os_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
             android:text="@string/operating_system"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_prediction_date" />
+            app:layout_constraintTop_toBottomOf="@id/dividerA" />
 
         <!-- Processor Value -->
         <TextView
             android:id="@+id/tv_os_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="12dp"
             android:text="@string/mac_windows"
             android:textSize="14sp"
             android:textStyle="bold|italic"
@@ -59,7 +60,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="20dp"
             android:text="@string/ram_size"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@id/btn_prediction_detail"
@@ -83,7 +83,7 @@
             android:id="@+id/tv_processor_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="12dp"
             android:text="@string/processor"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -92,13 +92,12 @@
         <!-- Prediction Detail Button -->
         <Button
             android:id="@+id/btn_prediction_detail"
+            style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="20dp"
-            android:backgroundTint="#EDE7F6"
+            android:layout_marginEnd="12dp"
             android:text="@string/prediction_detail"
-            android:textColor="#6A1B9A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_ram_value" />
@@ -108,10 +107,12 @@
             android:id="@+id/tv_processor_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="12dp"
             android:text="@string/intel_amd"
             android:textSize="14sp"
             android:textStyle="bold|italic"
+            app:layout_constraintEnd_toStartOf="@+id/btn_prediction_detail"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_processor_label" />
 
