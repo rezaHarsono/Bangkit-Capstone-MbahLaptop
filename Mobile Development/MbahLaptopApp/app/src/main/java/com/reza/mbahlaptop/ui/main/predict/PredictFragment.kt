@@ -53,6 +53,7 @@ class PredictFragment : Fragment() {
     private fun setupAction() {
         binding.buttonPredict.setOnClickListener {
             val os = binding.actvOs.text.toString()
+            val brand: String
             val processor = binding.actvProcessor.text.toString()
             val ramString = binding.actvRamSize.text.toString()
             val gpu = binding.actvGpu.text.toString()
@@ -70,7 +71,15 @@ class PredictFragment : Fragment() {
                     val resolutionWidth = resolutionPair.first
                     val resolutionHeight = resolutionPair.second
 
+                    when (os) {
+                        "MAC" -> brand = "apple"
+                        "Windows 10 OS" -> brand = "asus"
+                        "Windows 11 OS" -> brand = "asus"
+                        else -> brand = ""
+                    }
+
                     predict(
+                        brand = brand,
                         processor = processor,
                         ram = ram,
                         storage = storageSize,
@@ -99,6 +108,7 @@ class PredictFragment : Fragment() {
         val processorMac = resources.getStringArray(R.array.processor_mac)
         val gpuWindows = resources.getStringArray(R.array.gpu_windows)
         val gpuMac = resources.getStringArray(R.array.gpu_mac)
+
         val processorWindowsArrayAdapter =
             ArrayAdapter(requireContext(), R.layout.dropdown_item, processorWindows)
         val processorMacArrayAdapter =
@@ -146,6 +156,7 @@ class PredictFragment : Fragment() {
     }
 
     private fun predict(
+        brand: String,
         processor: String,
         ram: Float,
         storage: Float,
@@ -156,7 +167,7 @@ class PredictFragment : Fragment() {
         os: String
     ) {
         predictViewModel.uploadSpecs(
-            brand = "Asus",
+            brand = brand,
             processor = processor,
             ram = ram,
             storage = storage,
@@ -192,6 +203,7 @@ class PredictFragment : Fragment() {
                             )
                         }
                         intent.putExtras(bundle)
+                        clearFields()
                         startActivity(intent)
                     }
 
@@ -237,6 +249,28 @@ class PredictFragment : Fragment() {
 
     private fun showLoading(isLoading: Boolean) {
         binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
+
+    private fun clearFields() {
+        binding.apply {
+            actvOs.text = null
+            actvProcessor.text = null
+            actvRamSize.text = null
+            actvGpu.text = null
+            actvStorageType.text = null
+            actvStorageSize.text = null
+            actvScreenRes.text = null
+        }
+
+        binding.apply {
+            tilProcessor.clearFocus()
+            tilRamSize.clearFocus()
+            tilGpu.clearFocus()
+            tilStorageType.clearFocus()
+            tilStorageSize.clearFocus()
+            tilScreenRes.clearFocus()
+            tilOs.clearFocus()
+        }
     }
 
     override fun onDestroyView() {
