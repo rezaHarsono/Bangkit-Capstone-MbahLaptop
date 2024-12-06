@@ -1,7 +1,9 @@
 package com.reza.mbahlaptop.ui.setting
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
@@ -74,7 +76,11 @@ class SettingActivity : AppCompatActivity() {
                 }
             }
             buttonLanguage.setOnClickListener {
-                startActivity(Intent(this@SettingActivity, LanguageActivity::class.java))
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    startActivity(Intent(this@SettingActivity, LanguageActivity::class.java))
+                } else {
+                    startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+                }
             }
             buttonAbout.setOnClickListener {
                 startActivity(Intent(this@SettingActivity, AboutActivity::class.java))

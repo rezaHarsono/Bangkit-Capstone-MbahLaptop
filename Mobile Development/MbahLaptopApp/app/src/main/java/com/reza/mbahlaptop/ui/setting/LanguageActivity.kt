@@ -14,9 +14,6 @@ class LanguageActivity : AppCompatActivity() {
 
     private lateinit var preferences: SettingsPreferences
     private lateinit var factory: SettingViewModelFactory
-    private val languageViewModel: SettingViewModel by viewModels {
-        factory
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
