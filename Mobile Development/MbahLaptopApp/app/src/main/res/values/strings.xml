@@ -87,5 +87,7 @@
     <string name="english">English</string>
     <string name="indonesia">Bahasa Indonesia</string>
     <string name="title_language_setting">Language Setting</string>
+    <string name="email_registered_error">This email is already registered!</string>
+    <string name="signed_out_success">Signed out successfully</string>
 
 </resources>

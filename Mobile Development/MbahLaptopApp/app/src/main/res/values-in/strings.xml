@@ -88,4 +88,6 @@
     <string name="english">English</string>
     <string name="indonesia">Bahasa Indonesia</string>
     <string name="title_language_setting">Pengaturan Bahasa</string>
+    <string name="email_registered_error">Email ini sudah pernah terdaftar!</string>
+    <string name="signed_out_success">Berhasil keluar!</string>
 </resources>

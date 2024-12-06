@@ -12,6 +12,7 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivityRegisterBinding
 import com.reza.mbahlaptop.ui.auth.login.LoginActivity
@@ -20,6 +21,7 @@ import com.reza.mbahlaptop.ui.intro.IntroActivity
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var auth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,15 +31,18 @@ class RegisterActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
+        db = FirebaseFirestore.getInstance()
+
         binding.btnCancel.setOnClickListener {
             startActivity(Intent(this, IntroActivity::class.java))
             finish()
         }
 
         binding.btnRegister.setOnClickListener {
+            val username = binding.edUsername.text.toString()
             val email = binding.edEmail.text.toString()
             val password = binding.edPassword.text.toString()
-            if (email.isEmpty() || password.isEmpty()) {
+            if (email.isEmpty() || password.isEmpty() || username.isEmpty()) {
                 showToast(getString(R.string.please_fill_all_fields))
             } else {
                 register()
@@ -48,9 +53,16 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun register() {
+        val username = binding.edUsername.text.toString()
         val email = binding.edEmail.text.toString()
         val password = binding.edPassword.text.toString()
         showLoading(true)
+
+        val firesStoreUser = hashMapOf(
+            "username" to username,
+            "email" to email,
+            "password" to password
+        )
 
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
@@ -58,11 +70,23 @@ class RegisterActivity : AppCompatActivity() {
                     showLoading(false)
                     Log.d(TAG, "Create user: Success")
                     val user = auth.currentUser
+                    db.collection("users")
+                        .add(firesStoreUser)
+                        .addOnSuccessListener {
+                            Log.d(TAG, "Create user: Success")
+                        }
+                        .addOnFailureListener {
+                            Log.w(TAG, "Create user: Failure", it)
+                        }
                     updateUI(user)
                 } else {
                     showLoading(false)
                     Log.w(TAG, "Create user: Failure", task.exception)
-                    showToast("Login Failed")
+                    if (task.exception?.message == "The email address is already in use by another account.") {
+                        showToast(getString(R.string.email_registered_error))
+                    } else {
+                        showToast(task.exception?.message!!)
+                    }
                     updateUI(null)
                 }
             }
@@ -95,6 +119,8 @@ class RegisterActivity : AppCompatActivity() {
             ObjectAnimator.ofFloat(binding.registerTitle, View.ALPHA, 1f).setDuration(300)
         val registerImage =
             ObjectAnimator.ofFloat(binding.introImage, View.ALPHA, 1f).setDuration(300)
+        val registerUsername =
+            ObjectAnimator.ofFloat(binding.tilUsername, View.ALPHA, 1f).setDuration(300)
         val registerEmail =
             ObjectAnimator.ofFloat(binding.tilEmail, View.ALPHA, 1f).setDuration(300)
         val registerPassword =
@@ -108,6 +134,7 @@ class RegisterActivity : AppCompatActivity() {
             playSequentially(
                 registerTitle,
                 registerImage,
+                registerUsername,
                 registerEmail,
                 registerPassword,
                 registerButton,
