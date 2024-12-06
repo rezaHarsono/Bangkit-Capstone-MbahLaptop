@@ -4,7 +4,6 @@ data class SpecRequest(
     val brand: String,
     val processor: String,
     val Ram: Float,
-    val ramType: Float,
     val Storage: Float,
     val storage_type: String,
     val gpu: String,

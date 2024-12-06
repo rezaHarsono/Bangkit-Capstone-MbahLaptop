@@ -159,7 +159,6 @@ class PredictFragment : Fragment() {
             brand = "Asus",
             processor = processor,
             ram = ram,
-            ramType = 1f,
             storage = storage,
             storageType = storageType,
             gpu = gpu,
