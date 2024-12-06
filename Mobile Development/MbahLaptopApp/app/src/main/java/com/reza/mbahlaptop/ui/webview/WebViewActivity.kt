@@ -1,15 +1,14 @@
 package com.reza.mbahlaptop.ui.webview
 
 import android.os.Bundle
-import android.view.MenuItem
 import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.reza.mbahlaptop.databinding.ActivityWebViewBinding
+import com.reza.mbahlaptop.utils.TemplateActivity
 
-class WebViewActivity : AppCompatActivity() {
+class WebViewActivity : TemplateActivity() {
     private lateinit var binding: ActivityWebViewBinding
     private var url: String? = null
     private var isToastShown = false
@@ -63,15 +62,5 @@ class WebViewActivity : AppCompatActivity() {
 
         binding.webView.stopLoading()
         binding.webView.webViewClient = object : WebViewClient() {}
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> {
-                onBackPressedDispatcher.onBackPressed()
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
     }
 }

@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -15,8 +14,9 @@ import com.jakewharton.threetenabp.AndroidThreeTen
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivityMainBinding
 import com.reza.mbahlaptop.ui.setting.SettingActivity
+import com.reza.mbahlaptop.utils.TemplateActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : TemplateActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController

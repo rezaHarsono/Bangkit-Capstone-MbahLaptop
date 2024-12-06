@@ -1,14 +1,13 @@
 package com.reza.mbahlaptop.ui.setting
 
 import android.os.Bundle
-import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivityLanguageBinding
+import com.reza.mbahlaptop.utils.TemplateActivity
 
-class LanguageActivity : AppCompatActivity() {
+class LanguageActivity : TemplateActivity() {
     private lateinit var binding: ActivityLanguageBinding
 
     private lateinit var preferences: SettingsPreferences
@@ -39,16 +38,5 @@ class LanguageActivity : AppCompatActivity() {
     private fun updateLocale(languageCode: String) {
         val appLocale: LocaleListCompat = LocaleListCompat.forLanguageTags(languageCode)
         AppCompatDelegate.setApplicationLocales(appLocale)
-    }
-
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> {
-                onBackPressedDispatcher.onBackPressed()
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
     }
 }

@@ -9,10 +9,11 @@ import androidx.core.view.WindowInsetsCompat
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.data.local.entity.ResultEntity
 import com.reza.mbahlaptop.databinding.ActivityResultBinding
+import com.reza.mbahlaptop.utils.TemplateActivity
 import com.reza.mbahlaptop.utils.formatNumber
 import com.reza.mbahlaptop.utils.withCurrencyFormat
 
-class ResultActivity : AppCompatActivity() {
+class ResultActivity : TemplateActivity() {
     private lateinit var binding: ActivityResultBinding
 
     private var result: ResultEntity? = null
@@ -59,15 +60,5 @@ class ResultActivity : AppCompatActivity() {
                 tvResultHighestPrice.text = highestPrice
             }
         }
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> {
-                onBackPressedDispatcher.onBackPressed()
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
     }
 }

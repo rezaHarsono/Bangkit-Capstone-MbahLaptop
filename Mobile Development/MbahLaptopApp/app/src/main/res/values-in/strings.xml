@@ -25,14 +25,14 @@
     <string name="logout">Keluar</string>
     <string name="cancel">Batal</string>
     <string name="error_login_invalid">Username atau password salah. \nTolong coba lagi</string>
-    <string name="please_fill_all_fields">Tolong isi semua kolom!</string>
+    <string name="please_fill_all_fields">Isi semua kolom terlebih dahulu</string>
     <string name="prediction_date">Tanggal Prediksi</string>
     <string name="processor">Prosesor :</string>
     <string name="intel_amd">INTEL/AMD</string>
     <string name="ram_size">Ukuran Ram :</string>
     <string name="x_gb">X GB</string>
     <string name="prediction_detail">Detail Prediksi</string>
-    <string name="insert_your_laptop_spesification_below">Masukkan spesifikasi laptop anda di bawah</string>
+    <string name="insert_your_laptop_spesification_below">Masukkan spesifikasi laptop anda di bawah ini</string>
     <string name="os_type">Tipe OS</string>
     <string name="processor_type">Tipe Prosesor</string>
     <string name="gpu_type">Tipe GPU</string>
@@ -50,7 +50,7 @@
     <string name="mac_windows">MAC/Windows</string>
     <string name="user_setting">Pengaturan Pengguna</string>
     <string name="predicted_price_result">Hasil Prediksi Harga</string>
-    <string name="predicted_price">Harga Terprediksi</string>
+    <string name="predicted_price">Harga Hasil Prediksi</string>
     <string name="dd_mm_yyyy">DD/MM/YYYY</string>
     <string name="operating_system_hint">Sistem Operasi</string>
     <string name="processor_hint">Prosesor</string>
@@ -68,7 +68,7 @@
     <string name="powered_by_machine_learning">Ditenagai oleh Machine Learning</string>
     <string name="try_now">Coba Sekarang</string>
     <string name="latest_news">Berita Terbaru</string>
-    <string name="fields_empty_warning">Tolong isi semua kolom!</string>
+    <string name="fields_empty_warning">Isi semua kolom terlebih dahulu</string>
     <string name="about_app">
         Aplikasi ini dibuat untuk memprediksi harga laptop berdasarkan daftar spesifikasi yang diberikan oleh user.
         Aplikasi ini dikembangkan oleh tim yang terdiri dari tujuh anggota dari Bangkit Academy, menggabungkan pengetahuan dari tiga
@@ -85,9 +85,11 @@
     <string name="about">Tentang</string>
     <string name="title_prediction">Prediksi Harga</string>
     <string name="title_prediction_history">Riwayat Prediksi</string>
-    <string name="english">English</string>
+    <string name="english">Bahasa Inggris</string>
     <string name="indonesia">Bahasa Indonesia</string>
     <string name="title_language_setting">Pengaturan Bahasa</string>
     <string name="email_registered_error">Email ini sudah pernah terdaftar!</string>
     <string name="signed_out_success">Berhasil keluar!</string>
+    <string name="no_history_detected">Tidak Ada Riwayat Terdeteksi</string>
+    <string name="price_range">%1$s - %2$s</string>
 </resources>

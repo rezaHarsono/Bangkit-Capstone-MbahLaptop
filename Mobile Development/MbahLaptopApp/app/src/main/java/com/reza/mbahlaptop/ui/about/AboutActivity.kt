@@ -2,11 +2,11 @@ package com.reza.mbahlaptop.ui.about
 
 import android.os.Bundle
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.reza.mbahlaptop.databinding.ActivityAboutBinding
+import com.reza.mbahlaptop.utils.TemplateActivity
 
-class AboutActivity : AppCompatActivity() {
+class AboutActivity : TemplateActivity() {
     private var _binding: ActivityAboutBinding? = null
     private val binding get() = _binding
 
@@ -40,15 +40,5 @@ class AboutActivity : AppCompatActivity() {
         teamRv?.setOnTouchListener { _, _ -> true }
         teamRv?.adapter = teamAdapter
         teamAdapter.submitList(teamList)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> {
-                onBackPressedDispatcher.onBackPressed()
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
     }
 }
