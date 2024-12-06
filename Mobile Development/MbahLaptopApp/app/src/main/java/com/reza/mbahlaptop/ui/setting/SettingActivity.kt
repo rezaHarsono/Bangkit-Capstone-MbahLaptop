@@ -17,6 +17,7 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivitySettingBinding
 import com.reza.mbahlaptop.ui.about.AboutActivity
@@ -28,6 +29,7 @@ class SettingActivity : AppCompatActivity() {
     private val binding get() = _binding
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
     private var user: FirebaseUser? = null
 
     private lateinit var preferences: SettingsPreferences
@@ -48,6 +50,7 @@ class SettingActivity : AppCompatActivity() {
 
         auth = Firebase.auth
         user = auth.currentUser
+        db = FirebaseFirestore.getInstance()
 
         preferences = SettingsPreferences.getInstance(this.dataStore)
         factory = SettingViewModelFactory(preferences)
@@ -57,9 +60,25 @@ class SettingActivity : AppCompatActivity() {
     }
 
     private fun setupView() {
+        var username: String? = null
+
+        val userRef = db.collection("users")
+
+        val queryEmail = userRef.whereEqualTo("email", user?.email)
+
+        queryEmail.get()
+            .addOnSuccessListener {
+                if (!it.isEmpty) {
+                    username = it.documents[0].getString("username")
+                    binding?.tvUserName?.text = username
+                } else {
+                    username = user?.displayName
+                }
+            }
+
         binding?.apply {
             user?.let {
-                tvUserName.text = getString(R.string.username)
+                tvUserName.text = username
                 tvUserEmail.visibility = View.VISIBLE
                 tvUserEmail.text = user?.email
                 buttonLogout.visibility = View.VISIBLE
@@ -96,7 +115,8 @@ class SettingActivity : AppCompatActivity() {
         lifecycleScope.launch {
             val credentialManager = CredentialManager.create(this@SettingActivity)
             auth.signOut()
-            Toast.makeText(this@SettingActivity, "Signed out successfully", Toast.LENGTH_SHORT)
+            Toast.makeText(this@SettingActivity,
+                getString(R.string.signed_out_success), Toast.LENGTH_SHORT)
                 .show()
             credentialManager.clearCredentialState(ClearCredentialStateRequest())
             val logoutIntent = Intent(this@SettingActivity, HandleLoginActivity::class.java)
