@@ -4,7 +4,7 @@
 # API Predicts Laptop Prices
 The Predicts Laptop Prices API is a machine learning-based service designed to predict laptop prices based on specifications selected by users. By inputting data such as brand, processor, RAM, storage, GPU, and screen resolution, this API is able to provide accurate price estimates. This service helps buyers ensure that the price of the laptop offered is in accordance with the market value and makes it easier for sellers to determine a competitive selling price. With this API, the laptop transaction process becomes more efficient, transparent, and informative for all parties.
 
-## **Team ID** :C242-PS215
+## **Team ID**: C242-PS215
 ## **Cloud Computing Members**
 - C128B4KY2618 - Muhamad Adnan Fadillah
 - C172B4KX4636 - Zuwita S
