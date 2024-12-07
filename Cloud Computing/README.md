@@ -9,8 +9,8 @@ The Predicts Laptop Prices API is a machine learning-based service designed to p
 - C128B4KY2618 - Muhamad Adnan Fadillah
 - C172B4KX4636 - Zuwita S
 
-# Service
-## **Fully utilizes Google Cloud Platform (GCP)**
+
+## ** Service: Fully utilizes Google Cloud Platform (GCP)**
 - Cloud Run
 - APIs and Services
   
