@@ -90,6 +90,7 @@ class PredictFragment : Fragment() {
                         resolutionHeight = resolutionHeight,
                         os = os
                     )
+                    binding.buttonPredict.isEnabled = false
                 } catch (e: NumberFormatException) {
                     showToast(getString(R.string.fields_empty_warning))
                     Log.e(TAG, "Error: ${e.message}")
@@ -100,6 +101,8 @@ class PredictFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+
+        binding.buttonPredict.isEnabled = true
 
         val osType = resources.getStringArray(R.array.os_type)
         val osArrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, osType)

@@ -28,7 +28,6 @@
     <string name="prediction_date">Prediction Date</string>
     <string name="processor">Processor :</string>
     <string name="intel_amd">INTEL/AMD</string>
-    <string name="ram_size">Ram Size :</string>
     <string name="x_gb">X GB</string>
     <string name="prediction_detail">Prediction Detail</string>
     <string name="insert_your_laptop_spesification_below">Insert your laptop spesification below</string>
@@ -45,7 +44,6 @@
     <string name="guest">Guest</string>
     <string name="dark">Dark</string>
     <string name="light">Light</string>
-    <string name="operating_system">Operating System :</string>
     <string name="mac_windows">MAC/Windows</string>
     <string name="user_setting">User Setting</string>
     <string name="predicted_price_result">Predicted Price Result</string>
@@ -94,5 +92,9 @@
     <string name="machine_learning">Machine Learning</string>
     <string name="mobile_development">Mobile Development</string>
     <string name="cloud_computing">Cloud Computing</string>
+    <string name="specs">Specs</string>
+    <string name="predicted_price_format">Predicted Price: %1$s</string>
+    <string name="specs_format">Specs: %1$s, %2$s, %3$s</string>
+    <string name="data_management">Data Management</string>
 
 </resources>

@@ -3,118 +3,66 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="4dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
     app:cardCornerRadius="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp">
+        android:padding="12dp">
 
-        <!-- Prediction Date Title -->
-        <TextView
-            android:id="@+id/tv_prediction_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/prediction_date"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/dividerA"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginVertical="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_prediction_date" />
-
-        <!-- Processor Label -->
-        <TextView
-            android:id="@+id/tv_os_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/operating_system"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dividerA" />
-
-        <!-- Processor Value -->
-        <TextView
-            android:id="@+id/tv_os_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:text="@string/mac_windows"
-            android:textSize="14sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_os_label" />
-
-        <!-- RAM Label -->
-        <TextView
-            android:id="@+id/tv_ram_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/ram_size"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@id/btn_prediction_detail"
-            app:layout_constraintStart_toStartOf="@id/btn_prediction_detail"
-            app:layout_constraintTop_toBottomOf="@id/tv_prediction_date" />
-
-        <!-- RAM Value -->
-        <TextView
-            android:id="@+id/tv_ram_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:text="@string/x_gb"
-            android:textSize="14sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintStart_toStartOf="@id/tv_ram_label"
-            app:layout_constraintTop_toBottomOf="@id/tv_ram_label" />
-
-        <!-- GPU Label -->
-        <TextView
-            android:id="@+id/tv_processor_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:text="@string/processor"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/btn_prediction_detail" />
-
-        <!-- Prediction Detail Button -->
-        <Button
-            android:id="@+id/btn_prediction_detail"
-            style="@style/Widget.Material3.Button.TonalButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="12dp"
-            android:text="@string/prediction_detail"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_laptop_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/laptop"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_ram_value" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
 
-        <!-- GPU Value -->
         <TextView
             android:id="@+id/tv_processor_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:text="@string/intel_amd"
+            android:layout_marginStart="8dp"
+            android:text="@string/processor"
             android:textSize="14sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintEnd_toStartOf="@+id/btn_prediction_detail"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_processor_label" />
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/iv_laptop_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_price_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/predicted_price"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/iv_laptop_icon"
+            app:layout_constraintTop_toBottomOf="@+id/tv_processor_value" />
+
+        <TextView
+            android:id="@+id/tv_specs_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/specs"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_processor_value"
+            app:layout_constraintTop_toBottomOf="@+id/tv_price_value" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_go_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/baseline_arrow_forward_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

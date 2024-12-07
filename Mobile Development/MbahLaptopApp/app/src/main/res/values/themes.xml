@@ -3,7 +3,7 @@
     <style name="Base.Theme.MbahLaptop" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="fontFamily">@font/lato</item>
+        <item name="fontFamily">@font/inter_variablefont_opsz_wght</item>
         <item name="colorPrimary">@color/light_blue</item>
         <item name="android:windowActivityTransitions">true</item>
         <item name="android:windowEnterTransition">@android:transition/explode</item>

@@ -33,7 +33,7 @@ fun String.withCurrencyFormat(): String {
     return numberFormat.format(this.toDouble()).toString()
 }
 
-fun formatNumber(value: Float): String {
+fun formatGBValue(value: Float): String {
     val roundValue = value.toInt()
     return "$roundValue GB"
 }

@@ -1,6 +1,5 @@
 package com.reza.mbahlaptop.ui.main.history
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,8 +9,8 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.reza.mbahlaptop.data.Result
+import com.reza.mbahlaptop.data.local.entity.ResultEntity
 import com.reza.mbahlaptop.databinding.FragmentHistoryBinding
-import com.reza.mbahlaptop.ui.result.ResultActivity
 import com.reza.mbahlaptop.utils.ViewModelFactory
 
 class HistoryFragment : Fragment() {
@@ -24,13 +23,7 @@ class HistoryFragment : Fragment() {
         factory
     }
 
-    private val historyAdapter = HistoryAdapter(
-        onDetailClick = { result ->
-            val intent = Intent(requireContext(), ResultActivity::class.java)
-            intent.putExtra("RESULT", result)
-            startActivity(intent)
-        }
-    )
+    private val historyAdapter = HistoryAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -62,7 +55,8 @@ class HistoryFragment : Fragment() {
                     is Result.Success -> {
                         binding.progressBar.visibility = View.GONE
                         val resultData = result.data
-                        historyAdapter.submitList(resultData)
+                        val listWithHeaders = prepareListWithHeaders(resultData)
+                        historyAdapter.submitList(listWithHeaders)
                         binding.rvResultList.apply {
                             layoutManager = LinearLayoutManager(context)
                             setHasFixedSize(true)
@@ -72,15 +66,11 @@ class HistoryFragment : Fragment() {
 
                     is Result.Error -> {
                         binding.progressBar.visibility = View.GONE
-                        view?.let {
-                            Snackbar.make(
-                                requireActivity(),
-                                it,
-                                "Error Occurred: ${result.error}",
-                                Snackbar.LENGTH_SHORT
-                            ).setAction("Dismiss") {
-                            }.show()
-                        }
+                        Snackbar.make(
+                            requireView(),
+                            "Error Occurred: ${result.error}",
+                            Snackbar.LENGTH_SHORT
+                        ).setAction("Dismiss") {}.show()
                     }
                 }
             } else {
@@ -92,5 +82,23 @@ class HistoryFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    sealed class ListItem {
+        data class Header(val date: String) : ListItem()
+        data class Content(val result: ResultEntity) : ListItem()
+    }
+
+    private fun prepareListWithHeaders(results: List<ResultEntity>): List<ListItem> {
+        val groupedResults = results.groupBy { it.date }
+        val sortedDates = groupedResults.keys.sortedDescending()
+
+        val listItems = mutableListOf<ListItem>()
+        sortedDates.forEach { date ->
+            listItems.add(ListItem.Header(date))
+            listItems.addAll(groupedResults[date]!!.map { ListItem.Content(it) })
+        }
+
+        return listItems
     }
 }

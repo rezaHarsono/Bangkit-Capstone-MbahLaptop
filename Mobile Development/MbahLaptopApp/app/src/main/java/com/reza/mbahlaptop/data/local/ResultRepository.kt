@@ -19,9 +19,9 @@ class ResultRepository private constructor(
         emitSource(localData)
     }
 
-    suspend fun deleteResult(result: ResultEntity) {
+    suspend fun deleteAllResult() {
         withContext(Dispatchers.IO) {
-            resultDao.deleteResult(result)
+            resultDao.deleteAllResult()
         }
     }
 

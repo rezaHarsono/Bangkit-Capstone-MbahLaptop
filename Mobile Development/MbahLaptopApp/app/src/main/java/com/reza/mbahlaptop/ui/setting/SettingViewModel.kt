@@ -16,5 +16,4 @@ class SettingViewModel(private val preferences: SettingsPreferences) : ViewModel
             preferences.saveThemeSetting(isDarkModeActive)
         }
     }
-
 }

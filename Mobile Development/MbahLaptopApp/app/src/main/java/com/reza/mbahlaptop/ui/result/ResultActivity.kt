@@ -2,15 +2,14 @@ package com.reza.mbahlaptop.ui.result
 
 import android.os.Build
 import android.os.Bundle
-import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.data.local.entity.ResultEntity
 import com.reza.mbahlaptop.databinding.ActivityResultBinding
+import com.reza.mbahlaptop.utils.DateUtils
 import com.reza.mbahlaptop.utils.TemplateActivity
-import com.reza.mbahlaptop.utils.formatNumber
+import com.reza.mbahlaptop.utils.formatGBValue
 import com.reza.mbahlaptop.utils.withCurrencyFormat
 
 class ResultActivity : TemplateActivity() {
@@ -48,13 +47,13 @@ class ResultActivity : TemplateActivity() {
             val highestPrice = it.highestPrice.withCurrencyFormat().substringBefore(",")
             binding.apply {
                 tvResultPrice.text = getString(R.string.price_range, lowestPrice, highestPrice)
-                tvResultTime.text = it.date
+                tvResultTime.text = DateUtils.formatDate(it.date)
                 tvResultOs.text = it.os
                 tvResultProcessor.text = it.processor
                 tvResultGpu.text = it.gpu
-                tvResultRam.text = formatNumber(it.ram)
+                tvResultRam.text = formatGBValue(it.ram)
                 tvResultStorageType.text = it.storageType
-                tvResultStorageSize.text = formatNumber(it.storage)
+                tvResultStorageSize.text = formatGBValue(it.storage)
                 tvResultResolution.text = it.displayRes
                 tvResultLowestPrice.text = lowestPrice
                 tvResultHighestPrice.text = highestPrice

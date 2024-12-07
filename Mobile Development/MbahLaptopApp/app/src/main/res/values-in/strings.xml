@@ -29,7 +29,6 @@
     <string name="prediction_date">Tanggal Prediksi</string>
     <string name="processor">Prosesor :</string>
     <string name="intel_amd">INTEL/AMD</string>
-    <string name="ram_size">Ukuran Ram :</string>
     <string name="x_gb">X GB</string>
     <string name="prediction_detail">Detail Prediksi</string>
     <string name="insert_your_laptop_spesification_below">Masukkan spesifikasi laptop anda di bawah ini</string>
@@ -46,7 +45,6 @@
     <string name="guest">Tamu</string>
     <string name="dark">Gelap</string>
     <string name="light">Terang</string>
-    <string name="operating_system">Sistem Operasi :</string>
     <string name="mac_windows">MAC/Windows</string>
     <string name="user_setting">Pengaturan Pengguna</string>
     <string name="predicted_price_result">Hasil Prediksi Harga</string>
@@ -92,4 +90,11 @@
     <string name="signed_out_success">Berhasil keluar!</string>
     <string name="no_history_detected">Tidak Ada Riwayat Terdeteksi</string>
     <string name="price_range">%1$s - %2$s</string>
+    <string name="machine_learning">Machine Learning</string>
+    <string name="mobile_development">Mobile Development</string>
+    <string name="cloud_computing">Cloud Computing</string>
+    <string name="specs">Spesifikasi</string>
+    <string name="predicted_price_format">Harga Terprediksi: %1$s</string>
+    <string name="specs_format">Spesifikasi: %1$s, %2$s, %3$s</string>
+    <string name="data_management">Kelola Data</string>
 </resources>

@@ -20,6 +20,8 @@ import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivitySettingBinding
 import com.reza.mbahlaptop.ui.about.AboutActivity
 import com.reza.mbahlaptop.ui.main.HandleLoginActivity
+import com.reza.mbahlaptop.ui.main.history.HistoryViewModel
+import com.reza.mbahlaptop.utils.ViewModelFactory
 import kotlinx.coroutines.launch
 
 class SettingActivity : AppCompatActivity() {
@@ -31,9 +33,14 @@ class SettingActivity : AppCompatActivity() {
     private var user: FirebaseUser? = null
 
     private lateinit var preferences: SettingsPreferences
-    private lateinit var factory: SettingViewModelFactory
-    private val viewModel: SettingViewModel by viewModels {
-        factory
+    private lateinit var settingFactory: SettingViewModelFactory
+    private val settingViewModel: SettingViewModel by viewModels {
+        settingFactory
+    }
+
+    private lateinit var historyFactory: ViewModelFactory
+    private val historyViewModel: HistoryViewModel by viewModels {
+        historyFactory
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,7 +58,8 @@ class SettingActivity : AppCompatActivity() {
         db = FirebaseFirestore.getInstance()
 
         preferences = SettingsPreferences.getInstance(this.dataStore)
-        factory = SettingViewModelFactory(preferences)
+        settingFactory = SettingViewModelFactory(preferences)
+        historyFactory = ViewModelFactory.getInstance(this)
 
         setupView()
         setupAction()
@@ -87,19 +95,22 @@ class SettingActivity : AppCompatActivity() {
 
     private fun setupAction() {
         binding?.apply {
-            user?.let {
-                buttonLogout.setOnClickListener {
-                    signOut()
-                }
-            }
             buttonLanguage.setOnClickListener {
                 startActivity(Intent(this@SettingActivity, LanguageActivity::class.java))
+            }
+            switchTheme.setOnCheckedChangeListener { _, isChecked: Boolean ->
+                settingViewModel.saveThemeSetting(isChecked)
             }
             buttonAbout.setOnClickListener {
                 startActivity(Intent(this@SettingActivity, AboutActivity::class.java))
             }
-            switchTheme.setOnCheckedChangeListener { _, isChecked: Boolean ->
-                viewModel.saveThemeSetting(isChecked)
+            buttonClearHistory.setOnClickListener {
+                historyViewModel.deleteAllResult()
+            }
+            user?.let {
+                buttonLogout.setOnClickListener {
+                    signOut()
+                }
             }
         }
     }
@@ -132,7 +143,7 @@ class SettingActivity : AppCompatActivity() {
     }
 
     private fun changeTheme() {
-        viewModel.getThemeSetting().observe(this) { isDarkModeActive: Boolean ->
+        settingViewModel.getThemeSetting().observe(this) { isDarkModeActive: Boolean ->
             if (isDarkModeActive) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 binding?.apply {
