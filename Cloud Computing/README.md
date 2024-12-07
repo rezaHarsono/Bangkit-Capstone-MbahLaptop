@@ -17,7 +17,7 @@ The Predicts Laptop Prices API is a machine learning-based service designed to p
 # API Location
 Steps:
 - Develop Machine Learning Model : Use TensorFlow Lite (.tflite) based machine learning models to predict laptop prices.
-- Build REST API using :
+- Build REST API using Python
 - Method : Post
 - Deploy on Cloud Run : Use Cloud Run to execute the API
 - Endpoint : https://laptop-price-predictor-api-642507985346.asia-southeast2.run.app/
