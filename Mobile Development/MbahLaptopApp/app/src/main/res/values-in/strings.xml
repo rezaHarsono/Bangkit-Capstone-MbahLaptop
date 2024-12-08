@@ -7,9 +7,6 @@
     <string name="intro_info">Mulai Prediksi Harga Laptop Anda Sekarang!</string>
     <string name="login">Masuk</string>
     <string name="register">Daftar</string>
-    <string name="mbahlaptop">MbahLaptop</string>
-    <string name="register_ask">Belum memiliki akun?</string>
-    <string name="register_now">Daftar Sekarang!</string>
     <string name="error_email_invalid">Format email tidak valid</string>
     <string name="email">Email</string>
     <string name="error_password_invalid">Password harus memiliki setidaknya 8 karakter</string>
@@ -20,10 +17,8 @@
     <string name="title_predict">Prediksi</string>
     <string name="login_as_guest">Masuk Sebagai Tamu</string>
     <string name="mbah_laptop_image">Gambar Mbah Laptop</string>
-    <string name="laptop_image">Gambar Laptop</string>
     <string name="or">Atau</string>
     <string name="logout">Keluar</string>
-    <string name="cancel">Batal</string>
     <string name="error_login_invalid">Username atau password salah. \nTolong coba lagi</string>
     <string name="please_fill_all_fields">Isi semua kolom terlebih dahulu</string>
     <string name="prediction_date">Tanggal Prediksi</string>
@@ -62,7 +57,6 @@
     <string name="highest_price_recommendation">Rekomendasi Harga Tertinggi</string>
     <string name="laptop_name">Nama Laptop</string>
     <string name="price">Harga</string>
-    <string name="predict_the_price_of_any_laptop">Prediksi harga dari laptop apapun</string>
     <string name="powered_by_machine_learning">Ditenagai oleh Machine Learning</string>
     <string name="try_now">Coba Sekarang</string>
     <string name="latest_news">Berita Terbaru</string>
@@ -99,4 +93,8 @@
     <string name="data_management">Kelola Data</string>
     <string name="title_news">Berita</string>
     <string name="get_the_best_price_for_your_laptop">Dapatkan harga terbaik untuk laptop anda</string>
+    <string name="app_logo">Logo Aplikasi</string>
+    <string name="sign_up_or_login_bellow_to_to_start_predict_your_laptop_price_now">Daftar atau masuk di bawah ini untuk memulai prediksi harga laptop anda</string>
+    <string name="get_started">Masuk</string>
+    <string name="login_with_google">Masuk dengan Akun Google</string>
 </resources>

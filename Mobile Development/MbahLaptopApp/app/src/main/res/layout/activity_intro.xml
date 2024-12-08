@@ -61,53 +61,23 @@
             app:layout_constraintTop_toBottomOf="@id/intro_info"
             tools:alpha="100" />
 
-        <Button
-            android:id="@+id/btn_login"
-            style="@style/Widget.AppCompat.Button.Colored"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_start"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="40dp"
             android:alpha="0"
+            android:backgroundTint="@color/light_blue"
             android:padding="16dp"
-            android:text="@string/login"
+            android:text="@string/get_started"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/intro_image"
-            tools:alpha="100" />
-
-        <Button
-            android:id="@+id/btn_register"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="40dp"
-            android:alpha="0"
-            android:padding="16dp"
-            android:text="@string/register"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_login"
-            tools:alpha="100" />
-
-        <Button
-            android:id="@+id/btn_guest"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0"
-            android:text="@string/login_as_guest"
-            android:textColor="#1976D2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_register"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.ExtraSmall"
             tools:alpha="100" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

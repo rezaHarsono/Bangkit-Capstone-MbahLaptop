@@ -97,5 +97,5 @@ dependencies {
 
 
     //Buttom Navigation
-    implementation("com.github.Kwasow:BottomNavigationCircles-Android:1.2")
+    implementation(libs.bottomnavigationcircles.android)
 }

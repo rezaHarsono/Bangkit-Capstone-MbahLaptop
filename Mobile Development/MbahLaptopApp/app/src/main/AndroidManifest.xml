@@ -16,6 +16,10 @@
         android:theme="@style/Base.Theme.MbahLaptop"
         tools:targetApi="34">
         <activity
+            android:name=".ui.auth.AuthActivity"
+            android:theme="@style/Theme.Material3.Light"
+            android:exported="false" />
+        <activity
             android:name=".utils.TemplateActivity"
             android:exported="false" />
         <activity
@@ -39,14 +43,6 @@
             android:name=".ui.main.MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main" />
-        <activity
-            android:name=".ui.auth.register.RegisterActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Material3.Light"/>
-        <activity
-            android:name=".ui.auth.login.LoginActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Material3.Light"/>
         <activity
             android:name=".ui.intro.IntroActivity"
             android:exported="false"

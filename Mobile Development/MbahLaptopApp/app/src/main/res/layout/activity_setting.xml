@@ -139,7 +139,7 @@
                         app:leadingIcon="@drawable/outline_palette_24"
                         app:text="@string/theme" />
 
-                    <com.google.android.material.switchmaterial.SwitchMaterial
+                    <com.google.android.material.materialswitch.MaterialSwitch
                         android:id="@+id/switch_theme"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
@@ -149,7 +149,7 @@
                         app:layout_constraintBottom_toBottomOf="@+id/button_theme"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:switchPadding="4dp" />
+                        app:switchPadding="8dp" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <com.google.android.material.divider.MaterialDivider
@@ -221,7 +221,7 @@
             app:layout_constraintTop_toBottomOf="@+id/card_data"
             app:layout_constraintVertical_bias="1">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_logout"
                 style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="match_parent"
@@ -229,7 +229,9 @@
                 android:gravity="center"
                 android:text="@string/logout"
                 android:textColor="?attr/colorError"
-                android:visibility="gone" />
+                app:icon="@drawable/baseline_logout_24"
+                app:iconGravity="textStart"
+                app:iconTint="@color/design_default_color_error" />
 
         </androidx.cardview.widget.CardView>
 

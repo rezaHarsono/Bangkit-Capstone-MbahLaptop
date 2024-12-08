@@ -71,6 +71,7 @@
             android:layout_height="wrap_content"
             app:tabIndicatorAnimationMode="elastic"
             app:tabIndicatorColor="?attr/colorOnBackground"
+            app:tabIndicatorFullWidth="true"
             app:tabIndicatorHeight="4dp"
             app:tabRippleColor="?attr/colorOutlineVariant"
             app:tabSelectedTextColor="?attr/colorOnBackground"

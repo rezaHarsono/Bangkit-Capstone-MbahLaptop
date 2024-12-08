@@ -9,9 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
 import com.reza.mbahlaptop.databinding.ActivityIntroBinding
-import com.reza.mbahlaptop.ui.auth.login.LoginActivity
-import com.reza.mbahlaptop.ui.auth.register.RegisterActivity
-import com.reza.mbahlaptop.ui.main.MainActivity
+import com.reza.mbahlaptop.ui.auth.AuthActivity
 
 class IntroActivity : AppCompatActivity() {
 
@@ -25,24 +23,8 @@ class IntroActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-        binding.btnLogin.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(
-                intent,
-                ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle()
-            )
-        }
-
-        binding.btnRegister.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(
-                intent,
-                ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle()
-            )
-        }
-
-        binding.btnGuest.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+        binding.btnStart.setOnClickListener {
+            val intent = Intent(this, AuthActivity::class.java)
             startActivity(
                 intent,
                 ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle()
@@ -57,19 +39,14 @@ class IntroActivity : AppCompatActivity() {
             ObjectAnimator.ofFloat(binding.introWelcome, View.ALPHA, 1f).setDuration(500)
         val introInfo = ObjectAnimator.ofFloat(binding.introInfo, View.ALPHA, 1f).setDuration(500)
         val introImage = ObjectAnimator.ofFloat(binding.introImage, View.ALPHA, 1f).setDuration(500)
-        val introLogin = ObjectAnimator.ofFloat(binding.btnLogin, View.ALPHA, 1f).setDuration(500)
-        val introRegister =
-            ObjectAnimator.ofFloat(binding.btnRegister, View.ALPHA, 1f).setDuration(500)
-        val introGuest = ObjectAnimator.ofFloat(binding.btnGuest, View.ALPHA, 1f).setDuration(500)
+        val introStart = ObjectAnimator.ofFloat(binding.btnStart, View.ALPHA, 1f).setDuration(500)
 
         AnimatorSet().apply {
             playSequentially(
                 introTitle,
                 introInfo,
                 introImage,
-                introLogin,
-                introRegister,
-                introGuest
+                introStart
             )
             start()
         }

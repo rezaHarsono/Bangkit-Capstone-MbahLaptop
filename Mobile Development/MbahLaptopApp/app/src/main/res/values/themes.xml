@@ -10,12 +10,4 @@
         <item name="android:windowExitTransition">@android:transition/explode</item>
     </style>
 
-    <style name="CustomBottomNavTextAppearanceActive" parent="@style/TextAppearance.AppCompat.Caption">
-        <item name="android:textSize">12sp</item> <!-- Customize text size -->
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="CustomBottomNavTextAppearanceInactive" parent="@style/TextAppearance.AppCompat.Caption">
-        <item name="android:textSize">10sp</item> <!-- Customize text size -->
-    </style>
 </resources>

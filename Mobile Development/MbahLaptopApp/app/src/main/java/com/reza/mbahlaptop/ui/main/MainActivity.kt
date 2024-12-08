@@ -10,7 +10,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.github.kwasow.bottomnavigationcircles.BottomNavigationCircles
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivityMainBinding
@@ -65,6 +64,7 @@ class MainActivity : TemplateActivity() {
                     navController.navigate(R.id.navigation_history)
                     true
                 }
+
                 else -> false
             }
         }
