@@ -1,30 +1,23 @@
 package com.reza.mbahlaptop.ui.main.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.snackbar.Snackbar
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import com.reza.mbahlaptop.R
-import com.reza.mbahlaptop.data.Result
 import com.reza.mbahlaptop.databinding.FragmentHomeBinding
+import com.reza.mbahlaptop.utils.updateHeight
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding
-
-    private val factory: HomeViewModelFactory = HomeViewModelFactory.getInstance()
-    private val viewModel: HomeViewModel by viewModels {
-        factory
-    }
-
-    private val newsAdapter = NewsAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,64 +30,49 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        displayData()
+
+        setupView()
 
         binding?.apply {
             btnPredict.setOnClickListener {
                 findNavController().navigate(R.id.action_home_to_predict)
             }
-
-            swipeRefreshHome.setOnRefreshListener {
-                displayData()
-                binding!!.swipeRefreshHome.isRefreshing = false
-            }
         }
 
     }
 
-    private fun displayData() {
-        viewModel.getNews().observe(viewLifecycleOwner) { result ->
-            if (result != null) {
-                when (result) {
-                    is Result.Loading -> {
-                        Log.d("LOADING", "Loading")
-                        binding?.shimmerNews?.visibility = View.VISIBLE
-                        binding?.shimmerNews?.startShimmer()
-                    }
+    private fun setupView() {
+        binding?.apply {
+            val sectionsPagerAdapter = HomePagerAdapter(requireParentFragment())
+            val viewPager: ViewPager2 = viewPager
+            val tabs: TabLayout = tabs
 
-                    is Result.Success -> {
-                        Log.d("SUCCESS", "Success")
-                        binding?.shimmerNews?.stopShimmer()
-                        binding?.shimmerNews?.visibility = View.GONE
-                        val newsData = result.data
-                        newsAdapter.submitList(newsData)
-                        binding!!.rvNewsList.apply {
-                            layoutManager = LinearLayoutManager(context)
-                            setHasFixedSize(true)
-                            adapter = newsAdapter
-                        }
-                    }
+            viewPager.adapter = sectionsPagerAdapter
+            viewPager.updateHeight()
 
-                    is Result.Error -> {
-                        binding?.shimmerNews?.stopShimmer()
-                        binding?.shimmerNews?.visibility = View.GONE
-                        view?.let {
-                            Snackbar.make(
-                                requireActivity(),
-                                it,
-                                "Error Occurred: ${result.error}",
-                                Snackbar.LENGTH_SHORT
-                            ).setAction("Dismiss") {
-                            }.show()
-                        }
-                    }
+            TabLayoutMediator(tabs, viewPager) { tab, position ->
+                tab.text = resources.getString(TAB_TITLES[position])
+            }.attach()
+
+            viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+                    viewPager.updateHeight()
                 }
-            }
+            })
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        @StringRes
+        private val TAB_TITLES = intArrayOf(
+            R.string.title_home,
+            R.string.title_news
+        )
     }
 }

@@ -97,4 +97,6 @@
     <string name="predicted_price_format">Harga Terprediksi: %1$s</string>
     <string name="specs_format">Spesifikasi: %1$s, %2$s, %3$s</string>
     <string name="data_management">Kelola Data</string>
+    <string name="title_news">Berita</string>
+    <string name="get_the_best_price_for_your_laptop">Dapatkan harga terbaik untuk laptop anda</string>
 </resources>

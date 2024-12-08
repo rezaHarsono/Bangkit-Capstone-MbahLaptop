@@ -38,13 +38,32 @@ class MainActivity : TemplateActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_predict, R.id.navigation_history
-            )
+            navController.graph
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        navView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+                    navController.popBackStack(R.id.navigation_home, true)
+                    navController.navigate(R.id.navigation_home)
+                    true
+                }
+
+                R.id.navigation_predict -> {
+                    navController.navigate(R.id.navigation_predict)
+                    true
+                }
+
+                R.id.navigation_history -> {
+                    navController.navigate(R.id.navigation_history)
+                    true
+                }
+
+                else -> false
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -55,8 +74,8 @@ class MainActivity : TemplateActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_setting -> {
-                val intent = Intent(this, SettingActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, SettingActivity::class.java))
+                return true
             }
         }
         return super.onOptionsItemSelected(item)

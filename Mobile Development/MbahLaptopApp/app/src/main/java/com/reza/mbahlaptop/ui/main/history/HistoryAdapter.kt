@@ -73,7 +73,8 @@ class HistoryAdapter :
             val storage = formatGBValue(result.storage)
             binding.apply {
                 tvProcessorValue.text = result.processor
-                tvPriceValue.text = itemView.context.getString(R.string.predicted_price_format, lowestPrice)
+                tvPriceValue.text =
+                    itemView.context.getString(R.string.predicted_price_format, lowestPrice)
                 tvSpecsValue.text =
                     itemView.context.getString(R.string.specs_format, ram, storage, result.os)
             }

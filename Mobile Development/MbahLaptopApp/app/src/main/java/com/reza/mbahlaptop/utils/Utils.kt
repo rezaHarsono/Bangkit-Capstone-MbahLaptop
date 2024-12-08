@@ -1,6 +1,8 @@
 package com.reza.mbahlaptop.utils
 
 import android.icu.text.NumberFormat
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import org.threeten.bp.ZonedDateTime
 import org.threeten.bp.format.DateTimeFormatter
 import org.threeten.bp.temporal.ChronoUnit
@@ -36,4 +38,13 @@ fun String.withCurrencyFormat(): String {
 fun formatGBValue(value: Float): String {
     val roundValue = value.toInt()
     return "$roundValue GB"
+}
+
+fun ViewPager2.updateHeight() {
+    val currentView = (getChildAt(0) as RecyclerView).layoutManager?.findViewByPosition(currentItem)
+    currentView?.post {
+        val params = layoutParams
+        params.height = currentView.measuredHeight
+        layoutParams = params
+    }
 }
