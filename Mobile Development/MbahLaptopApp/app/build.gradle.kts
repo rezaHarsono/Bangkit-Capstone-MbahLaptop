@@ -21,7 +21,11 @@ android {
 
         buildConfigField("String", "BASE_URL_NEWS", "\"https://newsapi.org/v2/\"")
         buildConfigField("String", "API_KEY", "\"93b21820d88640e3bea33203ff62dd7d\"")
-        buildConfigField("String", "BASE_URL_MODEL", "\"https://laptop-price-predictor-api-642507985346.asia-southeast2.run.app/\"")
+        buildConfigField(
+            "String",
+            "BASE_URL_MODEL",
+            "\"https://laptop-price-predictor-api-642507985346.asia-southeast2.run.app/\""
+        )
     }
 
     buildTypes {
@@ -87,7 +91,11 @@ dependencies {
     implementation(libs.googleid)
 
     //Utilities
-    implementation (libs.threetenabp)
-    implementation (libs.shimmer)
+    implementation(libs.threetenabp)
+    implementation(libs.shimmer)
     implementation(libs.androidx.swiperefreshlayout)
+
+
+    //Buttom Navigation
+    implementation("com.github.Kwasow:BottomNavigationCircles-Android:1.2")
 }

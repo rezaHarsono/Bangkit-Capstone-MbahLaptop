@@ -9,6 +9,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.github.kwasow.bottomnavigationcircles.BottomNavigationCircles
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.reza.mbahlaptop.R
@@ -30,7 +31,9 @@ class MainActivity : TemplateActivity() {
 
         setSupportActionBar(binding.myToolbar)
 
-        val navView: BottomNavigationView = binding.navView
+        val navView: BottomNavigationCircles = binding.bottomCircle
+
+        navView.isItemActiveIndicatorEnabled = false
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
@@ -38,7 +41,9 @@ class MainActivity : TemplateActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
-            navController.graph
+            setOf(
+                R.id.navigation_home, R.id.navigation_predict, R.id.navigation_history
+            )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
@@ -60,7 +65,6 @@ class MainActivity : TemplateActivity() {
                     navController.navigate(R.id.navigation_history)
                     true
                 }
-
                 else -> false
             }
         }

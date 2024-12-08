@@ -16,26 +16,51 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
         app:navGraph="@navigation/mobile_navigation" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+    <!--        android:id="@+id/nav_view"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="64dp"-->
+    <!--        android:background="?attr/colorOnSurfaceInverse"-->
+    <!--        android:elevation="8dp"-->
+    <!--        app:itemIconSize="24dp"-->
+    <!--        app:itemPaddingBottom="12dp"-->
+    <!--        app:itemPaddingTop="8dp"-->
+    <!--        app:itemTextAppearanceActive="@style/CustomBottomNavTextAppearanceActive"-->
+    <!--        app:itemTextAppearanceInactive="@style/CustomBottomNavTextAppearanceInactive"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:menu="@menu/bottom_nav_menu" />-->
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/nav_view"
-        android:layout_width="0dp"
-        android:layout_height="64dp"
-        android:background="?attr/colorOnSurfaceInverse"
-        android:elevation="8dp"
-        app:itemIconSize="24dp"
-        app:itemPaddingBottom="12dp"
-        app:itemPaddingTop="8dp"
-        app:itemTextAppearanceActive="@style/CustomBottomNavTextAppearanceActive"
-        app:itemTextAppearanceInactive="@style/CustomBottomNavTextAppearanceInactive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.github.kwasow.bottomnavigationcircles.BottomNavigationCircles
+            android:id="@+id/bottom_circle"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="bottom"
+            android:elevation="8dp"
+            app:circleColor="@color/light_blue"
+            app:fabCradleMargin="15dp"
+            app:fabCradleRoundedCornerRadius="10dp"
+            app:fabCradleVerticalOffset="10dp"
+            app:itemIconSize="24dp"
+            app:itemPaddingBottom="12dp"
+            app:itemPaddingTop="8dp"
+            app:menu="@menu/bottom_nav_menu" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
