@@ -102,4 +102,5 @@
     <string name="instant_prediction_desc">Dapatkan perhitungan cepat untuk tahu berapa harga anda dapat menjual atau membeli laptop anda</string>
     <string name="full_specs_analysis">Analisa Spesifikasi Penuh</string>
     <string name="full_spec_analysis_desc">Kami akan menganalisa setiap spesifikasi dan memberikan anda laporan lengkap.</string>
+    <string name="predict_the_price_of_laptops_with_your_prefered_spesification">Prediksi harga laptop sesuai spesifikasi yang anda butuhkan</string>
 </resources>

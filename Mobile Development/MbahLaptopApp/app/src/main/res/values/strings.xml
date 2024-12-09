@@ -101,4 +101,5 @@
     <string name="instant_prediction_desc">Get a quick estimate on how much you can sell or buy your laptop for</string>
     <string name="full_specs_analysis">Full Specs Analysis</string>
     <string name="full_spec_analysis_desc">We\'ll analyze every spec and give you a detailed report</string>
+    <string name="predict_the_price_of_laptops_with_your_prefered_spesification">Predict the price of laptops with your prefered spesification.</string>
 </resources>
