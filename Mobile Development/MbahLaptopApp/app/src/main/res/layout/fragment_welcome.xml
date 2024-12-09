@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="4dp"
+        android:layout_marginTop="4dp"
         android:text="@string/instant_prediction"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -34,13 +34,13 @@
         android:layout_height="220dp"
         android:layout_marginTop="20dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/laptop_background_cozy"
+        android:src="@drawable/laptop_background_setup"
         app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="4dp"
+        android:layout_marginTop="4dp"
         android:text="@string/full_specs_analysis"
         android:textSize="18sp"
         android:textStyle="bold" />
