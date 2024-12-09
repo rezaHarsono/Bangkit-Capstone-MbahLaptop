@@ -204,7 +204,7 @@
                 android:paddingVertical="4dp"
                 android:textColor="?attr/colorOnBackground"
                 app:leadingIcon="@drawable/baseline_history_24"
-                app:text="Clear Prediction History"
+                app:text="@string/clear_prediction_history"
                 app:trailingIcon="@drawable/baseline_arrow_forward_ios_24" />
 
         </androidx.cardview.widget.CardView>

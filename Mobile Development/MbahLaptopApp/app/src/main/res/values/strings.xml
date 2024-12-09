@@ -102,4 +102,9 @@
     <string name="full_specs_analysis">Full Specs Analysis</string>
     <string name="full_spec_analysis_desc">We\'ll analyze every spec and give you a detailed report</string>
     <string name="predict_the_price_of_laptops_with_your_prefered_spesification">Predict the price of laptops with your prefered spesification.</string>
+    <string name="delete_history_message">Are you sure you want to delete all prediction history?</string>
+    <string name="yes">YES</string>
+    <string name="cancel">Cancel</string>
+    <string name="logout_message">Are you sure you want to logout?</string>
+    <string name="clear_prediction_history">Clear Prediction History</string>
 </resources>

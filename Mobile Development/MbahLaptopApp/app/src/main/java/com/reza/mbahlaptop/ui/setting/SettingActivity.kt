@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.credentials.ClearCredentialStateRequest
 import androidx.credentials.CredentialManager
 import androidx.lifecycle.lifecycleScope
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -105,12 +106,28 @@ class SettingActivity : AppCompatActivity() {
                 startActivity(Intent(this@SettingActivity, AboutActivity::class.java))
             }
             buttonClearHistory.setOnClickListener {
-                historyViewModel.deleteAllResult()
+                MaterialAlertDialogBuilder(this@SettingActivity)
+                    .setTitle(getString(R.string.clear_prediction_history))
+                    .setMessage(getString(R.string.delete_history_message))
+                    .setPositiveButton(getString(R.string.yes)) { _, _ ->
+                        historyViewModel.deleteAllResult()
+                    }
+                    .setNeutralButton(getString(R.string.cancel)) { _, _ ->
+                    }
+                    .show()
             }
             user?.let {
                 buttonLogout.visibility = View.VISIBLE
                 buttonLogout.setOnClickListener {
-                    signOut()
+                    MaterialAlertDialogBuilder(this@SettingActivity)
+                        .setTitle(resources.getString(R.string.logout))
+                        .setMessage(getString(R.string.logout_message))
+                        .setPositiveButton(getString(R.string.yes)) { _, _ ->
+                            signOut()
+                        }
+                        .setNeutralButton(getString(R.string.cancel)) { _, _ ->
+                        }
+                        .show()
                 }
             }
         }

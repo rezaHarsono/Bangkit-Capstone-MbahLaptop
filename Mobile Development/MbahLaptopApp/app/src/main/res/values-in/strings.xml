@@ -103,4 +103,9 @@
     <string name="full_specs_analysis">Analisa Spesifikasi Penuh</string>
     <string name="full_spec_analysis_desc">Kami akan menganalisa setiap spesifikasi dan memberikan anda laporan lengkap.</string>
     <string name="predict_the_price_of_laptops_with_your_prefered_spesification">Prediksi harga laptop sesuai spesifikasi yang anda butuhkan</string>
+    <string name="delete_history_message">Apakah anda yakin ingin menghapus seluruh riwayat prediksi?</string>
+    <string name="yes">YA</string>
+    <string name="cancel">Batal</string>
+    <string name="logout_message">Apa anda yakin ingin keluar akun?</string>
+    <string name="clear_prediction_history">Hapus Riwayat Prediksi</string>
 </resources>
