@@ -19,14 +19,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="4dp"
-        android:text="Instant Prediction"
+        android:text="@string/instant_prediction"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Get a quick estimate on how much you can sell or buy your laptop for"
+        android:text="@string/instant_prediction_desc"
         android:textColor="@color/non_active"
         android:textSize="16sp" />
 
@@ -42,14 +42,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="8dp"
-        android:text="Full Specs Analysis"
+        android:text="@string/full_specs_analysis"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="We'll analyze every spec and give you a detailed report"
+        android:text="@string/full_spec_analysis_desc"
         android:textColor="@color/non_active"
         android:textSize="16sp" />
 

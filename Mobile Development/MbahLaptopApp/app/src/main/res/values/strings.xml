@@ -97,4 +97,8 @@
     <string name="get_started">Get Started</string>
     <string name="login_with_google">Login with Google</string>
     <string name="or_continue_with_email">or continue with email</string>
+    <string name="instant_prediction">Instant Prediction</string>
+    <string name="instant_prediction_desc">Get a quick estimate on how much you can sell or buy your laptop for</string>
+    <string name="full_specs_analysis">Full Specs Analysis</string>
+    <string name="full_spec_analysis_desc">We\'ll analyze every spec and give you a detailed report</string>
 </resources>

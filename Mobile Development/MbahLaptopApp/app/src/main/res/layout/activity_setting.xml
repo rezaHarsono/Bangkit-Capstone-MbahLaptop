@@ -231,7 +231,9 @@
                 android:textColor="?attr/colorError"
                 app:icon="@drawable/baseline_logout_24"
                 app:iconGravity="textStart"
-                app:iconTint="@color/design_default_color_error" />
+                app:iconTint="@color/design_default_color_error"
+                android:visibility="gone"
+                />
 
         </androidx.cardview.widget.CardView>
 

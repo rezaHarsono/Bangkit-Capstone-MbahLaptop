@@ -97,4 +97,9 @@
     <string name="sign_up_or_login_bellow_to_to_start_predict_your_laptop_price_now">Daftar atau masuk di bawah ini untuk memulai prediksi harga laptop anda</string>
     <string name="get_started">Masuk</string>
     <string name="login_with_google">Masuk dengan Akun Google</string>
+    <string name="or_continue_with_email">atau lanjutkan dengan email</string>
+    <string name="instant_prediction">Prediksi Instan</string>
+    <string name="instant_prediction_desc">Dapatkan perhitungan cepat untuk tahu berapa harga anda dapat menjual atau membeli laptop anda</string>
+    <string name="full_specs_analysis">Analisa Spesifikasi Penuh</string>
+    <string name="full_spec_analysis_desc">Kami akan menganalisa setiap spesifikasi dan memberikan anda laporan lengkap.</string>
 </resources>

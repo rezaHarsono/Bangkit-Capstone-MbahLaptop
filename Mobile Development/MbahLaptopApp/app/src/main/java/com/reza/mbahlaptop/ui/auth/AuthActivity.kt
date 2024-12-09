@@ -1,6 +1,7 @@
 package com.reza.mbahlaptop.ui.auth
 
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
@@ -15,7 +16,8 @@ class AuthActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        enableEdgeToEdge()
+        
         _binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

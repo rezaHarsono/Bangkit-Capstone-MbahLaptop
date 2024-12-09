@@ -108,6 +108,7 @@ class SettingActivity : AppCompatActivity() {
                 historyViewModel.deleteAllResult()
             }
             user?.let {
+                buttonLogout.visibility = View.VISIBLE
                 buttonLogout.setOnClickListener {
                     signOut()
                 }

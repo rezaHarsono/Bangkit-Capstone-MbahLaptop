@@ -34,7 +34,7 @@
             android:id="@+id/bottom_circle"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:layout_gravity="bottom"
+            android:layout_gravity="bottom|center"
             android:elevation="8dp"
             app:circleColor="@color/light_blue"
             app:fabCradleMargin="15dp"
