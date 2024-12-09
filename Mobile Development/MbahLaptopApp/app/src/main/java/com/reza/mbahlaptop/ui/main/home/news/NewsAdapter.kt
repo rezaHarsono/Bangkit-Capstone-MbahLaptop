@@ -1,4 +1,4 @@
-package com.reza.mbahlaptop.ui.main.home
+package com.reza.mbahlaptop.ui.main.home.news
 
 import android.content.Intent
 import android.view.LayoutInflater

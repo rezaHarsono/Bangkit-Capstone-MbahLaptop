@@ -6,7 +6,9 @@ import com.reza.mbahlaptop.data.local.ResultRepository
 import kotlinx.coroutines.launch
 
 class HistoryViewModel(private val resultRepository: ResultRepository) : ViewModel() {
-    fun getAllResult() = resultRepository.getAllEvents()
+    fun getAllResult() = resultRepository.getAllResults()
+
+    fun getRecentResults() = resultRepository.getRecentResults()
 
     fun deleteAllResult() {
         viewModelScope.launch {

@@ -35,10 +35,10 @@ object DateUtils {
         val duration = ChronoUnit.SECONDS.between(parsedDateTime, now)
 
         return when {
-            duration < 60 -> "$duration seconds ago"
-            duration < 3600 -> "${TimeUnit.SECONDS.toMinutes(duration)} minutes ago"
-            duration < 86400 -> "${TimeUnit.SECONDS.toHours(duration)} hours ago"
-            else -> "${TimeUnit.SECONDS.toDays(duration)} days ago"
+            duration < 60 -> "${duration}s ago"
+            duration < 3600 -> "${TimeUnit.SECONDS.toMinutes(duration)}m ago"
+            duration < 86400 -> "${TimeUnit.SECONDS.toHours(duration)}h ago"
+            else -> "${TimeUnit.SECONDS.toDays(duration)}d ago"
         }
     }
 }

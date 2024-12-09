@@ -12,10 +12,17 @@ import kotlinx.coroutines.withContext
 class ResultRepository private constructor(
     private val resultDao: ResultDao
 ) {
-    fun getAllEvents(): LiveData<Result<List<ResultEntity>>> = liveData {
+    fun getAllResults(): LiveData<Result<List<ResultEntity>>> = liveData {
         emit(Result.Loading)
         val localData: LiveData<Result<List<ResultEntity>>> =
             resultDao.getAllResult().map { Result.Success(it) }
+        emitSource(localData)
+    }
+
+    fun getRecentResults(): LiveData<Result<List<ResultEntity>>> = liveData {
+        emit(Result.Loading)
+        val localData: LiveData<Result<List<ResultEntity>>> =
+            resultDao.getRecentResults().map { Result.Success(it) }
         emitSource(localData)
     }
 

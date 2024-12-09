@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">MbahLaptop</string>
-    <!-- Strings used for fragments for navigation -->
-
     <string name="intro_welcome">Welcome To MbahLaptop</string>
-    <string name="intro_info">Start Predict Your Laptop Prices Now!</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="error_email_invalid">Invalid email format</string>
@@ -92,7 +89,6 @@
     <string name="data_management">Data Management</string>
     <string name="title_news">News</string>
     <string name="get_the_best_price_for_your_laptop">Get the best price for your laptop</string>
-    <string name="app_logo">App Logo</string>
     <string name="sign_up_or_login_bellow_to_to_start_predict_your_laptop_price_now">Sign up or login bellow to to start predict your laptop price now</string>
     <string name="get_started">Get Started</string>
     <string name="login_with_google">Login with Google</string>
@@ -107,4 +103,6 @@
     <string name="cancel">Cancel</string>
     <string name="logout_message">Are you sure you want to logout?</string>
     <string name="clear_prediction_history">Clear Prediction History</string>
+    <string name="recent_prediction">Recent Prediction</string>
+    <string name="see_all">See All</string>
 </resources>

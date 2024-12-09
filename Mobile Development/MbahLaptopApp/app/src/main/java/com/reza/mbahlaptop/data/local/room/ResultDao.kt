@@ -15,6 +15,9 @@ interface ResultDao {
     @Query("DELETE FROM result")
     suspend fun deleteAllResult()
 
-    @Query("SELECT * FROM result ORDER BY id ")
+    @Query("SELECT * FROM result ORDER BY id DESC ")
     fun getAllResult(): LiveData<List<ResultEntity>>
+
+    @Query("SELECT * FROM result ORDER BY id DESC LIMIT 1")
+    fun getRecentResults(): LiveData<List<ResultEntity>>
 }

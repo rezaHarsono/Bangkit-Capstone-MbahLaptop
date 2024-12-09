@@ -4,7 +4,6 @@
     <!-- Strings used for fragments for navigation -->
 
     <string name="intro_welcome">Selamat Datang di MbahLaptop</string>
-    <string name="intro_info">Mulai Prediksi Harga Laptop Anda Sekarang!</string>
     <string name="login">Masuk</string>
     <string name="register">Daftar</string>
     <string name="error_email_invalid">Format email tidak valid</string>
@@ -93,7 +92,6 @@
     <string name="data_management">Kelola Data</string>
     <string name="title_news">Berita</string>
     <string name="get_the_best_price_for_your_laptop">Dapatkan harga terbaik untuk laptop anda</string>
-    <string name="app_logo">Logo Aplikasi</string>
     <string name="sign_up_or_login_bellow_to_to_start_predict_your_laptop_price_now">Daftar atau masuk di bawah ini untuk memulai prediksi harga laptop anda</string>
     <string name="get_started">Masuk</string>
     <string name="login_with_google">Masuk dengan Akun Google</string>
@@ -108,4 +106,6 @@
     <string name="cancel">Batal</string>
     <string name="logout_message">Apa anda yakin ingin keluar akun?</string>
     <string name="clear_prediction_history">Hapus Riwayat Prediksi</string>
+    <string name="recent_prediction">Riwayat Prediksi Terbaru</string>
+    <string name="see_all">Lihat Semua</string>
 </resources>

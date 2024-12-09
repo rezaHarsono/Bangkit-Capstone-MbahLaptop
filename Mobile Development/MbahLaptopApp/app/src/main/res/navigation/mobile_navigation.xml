@@ -27,4 +27,10 @@
         app:destination="@+id/navigation_predict"
         app:popUpTo="@+id/navigation_home"
         app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_home_to_history"
+        app:destination="@+id/navigation_history"
+        app:popUpTo="@id/navigation_home"
+        app:popUpToInclusive="true" />
 </navigation>

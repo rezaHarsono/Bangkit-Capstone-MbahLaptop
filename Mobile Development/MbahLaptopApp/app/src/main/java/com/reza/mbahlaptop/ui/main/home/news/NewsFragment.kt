@@ -16,7 +16,6 @@ import com.reza.mbahlaptop.data.Result
 import com.reza.mbahlaptop.databinding.FragmentNewsBinding
 import com.reza.mbahlaptop.ui.main.home.HomeViewModel
 import com.reza.mbahlaptop.ui.main.home.HomeViewModelFactory
-import com.reza.mbahlaptop.ui.main.home.NewsAdapter
 import com.reza.mbahlaptop.utils.updateHeight
 
 
