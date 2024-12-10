@@ -39,6 +39,8 @@
                 <include layout="@layout/placeholder_item" />
 
                 <include layout="@layout/placeholder_item" />
+
+                <include layout="@layout/placeholder_item" />
             </LinearLayout>
 
         </com.facebook.shimmer.ShimmerFrameLayout>

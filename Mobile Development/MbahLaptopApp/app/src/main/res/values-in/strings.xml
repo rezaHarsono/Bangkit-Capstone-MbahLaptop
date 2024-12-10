@@ -106,6 +106,7 @@
     <string name="cancel">Batal</string>
     <string name="logout_message">Apa anda yakin ingin keluar akun?</string>
     <string name="clear_prediction_history">Hapus Riwayat Prediksi</string>
-    <string name="recent_prediction">Riwayat Prediksi Terbaru</string>
+    <string name="recent_prediction">Prediksi Terbaru</string>
     <string name="see_all">Lihat Semua</string>
+    <string name="login_to_account">Masuk ke Akun</string>
 </resources>

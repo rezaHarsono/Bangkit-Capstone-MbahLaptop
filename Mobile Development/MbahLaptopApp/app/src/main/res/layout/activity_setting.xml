@@ -232,7 +232,34 @@
                 android:visibility="gone"
                 app:icon="@drawable/baseline_logout_24"
                 app:iconGravity="textStart"
-                app:iconTint="@color/design_default_color_error" />
+                app:iconTint="@color/design_default_color_error"
+                tools:visibility="visible" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:backgroundTint="@color/light_blue"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_data"
+            app:layout_constraintVertical_bias="1">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/login_to_account"
+                android:visibility="gone"
+                app:icon="@drawable/baseline_login_24"
+                app:iconGravity="textStart"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.ExtraSmall"
+                tools:visibility="visible" />
 
         </androidx.cardview.widget.CardView>
 

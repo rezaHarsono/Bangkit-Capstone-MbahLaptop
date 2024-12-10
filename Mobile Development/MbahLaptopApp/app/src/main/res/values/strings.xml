@@ -105,4 +105,5 @@
     <string name="clear_prediction_history">Clear Prediction History</string>
     <string name="recent_prediction">Recent Prediction</string>
     <string name="see_all">See All</string>
+    <string name="login_to_account">Login to Account</string>
 </resources>

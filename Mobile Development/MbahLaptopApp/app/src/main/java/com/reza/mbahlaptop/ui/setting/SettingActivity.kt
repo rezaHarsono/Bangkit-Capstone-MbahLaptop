@@ -20,6 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.reza.mbahlaptop.R
 import com.reza.mbahlaptop.databinding.ActivitySettingBinding
 import com.reza.mbahlaptop.ui.about.AboutActivity
+import com.reza.mbahlaptop.ui.auth.AuthActivity
 import com.reza.mbahlaptop.ui.main.HandleLoginActivity
 import com.reza.mbahlaptop.ui.main.history.HistoryViewModel
 import com.reza.mbahlaptop.utils.ViewModelFactory
@@ -87,8 +88,10 @@ class SettingActivity : AppCompatActivity() {
             user?.let {
                 tvUserName.text = username
                 tvUserEmail.visibility = View.VISIBLE
-                tvUserEmail.text = user?.email
+                tvUserEmail.text = it.email
                 buttonLogout.visibility = View.VISIBLE
+            } ?: run {
+                buttonLogin.visibility = View.VISIBLE
             }
         }
         changeTheme()
@@ -117,7 +120,6 @@ class SettingActivity : AppCompatActivity() {
                     .show()
             }
             user?.let {
-                buttonLogout.visibility = View.VISIBLE
                 buttonLogout.setOnClickListener {
                     MaterialAlertDialogBuilder(this@SettingActivity)
                         .setTitle(resources.getString(R.string.logout))
@@ -128,6 +130,10 @@ class SettingActivity : AppCompatActivity() {
                         .setNeutralButton(getString(R.string.cancel)) { _, _ ->
                         }
                         .show()
+                }
+            } ?: run {
+                buttonLogin.setOnClickListener {
+                    startActivity(Intent(this@SettingActivity, AuthActivity::class.java))
                 }
             }
         }
