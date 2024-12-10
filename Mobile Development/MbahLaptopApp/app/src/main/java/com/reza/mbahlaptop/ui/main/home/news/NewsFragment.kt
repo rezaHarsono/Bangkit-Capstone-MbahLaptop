@@ -41,11 +41,6 @@ class NewsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         displayData()
-
-        binding?.swipeRefreshHome?.setOnRefreshListener {
-            displayData()
-            binding!!.swipeRefreshHome.isRefreshing = false
-        }
     }
 
     private fun displayData() {
