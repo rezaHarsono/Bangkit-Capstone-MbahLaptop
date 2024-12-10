@@ -89,7 +89,7 @@
     <string name="data_management">Data Management</string>
     <string name="title_news">News</string>
     <string name="get_the_best_price_for_your_laptop">Get the best price for your laptop</string>
-    <string name="sign_up_or_login_bellow_to_to_start_predict_your_laptop_price_now">Sign up or login bellow to to start predict your laptop price now</string>
+    <string name="sign_up_or_login_bellow_to_to_start_predict_your_laptop_price_now">Sign up or login bellow to start predict your laptop price now</string>
     <string name="get_started">Get Started</string>
     <string name="login_with_google">Login with Google</string>
     <string name="or_continue_with_email">or continue with email</string>
@@ -97,7 +97,7 @@
     <string name="instant_prediction_desc">Get a quick estimate on how much you can sell or buy your laptop for</string>
     <string name="full_specs_analysis">Full Specs Analysis</string>
     <string name="full_spec_analysis_desc">We\'ll analyze every spec and give you a detailed report</string>
-    <string name="predict_the_price_of_laptops_with_your_prefered_spesification">Predict the price of laptops with your prefered spesification.</string>
+    <string name="predict_the_price_of_laptops_with_your_prefered_spesification">Predict the price of laptops with your preferred spesification.</string>
     <string name="delete_history_message">Are you sure you want to delete all prediction history?</string>
     <string name="yes">YES</string>
     <string name="cancel">Cancel</string>
@@ -106,4 +106,5 @@
     <string name="recent_prediction">Recent Prediction</string>
     <string name="see_all">See All</string>
     <string name="login_to_account">Login to Account</string>
+    <string name="processor_brand">Processor Brand</string>
 </resources>

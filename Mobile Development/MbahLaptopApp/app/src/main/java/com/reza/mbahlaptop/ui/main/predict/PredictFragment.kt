@@ -2,6 +2,7 @@ package com.reza.mbahlaptop.ui.main.predict
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -108,34 +109,63 @@ class PredictFragment : Fragment() {
         val osArrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, osType)
         binding.actvOs.setAdapter(osArrayAdapter)
 
+        val cpuBrand = resources.getStringArray(R.array.processor_brand)
+        val cpuBrandArrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, cpuBrand)
+        binding.actvProcessorBrand.setAdapter(cpuBrandArrayAdapter)
+
         val processorWindows = resources.getStringArray(R.array.processor_windows)
+        val processorIntel = resources.getStringArray(R.array.processor_intel)
+        val processorAmd = resources.getStringArray(R.array.processor_amd)
         val processorMac = resources.getStringArray(R.array.processor_mac)
+
         val gpuWindows = resources.getStringArray(R.array.gpu_windows)
         val gpuMac = resources.getStringArray(R.array.gpu_mac)
 
         val processorWindowsArrayAdapter =
             ArrayAdapter(requireContext(), R.layout.dropdown_item, processorWindows)
+        val processorIntelArrayAdapter =
+            ArrayAdapter(requireContext(), R.layout.dropdown_item, processorIntel)
+        val processorAmdArrayAdapter =
+            ArrayAdapter(requireContext(), R.layout.dropdown_item, processorAmd)
         val processorMacArrayAdapter =
             ArrayAdapter(requireContext(), R.layout.dropdown_item, processorMac)
         binding.actvProcessor.setAdapter(processorWindowsArrayAdapter)
+
         val gpuWindowsArrayAdapter =
             ArrayAdapter(requireContext(), R.layout.dropdown_item, gpuWindows)
         val gpuMacArrayAdapter =
             ArrayAdapter(requireContext(), R.layout.dropdown_item, gpuMac)
         binding.actvGpu.setAdapter(gpuWindowsArrayAdapter)
 
+
         binding.actvOs.setOnItemClickListener { parent, _, position, _ ->
             val selectedOS = parent.getItemAtPosition(position) as String
             if (selectedOS == "MAC") {
+                binding.actvProcessorBrand.text =
+                    Editable.Factory.getInstance().newEditable("Apple")
+                binding.actvProcessorBrand.setAdapter(null)
                 binding.actvProcessor.setAdapter(processorMacArrayAdapter)
                 binding.actvGpu.setAdapter(gpuMacArrayAdapter)
                 binding.actvProcessor.text = null
                 binding.actvGpu.text = null
             } else {
+                binding.actvProcessorBrand.setAdapter(cpuBrandArrayAdapter)
                 binding.actvProcessor.setAdapter(processorWindowsArrayAdapter)
                 binding.actvGpu.setAdapter(gpuWindowsArrayAdapter)
+                binding.actvProcessorBrand.text = null
                 binding.actvProcessor.text = null
                 binding.actvGpu.text = null
+            }
+        }
+
+        binding.actvProcessorBrand.setOnItemClickListener { parent, _, position, _ ->
+            val selectedBrand = parent.getItemAtPosition(position) as String
+            if (selectedBrand == "Intel") {
+                binding.actvProcessor.setAdapter(processorIntelArrayAdapter)
+                binding.actvProcessor.text = null
+            } else {
+                binding.actvProcessor.setAdapter(processorAmdArrayAdapter)
+                binding.actvProcessor.text = null
             }
         }
 

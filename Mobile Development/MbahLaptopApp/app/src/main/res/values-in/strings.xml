@@ -109,4 +109,5 @@
     <string name="recent_prediction">Prediksi Terbaru</string>
     <string name="see_all">Lihat Semua</string>
     <string name="login_to_account">Masuk ke Akun</string>
+    <string name="processor_brand">Merk Prosesor</string>
 </resources>

@@ -6,7 +6,13 @@
         <item>Windows 11 OS</item>
     </string-array>
 
+    <string-array name="processor_brand">
+        <item>Intel</item>
+        <item>AMD</item>
+    </string-array>
+
     <string-array name="processor_windows">
+        <item>4th Gen Intel Celeron</item>
         <item>8th Gen Intel Core i5</item>
         <item>8th Gen Intel Core i7</item>
         <item>8th Gen Intel Core i9</item>
@@ -26,12 +32,57 @@
         <item>13th Gen Intel Core i5</item>
         <item>13th Gen Intel Core i7</item>
         <item>13th Gen Intel Core i9</item>
+        <item>4th Gen Intel Celeron</item>
+        <item>8th Gen Intel Core i5</item>
+        <item>8th Gen Intel Core i7</item>
+        <item>8th Gen Intel Core i9</item>
+        <item>9th Gen intel Core i7</item>
+        <item>9th Gen Intel Core i9</item>
+        <item>10th Gen Intel Core i3</item>
+        <item>10th Gen Intel Core i5</item>
+        <item>10th Gen Intel Core i7</item>
+        <item>11th Gen Intel Core i3</item>
+        <item>11th Gen Intel Core i5</item>
+        <item>11th Gen Intel Core i7</item>
+        <item>12th Gen Intel Core i3</item>
+        <item>12th Gen Intel Core i5</item>
+        <item>12th Gen Intel Core i7</item>
+        <item>12th Gen Intel Core i9</item>
+        <item>13th Gen Intel Core i3</item>
+        <item>13th Gen Intel Core i5</item>
+        <item>13th Gen Intel Core i7</item>
+        <item>13th Gen Intel Core i9</item>
+    </string-array>
+
+    <string-array name="processor_intel">
+        <item>4th Gen Intel Celeron</item>
+        <item>8th Gen Intel Core i5</item>
+        <item>8th Gen Intel Core i7</item>
+        <item>8th Gen Intel Core i9</item>
+        <item>9th Gen intel Core i7</item>
+        <item>9th Gen Intel Core i9</item>
+        <item>10th Gen Intel Core i3</item>
+        <item>10th Gen Intel Core i5</item>
+        <item>10th Gen Intel Core i7</item>
+        <item>11th Gen Intel Core i3</item>
+        <item>11th Gen Intel Core i5</item>
+        <item>11th Gen Intel Core i7</item>
+        <item>12th Gen Intel Core i3</item>
+        <item>12th Gen Intel Core i5</item>
+        <item>12th Gen Intel Core i7</item>
+        <item>12th Gen Intel Core i9</item>
+        <item>13th Gen Intel Core i3</item>
+        <item>13th Gen Intel Core i5</item>
+        <item>13th Gen Intel Core i7</item>
+        <item>13th Gen Intel Core i9</item>
+    </string-array>
+
+    <string-array name="processor_amd">
         <item>3rd Gen AMD Athlon</item>
         <item>3rd Gen AMD Athlon Silver</item>
         <item>3rd Gen AMD Ryzen 3</item>
         <item>3rd Gen AMD Ryzen 5</item>
         <item>4th Gen AMD Ryzen 7 PRO</item>
-        <item>4th Gen Intel Celeron</item>
         <item>5th Gen AMD Ryzen 3</item>
         <item>5th Gen AMD Ryzen 5</item>
         <item>5th Gen AMD Ryzen 7</item>

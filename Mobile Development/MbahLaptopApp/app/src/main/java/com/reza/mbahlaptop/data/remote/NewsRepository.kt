@@ -19,7 +19,7 @@ class NewsRepository private constructor(
             val newsData = response.articles?.filterNotNull()
             val news = newsData?.filter { result ->
                 result.title != "[Removed]"
-            }?.take(10)
+            }?.take(5)
             if (news != null) {
                 emit(Result.Success(news))
             } else {
