@@ -32,6 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:defaultNavHost="true"
+            android:layout_marginBottom="64dp"
             app:navGraph="@navigation/mobile_navigation" />
 
     </androidx.core.widget.NestedScrollView>
@@ -50,7 +51,6 @@
         app:itemIconSize="24dp"
         app:itemPaddingBottom="12dp"
         app:itemPaddingTop="8dp"
-        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
         app:menu="@menu/bottom_nav_menu" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

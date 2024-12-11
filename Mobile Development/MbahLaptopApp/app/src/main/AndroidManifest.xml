@@ -49,7 +49,8 @@
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
             android:name=".ui.main.HandleLoginActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/MbahLaptop.splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

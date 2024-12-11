@@ -10,4 +10,9 @@
         <item name="android:windowExitTransition">@android:transition/explode</item>
     </style>
 
+    <style name="MbahLaptop.splash" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
 </resources>
