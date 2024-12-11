@@ -107,4 +107,8 @@
     <string name="see_all">See All</string>
     <string name="login_to_account">Login to Account</string>
     <string name="processor_brand">Processor Brand</string>
+    <string name="confirm_your_password">Confirm Your Password</string>
+    <string name="passwords_don_t_match">Passwords don\'t match</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="enter_your_email">Enter your email</string>
 </resources>

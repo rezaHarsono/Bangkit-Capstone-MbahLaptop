@@ -3,10 +3,12 @@ package com.reza.mbahlaptop.ui.auth.register
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -43,15 +45,51 @@ class RegisterFragment : Fragment() {
     }
 
     private fun setupAction() {
+        binding.apply {
+            edEmail.addTextChangedListener {
+                val email = edEmail.text.toString()
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    tilEmail.isErrorEnabled = true
+                    tilEmail.error = resources.getString(R.string.error_email_invalid)
+                } else {
+                    tilEmail.error = null
+                    tilEmail.isErrorEnabled = false
+                }
+            }
 
-        binding.btnRegister.setOnClickListener {
-            val username = binding.edUsername.text.toString()
-            val email = binding.edEmail.text.toString()
-            val password = binding.edPassword.text.toString()
-            if (email.isEmpty() || password.isEmpty() || username.isEmpty()) {
-                showToast(getString(R.string.please_fill_all_fields))
-            } else {
-                register()
+            edPassword.addTextChangedListener {
+                val password = edPassword.text.toString()
+                if (password.length < 8) {
+                    tilPassword.isErrorEnabled = true
+                    tilPassword.error = resources.getString(R.string.error_password_invalid)
+                } else {
+                    tilPassword.error = null
+                    tilPassword.isErrorEnabled = false
+                }
+            }
+
+            edPasswordValid.addTextChangedListener {
+                val password = edPassword.text.toString()
+                val passwordValid = binding.edPasswordValid.text.toString()
+                if (passwordValid != password) {
+                    tilPasswordValid.isErrorEnabled = true
+                    tilPasswordValid.error = getString(R.string.passwords_don_t_match)
+                } else {
+                    tilPasswordValid.error = null
+                    tilPasswordValid.isErrorEnabled = false
+                }
+            }
+
+            btnRegister.setOnClickListener {
+                val username = edUsername.text.toString().trim()
+                val email = edEmail.text.toString().trim()
+                val password = edPassword.text.toString()
+                val passwordValid = edPasswordValid.text.toString()
+                if (email.isEmpty() || password.isEmpty() || username.isEmpty() || passwordValid.isEmpty()) {
+                    showToast(getString(R.string.please_fill_all_fields))
+                } else {
+                    register()
+                }
             }
         }
     }

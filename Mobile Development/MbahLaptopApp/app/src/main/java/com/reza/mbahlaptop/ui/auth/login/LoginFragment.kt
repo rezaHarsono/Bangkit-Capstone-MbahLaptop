@@ -3,11 +3,13 @@ package com.reza.mbahlaptop.ui.auth.login
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityOptionsCompat
+import androidx.core.widget.addTextChangedListener
 import androidx.credentials.CredentialManager
 import androidx.credentials.CustomCredential
 import androidx.credentials.GetCredentialRequest
@@ -54,27 +56,40 @@ class LoginFragment : Fragment() {
     }
 
     private fun setupAction() {
-        binding.btnGoogle.setOnClickListener {
-            signInWithGoogle()
-        }
-
-        binding.btnLogin.setOnClickListener {
-            val email = binding.edEmail.text.toString()
-            val password = binding.edPassword.text.toString()
-
-            if (email.isEmpty() || password.isEmpty()) {
-                showToast(getString(R.string.please_fill_all_fields))
-            } else {
-                signInWithEmailAndPassword()
+        binding.apply {
+            edEmail.addTextChangedListener {
+                val email = edEmail.text.toString()
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    tilEmail.isErrorEnabled = true
+                    tilEmail.error = resources.getString(R.string.error_email_invalid)
+                } else {
+                    tilEmail.error = null
+                    tilEmail.isErrorEnabled = false
+                }
             }
-        }
 
-        binding.btnLoginGuest.setOnClickListener {
-            val intent = Intent(requireContext(), MainActivity::class.java)
-            startActivity(
-                intent,
-                ActivityOptionsCompat.makeSceneTransitionAnimation(requireActivity()).toBundle()
-            )
+            btnGoogle.setOnClickListener {
+                signInWithGoogle()
+            }
+
+            btnLogin.setOnClickListener {
+                val email = binding.edEmail.text.toString()
+                val password = binding.edPassword.text.toString()
+
+                if (email.isEmpty() || password.isEmpty()) {
+                    showToast(getString(R.string.please_fill_all_fields))
+                } else {
+                    signInWithEmailAndPassword()
+                }
+            }
+
+            btnLoginGuest.setOnClickListener {
+                val intent = Intent(requireContext(), MainActivity::class.java)
+                startActivity(
+                    intent,
+                    ActivityOptionsCompat.makeSceneTransitionAnimation(requireActivity()).toBundle()
+                )
+            }
         }
     }
 

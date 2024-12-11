@@ -14,8 +14,8 @@
             android:id="@+id/my_toolbar"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            app:layout_scrollFlags="scroll|enterAlways|snap"
             app:layout_scrollEffect="compress"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
             app:subtitleCentered="true"
             app:titleCentered="true" />
     </com.google.android.material.appbar.AppBarLayout>

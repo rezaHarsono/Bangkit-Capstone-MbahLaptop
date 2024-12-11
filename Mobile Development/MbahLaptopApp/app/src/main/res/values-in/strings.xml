@@ -110,4 +110,8 @@
     <string name="see_all">Lihat Semua</string>
     <string name="login_to_account">Masuk ke Akun</string>
     <string name="processor_brand">Merk Prosesor</string>
+    <string name="confirm_your_password">Konfirmasi Password Anda</string>
+    <string name="passwords_don_t_match">Password tidak sama</string>
+    <string name="enter_your_password">Masukkan password</string>
+    <string name="enter_your_email">Masukkan email</string>
 </resources>
