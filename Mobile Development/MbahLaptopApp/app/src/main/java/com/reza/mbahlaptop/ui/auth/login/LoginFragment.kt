@@ -189,7 +189,10 @@ class LoginFragment : Fragment() {
         if (currentUser != null) {
             val loginIntent = Intent(requireContext(), HandleLoginActivity::class.java)
             loginIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(loginIntent)
+            startActivity(
+                loginIntent,
+                ActivityOptionsCompat.makeSceneTransitionAnimation(requireActivity()).toBundle()
+            )
             requireActivity().finish()
         }
     }

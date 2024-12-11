@@ -46,7 +46,7 @@
         <activity
             android:name=".ui.intro.IntroActivity"
             android:exported="false"
-            android:theme="@style/Theme.Material3.Light" />
+            android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
             android:name=".ui.main.HandleLoginActivity"
             android:exported="true">

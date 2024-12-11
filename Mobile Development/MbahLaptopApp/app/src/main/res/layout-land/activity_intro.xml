@@ -5,19 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    android:fitsSystemWindows="true"
     tools:context=".ui.intro.IntroActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_margin="16dp">
+
+        <ImageView
+            android:id="@+id/intro_image"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="40dp"
+            android:alpha="0"
+            android:contentDescription="@string/mbah_laptop_image"
+            android:src="@drawable/mbah_laptop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:alpha="100" />
 
         <TextView
             android:id="@+id/intro_welcome"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
@@ -27,11 +39,14 @@
             android:textColor="@color/white"
             android:textSize="40sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/intro_image"
+            app:layout_constraintTop_toTopOf="@+id/intro_image"
             tools:alpha="100" />
 
         <TextView
             android:id="@+id/intro_info"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
             android:layout_marginTop="8dp"
@@ -40,16 +55,10 @@
             android:textAlignment="center"
             android:textColor="#CCFFFFFF"
             android:textSize="18sp"
-            tools:alpha="100" />
-
-        <ImageView
-            android:id="@+id/intro_image"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_marginTop="8dp"
-            android:alpha="0"
-            android:contentDescription="@string/mbah_laptop_image"
-            android:src="@drawable/mbah_laptop"
+            app:layout_constraintBottom_toTopOf="@+id/btn_start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/intro_image"
+            app:layout_constraintTop_toBottomOf="@+id/intro_welcome"
             tools:alpha="100" />
 
         <com.google.android.material.button.MaterialButton
@@ -65,9 +74,12 @@
             android:text="@string/get_started"
             android:textSize="16sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/intro_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/intro_image"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.ExtraSmall"
             tools:alpha="100" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

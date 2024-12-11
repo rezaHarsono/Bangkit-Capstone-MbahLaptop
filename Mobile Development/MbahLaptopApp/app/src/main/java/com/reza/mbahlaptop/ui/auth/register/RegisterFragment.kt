@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.app.ActivityOptionsCompat
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import com.google.firebase.Firebase
@@ -151,7 +152,10 @@ class RegisterFragment : Fragment() {
         if (currentUser != null) {
             val loginIntent = Intent(requireContext(), HandleLoginActivity::class.java)
             loginIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(loginIntent)
+            startActivity(
+                loginIntent,
+                ActivityOptionsCompat.makeSceneTransitionAnimation(requireActivity()).toBundle()
+            )
             requireActivity().finish()
         }
     }

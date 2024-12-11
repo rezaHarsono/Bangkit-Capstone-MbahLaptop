@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.app.ActivityOptionsCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.reza.mbahlaptop.R
@@ -246,7 +247,11 @@ class PredictFragment : Fragment() {
                         )
                         intent.putExtra("RESULT", resultBundle)
                         clearFields()
-                        startActivity(intent)
+                        startActivity(
+                            intent,
+                            ActivityOptionsCompat.makeSceneTransitionAnimation(requireActivity())
+                                .toBundle()
+                        )
                     }
 
                     is Result.Loading -> {

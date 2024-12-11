@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.app.ActivityOptionsCompat
 import androidx.credentials.ClearCredentialStateRequest
 import androidx.credentials.CredentialManager
 import androidx.lifecycle.lifecycleScope
@@ -100,13 +101,21 @@ class SettingActivity : AppCompatActivity() {
     private fun setupAction() {
         binding?.apply {
             buttonLanguage.setOnClickListener {
-                startActivity(Intent(this@SettingActivity, LanguageActivity::class.java))
+                startActivity(
+                    Intent(this@SettingActivity, LanguageActivity::class.java),
+                    ActivityOptionsCompat.makeSceneTransitionAnimation(this@SettingActivity)
+                        .toBundle()
+                )
             }
             switchTheme.setOnCheckedChangeListener { _, isChecked: Boolean ->
                 settingViewModel.saveThemeSetting(isChecked)
             }
             buttonAbout.setOnClickListener {
-                startActivity(Intent(this@SettingActivity, AboutActivity::class.java))
+                startActivity(
+                    Intent(this@SettingActivity, AboutActivity::class.java),
+                    ActivityOptionsCompat.makeSceneTransitionAnimation(this@SettingActivity)
+                        .toBundle()
+                )
             }
             buttonClearHistory.setOnClickListener {
                 MaterialAlertDialogBuilder(this@SettingActivity)
@@ -133,7 +142,11 @@ class SettingActivity : AppCompatActivity() {
                 }
             } ?: run {
                 buttonLogin.setOnClickListener {
-                    startActivity(Intent(this@SettingActivity, AuthActivity::class.java))
+                    startActivity(
+                        Intent(this@SettingActivity, AuthActivity::class.java),
+                        ActivityOptionsCompat.makeSceneTransitionAnimation(this@SettingActivity)
+                            .toBundle()
+                    )
                 }
             }
         }
@@ -152,7 +165,10 @@ class SettingActivity : AppCompatActivity() {
             credentialManager.clearCredentialState(ClearCredentialStateRequest())
             val logoutIntent = Intent(this@SettingActivity, HandleLoginActivity::class.java)
             logoutIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(logoutIntent)
+            startActivity(
+                logoutIntent,
+                ActivityOptionsCompat.makeSceneTransitionAnimation(this@SettingActivity).toBundle()
+            )
             finish()
             showLoading(false)
         }

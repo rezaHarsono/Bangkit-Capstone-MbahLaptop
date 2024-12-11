@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.core.app.ActivityOptionsCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -78,7 +79,10 @@ class MainActivity : TemplateActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_setting -> {
-                startActivity(Intent(this, SettingActivity::class.java))
+                startActivity(
+                    Intent(this, SettingActivity::class.java),
+                    ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle()
+                )
                 return true
             }
         }
