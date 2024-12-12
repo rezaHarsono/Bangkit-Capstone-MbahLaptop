@@ -3,15 +3,15 @@
 
 ## Team Members - C242-PS215
 
-| Member                   | Student ID   | Path               | University                |
-|--------------------------|--------------|--------------------|---------------------------|
-| Muhammad Reza Harsono    | A128B4KY3033 | Mobile Development | Politeknik Negeri Jakarta |
-| Muhammad Rizky Ramadhani | A128B4KY3067 | Mobile Development | Politeknik Negeri Jakarta |
-| Muhamad Adnan Fadillah   | C128B4KY2618 | Machine Learning   | Politeknik Negeri Jakarta |
-| Zuwita S                 | C172B4KX4636 | Cloud Computing    | Universitas Mikroskil     |
-| German Mindo Simarmata   | M006B4KY1601 | Cloud Computing    | Universitas Brawijaya     |
-| Adam Noor Falah          | M006B4KY0066 | Machine Learning   | Universitas Brawijaya     |
-| Juan Graciano            | M128B4KY2107 | Machine Learning   | Politeknik Negeri Jakarta |
+| Member                                                  | Student ID   | Path               | University                |
+|---------------------------------------------------------|--------------|--------------------|---------------------------|
+| [Muhammad Reza Harsono](https://github.com/rezaHarsono) | A128B4KY3033 | Mobile Development | Politeknik Negeri Jakarta |
+| [Muhammad Rizky Ramadhani](https://github.com/BuzanKun) | A128B4KY3067 | Mobile Development | Politeknik Negeri Jakarta |
+| [Muhamad Adnan Fadillah](https://github.com/AdnanMAF)   | C128B4KY2618 | Machine Learning   | Politeknik Negeri Jakarta |
+| [Zuwita S](https://github.com/ZuwitaS)                  | C172B4KX4636 | Cloud Computing    | Universitas Mikroskil     |
+| [German Mindo Simarmata](https://github.com/germanms22) | M006B4KY1601 | Cloud Computing    | Universitas Brawijaya     |
+| [Adam Noor Falah](https://github.com/AdamNoorF)         | M006B4KY0066 | Machine Learning   | Universitas Brawijaya     |
+| [Juan Graciano](https://github.com/Juanpnj)             | M128B4KY2107 | Machine Learning   | Politeknik Negeri Jakarta |
 
 ## About
 ![App Design](asset/app_preview.png)
