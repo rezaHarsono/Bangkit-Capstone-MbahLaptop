@@ -7,6 +7,10 @@
 - M006B4KY0066 - Adam Noor Falah
 - M006B4KY1601 - German Mindo Simarmata
 
+## Dataset Source
+https://www.kaggle.com/datasets/jacksondivakarr/laptop-price-prediction-dataset
+or you can use our modified dataset in dataset folder
+
 ## Libraries
 - TensorFlow
 - Pandas
