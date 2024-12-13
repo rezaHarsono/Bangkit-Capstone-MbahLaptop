@@ -27,7 +27,7 @@ After that, the user will be directed to the Result Screen and the Predicted Pri
 ## Presentation and Demo Video
 ```
 Demo : https://www.youtube.com/watch?v=E6FgBBK6TpQ
-Presentation : 
+Presentation : https://www.youtube.com/watch?v=gTqZnv2B0xo
 ```
 
 ## Android APK File (Minimum Android 8 Oreo (SDK 24))

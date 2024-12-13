@@ -25,14 +25,16 @@ Mbah Laptop is developed using Kotlin in Android Studio. Here are the libraries 
     Go to File > New > Project from Version Control
 
 2. Open the Project in Android Studio
-   
-3. Delete the google-service.json
 
-4. Reintegrate with your own Firebase
-
-5. Run the Project
+3. Run the Project
 Wait for the Gradle Build to Finish and then choose the Device to run the app on top of the Window.
 After that, to run the app, click the Run Button or Go to Run > Run 'app'
+
+#### Optional
+By Default, the Project only support the Firebase Authentication using the email and password from register function. But if you want to use the Sign In with Google, you need to do the following before running the app.
+1. Delete the google-service.json
+
+2. Reintegrate the project with your own Firebase
 
 ### Another Way
 To install the project without cloning it, head to the link below to download and install the App directly
