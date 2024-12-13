@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MbahLaptop</string>
+    <string name="app_name">Mbah Laptop</string>
     <!-- Strings used for fragments for navigation -->
 
-    <string name="intro_welcome">Selamat Datang di MbahLaptop</string>
+    <string name="intro_welcome">Selamat Datang di Mbah Laptop</string>
     <string name="login">Masuk</string>
     <string name="register">Daftar</string>
     <string name="error_email_invalid">Format email tidak valid</string>
